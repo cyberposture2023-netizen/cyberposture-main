@@ -2,17 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
-// Note: If you previously exported metadata here, you will need to move it to a 
-// separate layout.js file or a server component since this is now a Client Component.
-
 export default function HomePage() {
-  // Animation Variants
-  const containerVariants = {
+  // FIX: Explicitly typed as Variants
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -23,14 +20,22 @@ export default function HomePage() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const } },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } 
+    },
   };    
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const } },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } 
+    },
   };
 
   return (
@@ -198,7 +203,7 @@ export default function HomePage() {
               </Link>
             </motion.div>
 
-            {/* Sentinel
+            {/* Sentinel - Restored for completeness */}
             <motion.div 
               variants={cardVariants}
               initial="hidden"
@@ -237,7 +242,7 @@ export default function HomePage() {
               >
                 Join Waitlist
               </Link>
-            </motion.div> */}
+            </motion.div>
           </div>
         </section>
       </main>
