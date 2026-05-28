@@ -153,7 +153,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="mx-auto w-[32rem] aspect-square">
             {/* Flagship */}
             <motion.div 
               variants={cardVariants}
@@ -203,46 +203,7 @@ export default function HomePage() {
               </Link>
             </motion.div>
 
-            {/* Sentinel - Restored for completeness */}
-            <motion.div 
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: 0.2 }}
-              whileHover={{ y: -8 }}
-              className="glass-panel flex flex-col rounded-xl p-6 md:p-8"
-            >
-              <div className="mb-6 flex items-start justify-between">
-                <div>
-                  <span className="mb-2 block text-[12px] font-bold uppercase tracking-[0.12em] text-primary-fixed">
-                    Coming Soon
-                  </span>
-                  <h3 className="font-display text-2xl text-on-surface opacity-80">
-                    Sentinel AI
-                  </h3>
-                </div>
-                <span className="material-symbols-outlined text-3xl text-on-surface-variant opacity-80">
-                  robot_2
-                </span>
-              </div>
-
-              <p className="mb-8 flex-grow text-sm text-on-surface-variant opacity-80">
-                Autonomous remediation engine. Pre-emptively isolates risky
-                behavioral patterns before external compromise occurs.
-              </p>
-
-              <div className="relative mb-6 flex h-48 items-center justify-center overflow-hidden rounded-lg border border-outline-variant/20 bg-surface-container-lowest">
-                <div className="h-16 w-16 animate-spin rounded-full border-2 border-primary-fixed/20 border-t-primary-fixed" />
-              </div>
-
-              <Link
-                href="/sentinel"
-                className="w-full rounded-lg border border-outline-variant/40 py-3 text-center font-semibold text-on-surface-variant transition-colors hover:bg-surface-variant"
-              >
-                Join Waitlist
-              </Link>
-            </motion.div>
+            
           </div>
         </section>
       </main>
