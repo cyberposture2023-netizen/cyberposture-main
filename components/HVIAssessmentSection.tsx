@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -80,13 +80,13 @@ export default function ProductsPage() {
     setProcText("Analyzing behavioral cyber posture…");
   };
 
-  // Framer Motion Variants
-  const fadeUp = {
+  // FIX: Explicitly type your animation objects as 'Variants'
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
   };
@@ -145,7 +145,7 @@ export default function ProductsPage() {
           </motion.div>
         </motion.section>
 
-        {/* Live Terminal Demo (Using your custom state) */}
+        {/* Live Terminal Demo */}
         <motion.section 
           id="assessment" 
           initial="hidden"
