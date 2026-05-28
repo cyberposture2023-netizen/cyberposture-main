@@ -198,7 +198,7 @@ export default function HomePage() {
               </Link>
             </motion.div>
 
-            {/* Sentinel */}
+            {/* Sentinel
             <motion.div 
               variants={cardVariants}
               initial="hidden"
@@ -237,7 +237,7 @@ export default function HomePage() {
               >
                 Join Waitlist
               </Link>
-            </motion.div>
+            </motion.div> */}
           </div>
         </section>
       </main>
