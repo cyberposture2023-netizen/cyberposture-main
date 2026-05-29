@@ -70,42 +70,23 @@ export default function ProductsPage() {
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
             One product, two paths
           </p>
-          <div className="mt-4 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-            <div>
-              <h1 className="font-display text-5xl leading-tight text-on-surface md:text-7xl">
-                HVI Score
-              </h1>
-              <p className="mt-6 max-w-3xl text-base leading-8 text-on-surface-variant md:text-lg">
-                Human Vulnerability Intelligence is one product organized for two
-                audiences: individuals who need a personal risk score, and
-                organizations that need aggregated human-risk visibility.
-              </p>
-            </div>
-
-            <div className="grid gap-3 rounded-xl border border-outline-variant/25 bg-surface-container-low p-4 sm:grid-cols-2">
-              <button
-                type="button"
-                onClick={() => selectAudience("b2c")}
-                className="rounded-lg border border-tertiary/35 bg-tertiary/10 px-5 py-4 text-center text-sm font-bold uppercase tracking-[0.08em] text-tertiary"
-              >
-                B2C: Personal
-              </button>
-              <button
-                type="button"
-                onClick={() => selectAudience("b2b")}
-                className="rounded-lg border border-primary/35 bg-primary-container/35 px-5 py-4 text-center text-sm font-bold uppercase tracking-[0.08em] text-primary"
-              >
-                B2B: Organization
-              </button>
-            </div>
+          <div className="mt-4">
+            <h1 className="font-display text-5xl leading-tight text-on-surface md:text-7xl">
+              HVI Score
+            </h1>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-on-surface-variant md:text-lg">
+              Human Vulnerability Intelligence is one product organized for two
+              audiences: individuals who need a personal risk score, and
+              organizations that need aggregated human-risk visibility.
+            </p>
           </div>
         </motion.section>
 
         <section className="mx-auto mt-16 max-w-7xl">
           <div className="mb-6 flex rounded-xl border border-outline-variant/25 bg-surface-container-low p-2">
             {[
-              ["b2c", "Individual / Family"],
-              ["b2b", "Organization"],
+              ["b2c", "Personal / Family"],
+              ["b2b", "Business"],
             ].map(([value, label]) => (
               <button
                 key={value}
@@ -131,7 +112,7 @@ export default function ProductsPage() {
             className="scroll-mt-28 rounded-xl border border-outline-variant/25 bg-surface-container-low p-6 md:p-8"
           >
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-              B2C path
+              Personal path
             </p>
             <h2 className="mt-4 font-display text-4xl leading-tight text-on-surface md:text-5xl">
               Your personal risk, made visible.
@@ -179,12 +160,20 @@ export default function ProductsPage() {
               Get the score, understand the weak spots, and move straight into
               personal protection.
             </p>
-            <a
-              href="#assessment"
-              className="btn-gold mt-7 inline-flex rounded-lg px-6 py-3 text-[12px] font-bold uppercase tracking-[0.08em]"
-            >
-              Get My Personal HVI Score
-            </a>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#assessment"
+                className="btn-gold inline-flex rounded-lg px-6 py-3 text-[12px] font-bold uppercase tracking-[0.08em]"
+              >
+                Take Assessment
+              </a>
+              <Link
+                href="/contact/b2c"
+                className="btn-ghost-gold inline-flex rounded-lg px-6 py-3 text-[12px] font-bold uppercase tracking-[0.08em]"
+              >
+                Start Free Test
+              </Link>
+            </div>
           </motion.article>
           ) : (
 
@@ -196,7 +185,7 @@ export default function ProductsPage() {
             className="scroll-mt-28 rounded-xl border border-outline-variant/25 bg-surface-container-low p-6 md:p-8"
           >
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">
-              B2B path
+              Business path
             </p>
             <h2 className="mt-4 font-display text-4xl leading-tight text-on-surface md:text-5xl">
               Secure your organization.
@@ -219,12 +208,20 @@ export default function ProductsPage() {
                 </div>
               ))}
             </div>
-            <Link
-              href="/contact"
-              className="btn-ghost-gold mt-7 inline-flex rounded-lg px-6 py-3 text-[12px] font-bold uppercase tracking-[0.08em]"
-            >
-              Book Enterprise Demo
-            </Link>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/contact/b2b"
+                className="btn-gold inline-flex rounded-lg px-6 py-3 text-[12px] font-bold uppercase tracking-[0.08em]"
+              >
+                Deploy Telemetry
+              </Link>
+              <Link
+                href="/contact/b2b"
+                className="btn-ghost-gold inline-flex rounded-lg px-6 py-3 text-[12px] font-bold uppercase tracking-[0.08em]"
+              >
+                Book Enterprise Demo
+              </Link>
+            </div>
           </motion.article>
           )}
         </section>

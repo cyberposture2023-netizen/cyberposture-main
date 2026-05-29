@@ -9,15 +9,24 @@ const NAV = [
   { to: "/", label: "Home" },
   {
     to: "/products",
-    label: "HVI Score",
+    label: "Product",
+    menuTitle: "HVI",
     children: [
-      { to: "/products#b2c", label: "B2C" },
-      { to: "/products#b2b", label: "B2B" },
+      { to: "/products#b2c", label: "Personal" },
+      { to: "/products#b2b", label: "Business" },
     ],
   },
   // { to: "/sentinel", label: "Platform" },
   { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  {
+    to: "/contact",
+    label: "Contact",
+    menuTitle: "Contact",
+    children: [
+      { to: "/contact/b2c", label: "Personal Contact" },
+      { to: "/contact/b2b", label: "Business Contact" },
+    ],
+  },
 ] as const;
 
 export function SiteHeader() {
@@ -88,7 +97,7 @@ export function SiteHeader() {
                 {"children" in item && (
                   <div className="invisible absolute left-1/2 top-full z-50 mt-4 w-56 -translate-x-1/2 rounded-xl border border-outline-variant/25 bg-surface-container-lowest p-2 opacity-0 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all group-hover:visible group-hover:opacity-100">
                     <p className="px-3 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-tertiary">
-                      HVI Score
+                      {item.menuTitle}
                     </p>
                     {item.children.map((child) => (
                       <Link
@@ -108,7 +117,7 @@ export function SiteHeader() {
 
         {/* Desktop CTA */}
         <Link
-          href="/contact"
+          href="/contact/b2b"
           className="btn-gold hidden rounded-lg px-5 py-2 text-[12px] font-bold uppercase tracking-[0.08em] transition-transform hover:scale-105 active:scale-95 md:inline-flex"
         >
           Request Demo
@@ -171,7 +180,7 @@ export function SiteHeader() {
 
             <div className="mt-10 flex flex-col gap-6 border-t border-outline-variant/30 pt-10">
               <Link
-                href="/contact"
+                href="/contact/b2b"
                 onClick={() => setIsOpen(false)}
                 className="btn-gold w-full rounded-lg px-5 py-4 text-center text-[14px] font-bold uppercase tracking-[0.08em]"
               >

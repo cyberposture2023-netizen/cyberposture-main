@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
 
@@ -32,708 +31,336 @@ const itemVariants: Variants = {
 
 const portalCards = [
   {
-    audience: "B2C",
+    audience: "Personal",
     icon: "family_restroom",
     title: "Protect Yourself & Your Family",
-    copy: "Start with a personal Human Vulnerability Index assessment that turns everyday online habits into a clear risk score and practical next steps.",
+    copy: "Start with a simple personal path that turns everyday digital patterns into clear next steps.",
     href: "/products#b2c",
-    cta: "View B2C HVI",
+    cta: "View Personal Path",
   },
   {
-    audience: "B2B",
+    audience: "Business",
     icon: "corporate_fare",
     title: "Secure Your Organization",
-    copy: "Route security leaders into the corporate assessment path for department-level risk, passive telemetry, and pilot planning.",
+    copy: "Route teams into a business path for signal mapping, exposure review, and pilot planning.",
     href: "/products#b2b",
-    cta: "View B2B HVI",
+    cta: "View Business Path",
   },
 ] as const;
 
-const trustSignals = [
-  ["70-80%", "organizational breaches originate inside the human perimeter"],
-  ["No HR data", "privacy-safe architecture avoids personnel records"],
-  ["Live risk map", "department-level visibility for security leaders"],
+const threatInboxItems = [
+  {
+    channel: "Email",
+    icon: "mail",
+    title: "Payroll direct deposit update",
+    sender: "hr-benefits@payroll-secure.example",
+    preview: "Confirm your bank details before Friday payroll closes.",
+    signal: "Lookalike domain, urgency, financial change request",
+    risk: "Credential capture",
+  },
+  {
+    channel: "SMS",
+    icon: "sms",
+    title: "Package delivery exception",
+    sender: "+1 (415) 555-0186",
+    preview: "Your address needs confirmation. Tap to reschedule delivery.",
+    signal: "Shortened link, personal timing cue, mobile-first lure",
+    risk: "Payment-card phishing",
+  },
+  {
+    channel: "Voice",
+    icon: "record_voice_over",
+    title: "Executive callback request",
+    sender: "Unknown caller, saved executive name",
+    preview: "I am boarding now. Send the approval code so finance can close.",
+    signal: "Caller ID spoofing, MFA pressure, authority pretext",
+    risk: "Account takeover",
+  },
+  {
+    channel: "Docs",
+    icon: "description",
+    title: "Shared vendor invoice",
+    sender: "finance-ops@workspace-share.example",
+    preview: "A shared file asks for permission to view contacts and files.",
+    signal: "Broad OAuth scope, external sender, familiar workflow",
+    risk: "Cloud data exposure",
+  },
+  ] as const;
+
+const osintScanLines = [
+  "$ cyberposture osint.lookup --scope approved-domain --mode passive",
+  "[policy] intrusive probes disabled; no login, exploit, or port scan actions",
+  "[web] querying indexed pages and public metadata caches",
+  "[dns] reviewing public DNS, MX, SPF, DMARC, and certificate transparency",
+  "[identity] checking sanctioned breach references with redacted identifiers",
+  "[cloud] locating publicly shared docs, buckets, and collaboration hints",
+  "[social] collecting brand, role, and impersonation signals from open sources",
+  "[coverage] domains, identities, credentials, cloud shares, supplier mentions",
+  "[result] 28 public signals normalized into 5 remediation themes",
+  "[status] passive OSINT run complete; no target systems touched",
 ] as const;
 
-const journeySteps = [
+const osintCoverage = [
+  ["Domains", "DNS, certificates, web metadata"],
+  ["Identity", "executive names, aliases, public role clues"],
+  ["Credentials", "redacted breach references and reuse patterns"],
+  ["Cloud", "public shares, exposed docs, bucket naming hints"],
+  ["Suppliers", "third-party mentions and impersonation surface"],
+] as const;
+
+const iasFindings = [
   {
-    step: "01",
-    title: "Experience the threat",
-    copy: "A short simulation creates immediate context before asking visitors to commit.",
+    severity: "High",
+    title: "Leaked credential trail",
+    finding: "Redacted password reuse evidence tied to two public breach references.",
+    fix: "Force credential rotation, block reused passwords, and add MFA recovery review.",
   },
   {
-    step: "02",
-    title: "Choose a path",
-    copy: "Individuals move to personal HVI scoring; organizations move toward corporate risk mapping.",
+    severity: "Medium",
+    title: "Cloud sharing exposure",
+    finding: "Public document naming reveals project, vendor, and internal workflow context.",
+    fix: "Tighten link-sharing defaults and archive stale externally visible documents.",
   },
   {
-    step: "03",
-    title: "Act on the score",
-    copy: "Each audience receives a clear next step: personal protection or enterprise discovery.",
+    severity: "Medium",
+    title: "Misconfigured mail posture",
+    finding: "DMARC enforcement appears weak enough for believable spoofing attempts.",
+    fix: "Move DMARC toward reject, align SPF/DKIM, and monitor spoof attempts.",
   },
 ] as const;
 
-const threatScenarios = [
-  {
-    title: "Phishing link",
-    prompt: "An urgent account email asks you to verify your login before the end of the day.",
-    choices: [
-      {
-        id: "risky",
-        label: "Click Verify account",
-        consequence:
-          "Real-time consequence: opening the link can send credentials to a lookalike login page.",
-      },
-      {
-        id: "safe",
-        label: "Open the bank app directly",
-        consequence:
-          "Real-time consequence: opening the bank app directly avoids the attacker-controlled link and verifies the alert through a trusted channel.",
-      },
-    ],
-  },
-  {
-    title: "Deepfake voice prompt",
-    prompt: "A familiar executive voice asks for a one-time code while traveling.",
-    choices: [
-      {
-        id: "risky",
-        label: "Send the 6-digit code in chat",
-        consequence:
-          "Real-time consequence: sharing the code can complete account takeover even when MFA is enabled.",
-      },
-      {
-        id: "safe",
-        label: "Hang up and call the saved work number",
-        consequence:
-          "Real-time consequence: calling back on a known number breaks the impersonation attempt.",
-      },
-    ],
-  },
-  {
-    title: "Social engineering branch",
-    prompt: "A shared document asks you to approve broad permissions before you can view it.",
-    choices: [
-      {
-        id: "risky",
-        label: "Approve the permissions",
-        consequence:
-          "Real-time consequence: malicious OAuth approval can expose mail, files, and contacts without a password.",
-      },
-      {
-        id: "safe",
-        label: "Inspect sender and permissions",
-        consequence:
-          "Real-time consequence: checking the sender and permission scope catches the suspicious access request.",
-      },
-    ],
-  },
+const iasTerminalLines = [
+  "$ cyberposture ias.view --persona attacker --input passive-osint",
+  "[lens] mapping exposed assets into likely reconnaissance paths",
+  "[asset] login portal discovered from indexed support documentation",
+  "[misconfig] mail policy may permit spoofed executive display names",
+  "[credential] sanitized breach reference increases phishing credibility",
+  "[osint] public roles reveal approvers, vendors, and travel patterns",
+  "[priority] fix credentials, mail trust, and public sharing defaults first",
 ] as const;
 
-const osintLines = [
-  "$ hvi osint scan --target public-profile --mode passive",
-  "[dns] discovered public domain references: 12",
-  "[social] exposed family and travel clues: review",
-  "[identity] breached email reference: sanitized match",
-  "[cloud] shared document permission prompt detected",
-  "[credential] password reuse risk pattern: elevated",
-  "[hvi] correlating phishing, exposure, and privilege signals",
-  "[summary] preview score: 74 / high attention",
-] as const;
-
-function AppSimulation() {
-  const [visibleLines, setVisibleLines] = useState(4);
+function HeroOsintPreview() {
+  const [activeThreat, setActiveThreat] = useState(0);
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      setVisibleLines((current) =>
-        current >= osintLines.length ? 4 : current + 1
-      );
-    }, 1100);
+      setActiveThreat((current) => (current + 1) % threatInboxItems.length);
+    }, 4200);
 
     return () => window.clearInterval(interval);
   }, []);
 
-  const progress = Math.round((visibleLines / osintLines.length) * 100);
+  const selectedThreat = threatInboxItems[activeThreat];
 
   return (
     <motion.div
-      id="simulation"
-      initial={{ opacity: 0, scale: 0.94, y: 24 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
+      id="osint-preview"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-      className="relative mx-auto w-full max-w-6xl"
+      className="relative mx-auto w-full max-w-7xl overflow-hidden"
     >
-      <div className="absolute -inset-5 rounded-[2rem] bg-tertiary/10 blur-2xl" />
-      <div className="relative overflow-hidden rounded-[1.6rem] border border-outline-variant/30 bg-surface-container-lowest shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
-        <div className="flex items-center gap-2 border-b border-outline-variant/25 bg-surface-container-low px-4 py-3">
-          <span className="h-3 w-3 rounded-full bg-error" />
-          <span className="h-3 w-3 rounded-full bg-tertiary" />
-          <span className="h-3 w-3 rounded-full bg-primary" />
-          <div className="ml-2 flex min-w-0 flex-1 items-center gap-2 rounded-full border border-outline-variant/25 bg-background/65 px-3 py-1.5">
-            <span className="material-symbols-outlined text-sm text-primary">
-              travel_explore
-            </span>
-            <span className="truncate font-mono text-[10px] text-on-surface-variant">
-              hvi://passive-osint/public-profile
+      <motion.div
+        initial={{ opacity: 0.6 }}
+        animate={{ opacity: 1 }}
+        className="absolute -inset-5 rounded-[1.5rem] bg-white/10 blur-3xl"
+      />
+      <div className="relative overflow-hidden rounded-xl border border-white/15 bg-[#050505] shadow-[0_28px_90px_rgba(0,0,0,0.52)]">
+        <div className="flex items-center gap-2 border-b border-white/10 bg-[#0b0c10] px-4 py-3">
+          <span className="material-symbols-outlined text-lg text-white/72">
+            desktop_mac
+          </span>
+          <span className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white">
+            threat desktop
+          </span>
+          <div className="ml-2 flex min-w-0 flex-1 items-center gap-2 rounded-full border border-white/10 bg-black/35 px-3 py-1.5">
+            <span className="h-2 w-2 rounded-full bg-white/55" />
+            <span className="truncate font-mono text-[10px] text-white/55">
+              desktop://notification-storm
             </span>
           </div>
+          <span className="ml-auto hidden rounded-full border border-white/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white/65 sm:inline-flex">
+            active preview
+          </span>
         </div>
 
-        <div className="grid min-h-[520px] bg-[linear-gradient(135deg,rgba(17,20,19,0.96),rgba(11,15,14,1))] md:grid-cols-[135px_1fr]">
-          <aside className="hidden border-r border-outline-variant/20 bg-background/35 p-4 md:block">
-            <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-tertiary">
-              HVI Scan
-            </p>
-            <div className="mt-5 space-y-2">
-              {["OSINT", "Identity", "Credentials", "Exposure"].map((item, index) => (
-                <div
-                  key={item}
-                  className={`rounded-lg px-3 py-2 text-[11px] ${
-                    index === 0
-                      ? "bg-tertiary/10 text-tertiary"
-                      : "text-on-surface-variant"
-                  }`}
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          </aside>
+        <div className="relative overflow-hidden bg-[radial-gradient(circle_at_18%_20%,rgba(255,255,255,0.14),transparent_24%),linear-gradient(135deg,#050505,#0f1014_48%,#050505)]">
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:34px_34px]" />
 
-          <div className="flex flex-col p-4">
-            <div className="grid gap-3 sm:grid-cols-3">
-              {[
-                ["74", "HVI preview"],
-                ["12", "public signals"],
-                ["3", "priority fixes"],
-              ].map(([value, label]) => (
-                <div
-                  key={label}
-                  className="rounded-lg border border-outline-variant/25 bg-background/55 p-3"
-                >
-                  <p className="font-display text-2xl leading-none text-tertiary">
-                    {value}
-                  </p>
-                  <p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-on-surface-variant">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-4 flex flex-1 flex-col rounded-xl border border-outline-variant/25 bg-background/80">
-              <div className="flex items-center justify-between border-b border-outline-variant/20 px-4 py-3">
+          <div className="relative grid gap-6 p-6 lg:grid-cols-[minmax(0,1fr)_360px]">
+            <motion.div
+              key={selectedThreat.title}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.32, ease: "easeOut" }}
+              className="min-h-[285px] overflow-hidden rounded-xl border border-white/12 bg-[#0a0b0f]/90 shadow-[0_24px_70px_rgba(0,0,0,0.52)] backdrop-blur-xl"
+            >
+              <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-2">
+                <span className="h-3 w-3 rounded-full bg-white/25" />
+                <span className="h-3 w-3 rounded-full bg-white/18" />
+                <span className="h-3 w-3 rounded-full bg-white/12" />
+                <span className="ml-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white/55">
+                  Captured {selectedThreat.channel}
+                </span>
+              </div>
+              <div className="grid gap-5 p-5 md:grid-cols-[1fr_240px]">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
-                    Passive OSINT terminal
-                  </p>
-                  <p className="mt-1 text-xs text-on-surface-variant">
-                    sanitized demo output
-                  </p>
+                  <div className="flex items-start gap-3 border-b border-white/10 pb-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-sm font-bold text-white">
+                      {selectedThreat.channel.slice(0, 2).toUpperCase()}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-xl font-semibold text-white">
+                        {selectedThreat.title}
+                      </h3>
+                      <p className="mt-1 truncate text-xs text-white/55">
+                        {selectedThreat.sender}
+                      </p>
+                    </div>
+                    <span className="rounded-full border border-white/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white/65">
+                      live
+                    </span>
+                  </div>
+                  <div className="mt-5 rounded-lg border border-white/10 bg-white/[0.045] p-5">
+                    <p className="text-base leading-8 text-white/85">
+                      {selectedThreat.preview}
+                    </p>
+                    <p className="mt-4 font-mono text-[11px] text-white/45">
+                      secure-action.example/{selectedThreat.channel.toLowerCase()}
+                    </p>
+                  </div>
                 </div>
-                <span className="rounded-full border border-primary/25 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-primary">
-                  running
+
+                <div className="rounded-xl border border-white/10 bg-black/35 p-4">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/50">
+                    HVI triage
+                  </p>
+                  <p className="mt-3 text-lg font-semibold text-white">
+                    {selectedThreat.risk}
+                  </p>
+                  <p className="mt-3 text-xs leading-6 text-white/55">
+                    {selectedThreat.signal}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {["Open link", "Approve", "Reply"].map((action) => (
+                      <span
+                        key={action}
+                        className="rounded-md border border-white/12 bg-white/[0.04] px-3 py-2 text-xs font-semibold text-white/65"
+                      >
+                        {action}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <div>
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/50">
+                  Notification stack
+                </p>
+                <span className="rounded-full border border-white/10 px-2.5 py-1 text-[10px] text-white/45">
+                  {activeThreat + 1}/{threatInboxItems.length}
                 </span>
               </div>
 
-              <pre className="min-h-[250px] flex-1 overflow-hidden p-4 font-mono text-[11px] leading-6 text-primary sm:text-xs">
-                {osintLines.slice(0, visibleLines).join("\n")}
-                <span className="animate-pulse">_</span>
-              </pre>
+              <div className="relative h-[245px]">
+                {threatInboxItems.map((item, index) => {
+                  const offset =
+                    (index - activeThreat + threatInboxItems.length) %
+                    threatInboxItems.length;
+                  const isActive = offset === 0;
 
-              <div className="border-t border-outline-variant/20 p-4">
-                <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.12em] text-on-surface-variant">
-                  <span>Scan progress</span>
-                  <span>{progress}%</span>
-                </div>
-                <div className="mt-2 h-2 overflow-hidden rounded-full bg-surface-container-highest">
-                  <motion.div
-                    animate={{ width: `${progress}%` }}
-                    transition={{ duration: 0.45, ease: "easeOut" }}
-                    className="h-full rounded-full bg-tertiary"
-                  />
-                </div>
+                  return (
+                    <button
+                      key={item.title}
+                      type="button"
+                      onClick={() => setActiveThreat(index)}
+                      className={`absolute inset-x-0 rounded-2xl border text-left shadow-[0_18px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl transition-all duration-500 ${
+                        isActive
+                          ? "border-white/25 bg-white/[0.16] p-4"
+                          : "border-white/10 bg-white/[0.075] p-3 hover:bg-white/[0.11]"
+                      }`}
+                      style={{
+                        top: `${offset * 18}px`,
+                        zIndex: threatInboxItems.length - offset,
+                        transform: `scale(${1 - offset * 0.035}) translateX(${offset * 8}px)`,
+                        opacity: 1 - offset * 0.16,
+                      }}
+                    >
+                      <div className="flex items-start gap-3">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-black/55">
+                          <span className="material-symbols-outlined text-base text-white/80">
+                            {item.icon}
+                          </span>
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center justify-between gap-3">
+                            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-white/55">
+                              {item.channel}
+                            </p>
+                            <span className="text-[10px] text-white/40">now</span>
+                          </div>
+                          <h3 className="mt-1 truncate text-sm font-semibold text-white">
+                            {item.title}
+                          </h3>
+                          {isActive && (
+                            <motion.p
+                              initial={{ opacity: 0, y: 4 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              className="mt-2 line-clamp-3 text-xs leading-5 text-white/62"
+                            >
+                              {item.preview}
+                            </motion.p>
+                          )}
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
+
+                
               </div>
-            </div>
 
-            <div className="mt-4 rounded-xl border border-tertiary/25 bg-tertiary/10 p-4">
-              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-tertiary">
-                Real-time finding
-              </p>
-              <p className="mt-2 text-xs leading-6 text-on-surface-variant">
-                Public signals suggest phishing exposure, credential reuse, and
-                document permission risk. Take the full assessment to convert
-                findings into action steps.
-              </p>
+              <div className="mt-4 flex justify-center gap-1.5">
+                {threatInboxItems.map((item, index) => (
+                  <button
+                    key={`${item.title}-dot`}
+                    type="button"
+                    onClick={() => setActiveThreat(index)}
+                    className={`h-1.5 rounded-full transition-all ${
+                      activeThreat === index ? "w-6 bg-white/70" : "w-1.5 bg-white/25"
+                    }`}
+                    aria-label={`Show ${item.channel} notification`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
     </motion.div>
   );
+
 }
-
-function MailPhishingEmail({
-  selectedChoice,
-  onChoice,
-}: {
-  selectedChoice: string | null;
-  onChoice: (choiceId: string) => void;
-}) {
-  const scenario = threatScenarios[0];
-  const selected = scenario.choices.find((choice) => choice.id === selectedChoice);
-
-  return (
-    <div className="mt-5">
-      <div className="mb-4 rounded-xl border border-outline-variant/25 bg-background/65 p-4">
-        <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
-          Scenario 1 of 3
-        </p>
-        <p className="mt-2 text-base leading-7 text-on-surface">
-          {scenario.prompt}
-        </p>
-        <p className="mt-3 text-sm font-semibold text-tertiary">
-          Click one option below the email to continue.
-        </p>
-      </div>
-
-    <div className="overflow-hidden rounded-xl border border-[#dadce0] bg-white text-[#202124] shadow-[0_18px_60px_rgba(0,0,0,0.18)]">
-      <div className="flex items-center justify-between border-b border-[#e8eaed] bg-[#f6f8fc] px-4 py-3">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#1a73e8] text-white">
-            <span className="material-symbols-outlined">mail</span>
-          </div>
-          <span className="text-sm font-semibold">Mail</span>
-        </div>
-        <div className="flex items-center gap-3 text-[#5f6368]">
-          <span className="material-symbols-outlined text-lg">search</span>
-          <span className="material-symbols-outlined text-lg">settings</span>
-        </div>
-      </div>
-
-      <div className="grid min-h-[300px] md:grid-cols-[132px_1fr]">
-        <aside className="hidden border-r border-[#e8eaed] bg-[#f6f8fc] px-3 py-4 md:block">
-          {["Inbox", "Starred", "Sent", "Spam"].map((item, index) => (
-            <div
-              key={item}
-              className={`rounded-r-full px-3 py-2 text-xs ${
-                index === 0
-                  ? "bg-[#fce8e6] font-semibold text-[#d93025]"
-                  : "text-[#5f6368]"
-              }`}
-            >
-              {item}
-            </div>
-          ))}
-        </aside>
-
-        <div className="p-4">
-          <div className="flex items-center gap-2 border-b border-[#e8eaed] pb-3 text-[#5f6368]">
-            <span className="material-symbols-outlined text-lg">arrow_back</span>
-            <span className="material-symbols-outlined text-lg">archive</span>
-            <span className="material-symbols-outlined text-lg">report</span>
-            <span className="material-symbols-outlined text-lg">delete</span>
-          </div>
-
-          <h4 className="mt-4 text-xl font-normal text-[#202124]">
-            Urgent: account verification required today
-          </h4>
-          <div className="mt-4 flex items-start gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#d93025] text-sm font-bold text-white">
-              FN
-            </div>
-            <div className="min-w-0 flex-1">
-              <div className="flex items-center justify-between gap-3">
-                <p className="truncate text-sm font-semibold">
-                  First National Bank Security
-                </p>
-                <span className="shrink-0 text-xs text-[#5f6368]">9:42 AM</span>
-              </div>
-              <p className="mt-0.5 text-xs text-[#5f6368]">
-                security-alert@firstnational-secure.com
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-5 rounded-lg border border-[#fbbc04] bg-[#fef7e0] p-4 text-sm leading-6">
-            We detected unusual access to your account. To prevent lockout,
-            verify your login within 10 minutes using the secure button below.
-          </div>
-
-          <button
-            type="button"
-            className="mt-5 rounded bg-[#1a73e8] px-5 py-2.5 text-sm font-semibold text-white"
-          >
-            Verify account
-          </button>
-
-          <div className="mt-5 rounded-lg border border-[#e8eaed] bg-[#f8fafd] p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#5f6368]">
-              What would you do?
-            </p>
-            <div className="mt-3 grid gap-3 sm:grid-cols-2">
-              {scenario.choices.map((choice) => (
-                <button
-                  key={choice.id}
-                  type="button"
-                  onClick={() => onChoice(choice.id)}
-                  disabled={selectedChoice !== null}
-                  className={`rounded-lg border px-4 py-3 text-left text-sm font-semibold transition-colors ${
-                    selectedChoice === choice.id
-                      ? "border-[#1a73e8] bg-[#e8f0fe] text-[#174ea6]"
-                      : "border-[#dadce0] bg-white text-[#202124] hover:bg-[#f6f8fc] disabled:opacity-50"
-                  }`}
-                >
-                  {choice.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {selected && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-5 rounded-lg border border-[#fce8e6] bg-[#fce8e6] p-4"
-            >
-              <p className="text-sm leading-6 text-[#5f6368]">
-                {selected.consequence}
-              </p>
-              <p className="mt-2 text-xs font-semibold text-[#d93025]">
-                Saving choice and loading the next simulation...
-              </p>
-            </motion.div>
-          )}
-        </div>
-      </div>
-    </div>
-    </div>
-  );
-}
-
-function DeepfakeVoicePrompt({
-  selectedChoice,
-  onChoice,
-}: {
-  selectedChoice: string | null;
-  onChoice: (choiceId: string) => void;
-}) {
-  const scenario = threatScenarios[1];
-  const selected = scenario.choices.find((choice) => choice.id === selectedChoice);
-  const waveform = [34, 58, 42, 72, 46, 64, 38, 82, 52, 68, 44, 60, 36, 76, 48, 56];
-
-  return (
-    <div className="mt-5 rounded-xl border border-outline-variant/25 bg-background/65 p-5">
-      <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
-        Scenario 2 of {threatScenarios.length}
-      </p>
-      <p className="mt-3 text-base leading-7 text-on-surface">
-        {scenario.prompt}
-      </p>
-      <p className="mt-3 text-sm font-semibold text-tertiary">
-        Listen to the voice message, read the transcript, then choose one response.
-      </p>
-
-      <div className="mt-5 overflow-hidden rounded-2xl border border-outline-variant/25 bg-surface-container-low">
-        <div className="flex items-center justify-between border-b border-outline-variant/20 px-4 py-3">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-container text-primary">
-              <span className="material-symbols-outlined">record_voice_over</span>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-on-surface">Maya Chen</p>
-              <p className="text-xs text-on-surface-variant">Voice message - 0:14</p>
-            </div>
-          </div>
-          <span className="rounded-full border border-tertiary/30 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-tertiary">
-            Playing
-          </span>
-        </div>
-
-        <div className="p-4">
-          <div className="flex items-center gap-4">
-            <button
-              type="button"
-              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-tertiary text-on-tertiary"
-              aria-label="Playing voice message"
-            >
-              <span className="material-symbols-outlined">pause</span>
-            </button>
-            <div className="flex h-16 flex-1 items-center gap-1.5">
-              {waveform.map((height, index) => (
-                <motion.span
-                  key={`${height}-${index}`}
-                  initial={{ height: "20%" }}
-                  animate={{ height: `${height}%` }}
-                  transition={{
-                    duration: 0.7,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    delay: index * 0.035,
-                  }}
-                  className="w-full rounded-full bg-primary"
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-4 rounded-xl border border-outline-variant/20 bg-background/70 p-4">
-            <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface-variant">
-              Transcript
-            </p>
-            <p className="mt-2 text-sm leading-7 text-on-surface-variant">
-              "Hey, it's Maya. I'm boarding now and locked out of the approval
-              portal. Send me the six-digit code you just received so I can
-              close this vendor payment before the cutoff."
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-5 grid gap-3 sm:grid-cols-2">
-        {scenario.choices.map((choice) => (
-          <button
-            key={choice.id}
-            type="button"
-            onClick={() => onChoice(choice.id)}
-            disabled={selectedChoice !== null}
-            className={`rounded-lg border p-4 text-left text-sm font-semibold transition-colors disabled:cursor-default ${
-              selectedChoice === choice.id
-                ? "border-tertiary bg-tertiary/10 text-tertiary"
-                : "border-outline-variant/25 bg-surface-container-low text-on-surface hover:border-tertiary/50 disabled:opacity-50"
-            }`}
-          >
-            {choice.label}
-          </button>
-        ))}
-      </div>
-
-      {selected && (
-        <motion.div
-          key={selected.id}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mt-5 rounded-lg border border-tertiary/25 bg-tertiary/10 p-4"
-        >
-          <p className="text-sm leading-7 text-on-surface-variant">
-            {selected.consequence}
-          </p>
-          <p className="mt-2 text-xs font-semibold text-tertiary">
-            Saving choice and loading the next simulation...
-          </p>
-        </motion.div>
-      )}
-    </div>
-  );
-}
-
-function SharedDocumentPrompt({
-  selectedChoice,
-  onChoice,
-}: {
-  selectedChoice: string | null;
-  onChoice: (choiceId: string) => void;
-}) {
-  const scenario = threatScenarios[2];
-  const selected = scenario.choices.find((choice) => choice.id === selectedChoice);
-
-  return (
-    <div className="mt-5 rounded-xl border border-outline-variant/25 bg-background/65 p-5">
-      <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
-        Scenario 3 of {threatScenarios.length}
-      </p>
-      <p className="mt-3 text-base leading-7 text-on-surface">
-        {scenario.prompt}
-      </p>
-      <p className="mt-3 text-sm font-semibold text-tertiary">
-        Review the shared document prompt, then choose one response.
-      </p>
-
-      <div className="mt-5 overflow-hidden rounded-2xl border border-[#dadce0] bg-white text-[#202124] shadow-[0_18px_60px_rgba(0,0,0,0.18)]">
-        <div className="flex items-center justify-between border-b border-[#e8eaed] bg-[#f8fafd] px-4 py-3">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded bg-[#1a73e8] text-white">
-              <span className="material-symbols-outlined text-xl">description</span>
-            </div>
-            <div>
-              <p className="text-sm font-semibold">Docs</p>
-              <p className="text-xs text-[#5f6368]">Shared with you</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2 text-[#5f6368]">
-            <span className="material-symbols-outlined text-lg">star</span>
-            <span className="material-symbols-outlined text-lg">more_vert</span>
-          </div>
-        </div>
-
-        <div className="grid gap-4 p-4 md:grid-cols-[1fr_210px]">
-          <div className="rounded-lg border border-[#e8eaed] bg-[#f8fafd] p-4">
-            <div className="mb-4 flex items-center justify-between border-b border-[#e8eaed] pb-3">
-              <div>
-                <h4 className="text-base font-semibold">Q4 Vendor Payment List</h4>
-                <p className="mt-1 text-xs text-[#5f6368]">
-                  Shared by finance-ops@secure-workspace.co
-                </p>
-              </div>
-              <span className="rounded-full bg-[#e8f0fe] px-3 py-1 text-xs font-semibold text-[#174ea6]">
-                External
-              </span>
-            </div>
-
-            <div className="space-y-3">
-              <div className="h-3 w-3/4 rounded bg-[#dadce0]" />
-              <div className="h-3 w-full rounded bg-[#dadce0]" />
-              <div className="h-3 w-5/6 rounded bg-[#dadce0]" />
-              <div className="mt-5 grid grid-cols-3 gap-2">
-                {[1, 2, 3, 4, 5, 6].map((item) => (
-                  <div key={item} className="h-9 rounded border border-[#e8eaed] bg-white" />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-lg border border-[#fbbc04] bg-[#fef7e0] p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#5f6368]">
-              Permission request
-            </p>
-            <p className="mt-3 text-sm leading-6">
-              This document wants permission to view your email address, contacts,
-              and files shared with you.
-            </p>
-            <div className="mt-4 space-y-2 text-xs text-[#5f6368]">
-              <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-base text-[#d93025]">mail</span>
-                Read basic email profile
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-base text-[#d93025]">folder_open</span>
-                View shared drive files
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-base text-[#d93025]">contacts</span>
-                Access contacts
-              </div>
-            </div>
-            <button
-              type="button"
-              className="mt-5 w-full rounded bg-[#1a73e8] px-4 py-2.5 text-sm font-semibold text-white"
-            >
-              Allow permissions
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-5 grid gap-3 sm:grid-cols-2">
-        {scenario.choices.map((choice) => (
-          <button
-            key={choice.id}
-            type="button"
-            onClick={() => onChoice(choice.id)}
-            disabled={selectedChoice !== null}
-            className={`rounded-lg border p-4 text-left text-sm font-semibold transition-colors disabled:cursor-default ${
-              selectedChoice === choice.id
-                ? "border-tertiary bg-tertiary/10 text-tertiary"
-                : "border-outline-variant/25 bg-surface-container-low text-on-surface hover:border-tertiary/50 disabled:opacity-50"
-            }`}
-          >
-            {choice.label}
-          </button>
-        ))}
-      </div>
-
-      {selected && (
-        <motion.div
-          key={selected.id}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mt-5 rounded-lg border border-tertiary/25 bg-tertiary/10 p-4"
-        >
-          <p className="text-sm leading-7 text-on-surface-variant">
-            {selected.consequence}
-          </p>
-          <p className="mt-2 text-xs font-semibold text-tertiary">
-            Choice saved.
-          </p>
-        </motion.div>
-      )}
-    </div>
-  );
-}
-
-function ThreatMicroSimulation() {
-  const [activeScenario, setActiveScenario] = useState(0);
-  const [completed, setCompleted] = useState<number[]>([]);
-  const [choices, setChoices] = useState<Array<string | null>>(
-    Array(threatScenarios.length).fill(null)
-  );
-  const [phase, setPhase] = useState<"playing" | "calculating" | "complete">(
-    "playing"
-  );
-  const [displayScore, setDisplayScore] = useState(0);
-  const scenario = threatScenarios[activeScenario];
-  const selectedChoice = choices[activeScenario];
-  const selected = scenario.choices.find((choice) => choice.id === selectedChoice);
-  const finalScore = Math.max(
-    0,
-    Math.min(
-      100,
-      44 +
-        choices.reduce((total, choice) => {
-          if (choice === "risky") return total + 17;
-          if (choice === "safe") return total - 8;
-          return total;
-        }, 0)
-    )
-  );
+function OsintScansModule() {
+  const [visibleLines, setVisibleLines] = useState(5);
 
   useEffect(() => {
-    if (phase !== "calculating") return;
-
-    setDisplayScore(0);
     const interval = window.setInterval(() => {
-      setDisplayScore((current) => {
-        const next = Math.min(finalScore, current + 4);
-        if (next >= finalScore) {
-          window.clearInterval(interval);
-          window.setTimeout(() => setPhase("complete"), 450);
-        }
-        return next;
-      });
-    }, 45);
+      setVisibleLines((current) =>
+        current >= osintScanLines.length ? 5 : current + 1
+      );
+    }, 950);
 
     return () => window.clearInterval(interval);
-  }, [finalScore, phase]);
+  }, []);
 
-  function runScenario(index: number) {
-    if (phase !== "playing") return;
-    setActiveScenario(index);
-  }
-
-  function saveChoice(choiceId: string) {
-    if (choices[activeScenario]) return;
-
-    setChoices((current) => {
-      const next = [...current];
-      next[activeScenario] = choiceId;
-      return next;
-    });
-    setCompleted((current) =>
-      current.includes(activeScenario) ? current : [...current, activeScenario]
-    );
-
-    window.setTimeout(() => {
-      if (activeScenario < threatScenarios.length - 1) {
-        setActiveScenario((current) => current + 1);
-      } else {
-        setPhase("calculating");
-      }
-    }, 1200);
-  }
+  const progress = Math.round((visibleLines / osintScanLines.length) * 100);
 
   return (
-    <section id="threat-simulation" className="px-6 py-16 md:px-8 md:py-20">
+    <section id="osint-scans" className="px-6 py-16 md:px-8 md:py-20">
       <div className="mx-auto max-w-7xl">
         <motion.div
           variants={itemVariants}
@@ -743,14 +370,14 @@ function ThreatMicroSimulation() {
           className="mx-auto mb-10 max-w-4xl text-center"
         >
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-            Interactive preview
+            OSINT scans
           </p>
           <h2 className="mt-4 font-display text-4xl leading-tight text-on-surface md:text-6xl">
-            Want to try HVI before the pitch?
+            See the public attack surface without touching private systems.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-on-surface-variant">
-            Make three quick decisions inside realistic threat scenarios and see
-            how your HVI preview score reacts.
+            Passive OSINT coverage across public web, DNS, identity, breach,
+            cloud, and supplier signals.
           </p>
         </motion.div>
 
@@ -759,184 +386,213 @@ function ThreatMicroSimulation() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
-          className="rounded-xl border border-outline-variant/25 bg-surface-container-low p-5 shadow-[0_22px_70px_rgba(0,0,0,0.25)] md:p-6"
+          className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]"
         >
-          <div className="flex items-center justify-between gap-4 border-b border-outline-variant/25 pb-4">
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-tertiary">
-                Threat simulator
-              </p>
-              <h3 className="mt-1 text-xl font-semibold text-on-surface">
-                3-click exposure preview
-              </h3>
-              <p className="mt-2 text-sm text-on-surface-variant">
-                Read each scenario, click one of the two choices, and watch HVI
-                calculate your preview score after the third answer.
-              </p>
-            </div>
-            <div className="rounded-lg border border-outline-variant/25 bg-background/60 px-3 py-2 text-right">
-              <p className="text-[10px] uppercase tracking-[0.12em] text-on-surface-variant">
-                Steps
-              </p>
-              <p className="font-display text-2xl leading-none text-tertiary">
-                {completed.length}/3
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-5 grid gap-3 md:grid-cols-3">
-            {threatScenarios.map((item, index) => (
-              <button
-                key={item.title}
-                type="button"
-                onClick={() => runScenario(index)}
-                className={`rounded-lg border p-4 text-left transition-colors ${
-                  activeScenario === index
-                    ? "border-tertiary bg-tertiary/10"
-                    : "border-outline-variant/25 bg-background/45 hover:border-tertiary/45"
-                }`}
-              >
-                <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-primary">
-                  Scenario {index + 1}
-                </p>
-                <h4 className="mt-3 text-sm font-semibold text-on-surface">
-                  {item.title}
-                </h4>
-                {choices[index] && (
-                  <p className="mt-2 text-[11px] font-semibold text-tertiary">
-                    Choice saved
-                  </p>
-                )}
-              </button>
-            ))}
-          </div>
-
-          {phase === "calculating" || phase === "complete" ? (
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-5 rounded-xl border border-tertiary/25 bg-background/65 p-8 text-center"
-            >
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-                {phase === "calculating" ? "Calculating HVI score" : "HVI preview complete"}
-              </p>
-              <div className="mx-auto mt-6 flex h-40 w-40 items-center justify-center rounded-full border border-tertiary/25 bg-tertiary/10">
-                <motion.span
-                  key={displayScore}
-                  className="font-display text-6xl text-tertiary"
-                >
-                  {displayScore}
-                </motion.span>
+          <div className="overflow-hidden rounded-xl border border-outline-variant/25 bg-[#080d0b] shadow-[0_22px_70px_rgba(0,0,0,0.3)]">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-white/[0.04] px-4 py-3">
+              <div className="flex items-center gap-2">
+                <span className="h-3 w-3 rounded-full bg-error" />
+                <span className="h-3 w-3 rounded-full bg-tertiary" />
+                <span className="h-3 w-3 rounded-full bg-primary" />
+                <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.12em] text-on-surface-variant">
+                  api.osint.passive.run
+                </span>
               </div>
-              <div className="mx-auto mt-6 h-2 max-w-xl overflow-hidden rounded-full bg-surface-container-highest">
-                <motion.div
-                  animate={{ width: phase === "complete" ? "100%" : "72%" }}
-                  transition={{ duration: 0.7, ease: "easeOut" }}
-                  className="h-full rounded-full bg-tertiary"
-                />
-              </div>
-              <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-on-surface-variant">
-                {phase === "calculating"
-                  ? "HVI is correlating your phishing, deepfake voice, and document-permission decisions."
-                  : "This is a preview only. To unlock the full HVI score and remediation plan, choose the path that fits you."}
-              </p>
-              {phase === "complete" && (
-                <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-                  <Link
-                    href="/products#b2c"
-                    className="btn-gold inline-flex rounded-lg px-6 py-3 text-[11px] font-bold uppercase tracking-[0.08em]"
+              <span className="rounded-full border border-primary/25 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-primary">
+                sanitized demo
+              </span>
+            </div>
+
+            <div className="p-4 md:p-5">
+              <pre className="min-h-[360px] overflow-hidden rounded-lg border border-primary/15 bg-black/55 p-4 font-mono text-[11px] leading-6 text-primary sm:text-xs">
+                {osintScanLines.slice(0, visibleLines).join("\n")}
+                <span className="animate-pulse">_</span>
+              </pre>
+
+              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                {[
+                  ["0", "active probes"],
+                  ["5", "coverage areas"],
+                  ["28", "public signals"],
+                ].map(([value, label]) => (
+                  <div
+                    key={label}
+                    className="rounded-lg border border-outline-variant/20 bg-white/[0.04] p-3"
                   >
-                    B2C: View Personal Path
-                  </Link>
-                  <Link
-                    href="/products#b2b"
-                    className="btn-ghost-gold inline-flex rounded-lg px-6 py-3 text-[11px] font-bold uppercase tracking-[0.08em]"
-                  >
-                    B2B: View Enterprise Path
-                  </Link>
-                </div>
-              )}
-            </motion.div>
-          ) : activeScenario === 0 ? (
-              <MailPhishingEmail
-                selectedChoice={selectedChoice}
-                onChoice={saveChoice}
-              />
-          ) : activeScenario === 1 ? (
-              <DeepfakeVoicePrompt
-                selectedChoice={selectedChoice}
-                onChoice={saveChoice}
-              />
-          ) : activeScenario === 2 ? (
-              <SharedDocumentPrompt
-                selectedChoice={selectedChoice}
-                onChoice={saveChoice}
-              />
-          ) : (
-            <div className="mt-5 rounded-xl border border-outline-variant/25 bg-background/65 p-5">
-              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
-                Scenario {activeScenario + 1} of {threatScenarios.length}
-              </p>
-              <p className="mt-3 text-base leading-7 text-on-surface">
-                {scenario.prompt}
-              </p>
-              <p className="mt-3 text-sm font-semibold text-tertiary">
-                Click one option to save your response and move to the next simulation.
-              </p>
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                {scenario.choices.map((choice) => (
-                  <button
-                    key={choice.id}
-                    type="button"
-                    onClick={() => saveChoice(choice.id)}
-                    disabled={selectedChoice !== null}
-                    className={`rounded-lg border p-4 text-left text-sm font-semibold transition-colors disabled:cursor-default ${
-                      selectedChoice === choice.id
-                        ? "border-tertiary bg-tertiary/10 text-tertiary"
-                        : "border-outline-variant/25 bg-surface-container-low text-on-surface hover:border-tertiary/50 disabled:opacity-50"
-                    }`}
-                  >
-                    {choice.label}
-                  </button>
+                    <p className="font-display text-3xl leading-none text-tertiary">
+                      {value}
+                    </p>
+                    <p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-on-surface-variant">
+                      {label}
+                    </p>
+                  </div>
                 ))}
               </div>
-              {selected && (
-                <motion.div
-                  key={`${activeScenario}-${selected.id}`}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mt-5 rounded-lg border border-tertiary/25 bg-tertiary/10 p-4"
-                >
-                  <p className="text-sm leading-7 text-on-surface-variant">
-                    {selected.consequence}
-                  </p>
-                  <p className="mt-2 text-xs font-semibold text-tertiary">
-                    Saving choice and loading the next simulation...
-                  </p>
-                </motion.div>
-              )}
-              {activeScenario === threatScenarios.length - 1 && completed.length === threatScenarios.length && (
-                <p className="mt-4 text-sm font-semibold text-primary">
-                  All three choices saved.
-                </p>
-              )}
-            </div>
-          )}
 
-          {phase === "playing" && (
-          <div className="mt-5 rounded-xl border border-primary/20 bg-primary-container/35 p-5">
-            <p className="text-sm leading-7 text-on-surface-variant">
-              See how you or your team stack up against this threat. Take the
-              full assessment below.
-            </p>
-            <Link
-              href="/products#b2c"
-              className="btn-gold mt-4 inline-flex rounded-lg px-5 py-3 text-[11px] font-bold uppercase tracking-[0.08em]"
-            >
-              View the Personal HVI Path
-            </Link>
+              <div className="mt-4">
+                <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.12em] text-on-surface-variant">
+                  <span>Passive lookup progress</span>
+                  <span>{progress}%</span>
+                </div>
+                <div className="mt-2 h-2 overflow-hidden rounded-full bg-surface-container-highest">
+                  <motion.div
+                    animate={{ width: `${progress}%` }}
+                    transition={{ duration: 0.45, ease: "easeOut" }}
+                    className="h-full rounded-full bg-primary"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-          )}
+
+          <div className="space-y-5">
+            <div className="rounded-xl border border-outline-variant/25 bg-surface-container-low p-5 md:p-6">
+              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
+                Coverage
+              </p>
+              <div className="mt-4 space-y-3">
+                {osintCoverage.map(([label, copy]) => (
+                  <div
+                    key={label}
+                    className="rounded-lg border border-outline-variant/20 bg-background/45 p-4"
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className="material-symbols-outlined mt-0.5 text-base text-tertiary">
+                        travel_explore
+                      </span>
+                      <div>
+                        <h4 className="text-sm font-semibold text-on-surface">
+                          {label}
+                        </h4>
+                        <p className="mt-1 text-xs leading-6 text-on-surface-variant">
+                          {copy}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function IasPerspectiveSection() {
+  return (
+    <section id="ias" className="relative overflow-hidden border-y border-tertiary/30 bg-[#050706] px-6 py-20 md:px-8 md:py-28">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_20%,rgba(231,193,133,0.22),transparent_28%),radial-gradient(circle_at_82%_16%,rgba(177,204,197,0.16),transparent_24%)]" />
+      <div className="pointer-events-none absolute left-[-4vw] top-[-60px] font-display text-[10rem] leading-none text-white/[0.035] md:text-[16rem]">
+        IAS
+      </div>
+      <div className="relative mx-auto max-w-7xl">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+          className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]"
+        >
+          <motion.div variants={itemVariants}>
+            <p className="inline-flex rounded-full border border-tertiary/35 bg-tertiary/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
+              IAS
+            </p>
+            <h2 className="mt-6 max-w-3xl font-display text-5xl leading-[0.98] text-white md:text-7xl">
+              IAS - How a Hacker Views You
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">
+              The Internet Attack Surface view translates passive OSINT into an
+              attacker-perspective map: exposed assets, weak configurations,
+              leaked credential context, and public clues that make social
+              engineering easier.
+            </p>
+
+            <div className="mt-8 overflow-hidden rounded-2xl border border-tertiary/35 bg-black shadow-[0_28px_90px_rgba(0,0,0,0.5),0_0_60px_rgba(231,193,133,0.12)]">
+              <div className="flex items-center justify-between border-b border-tertiary/20 bg-tertiary/10 px-4 py-3">
+                <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-tertiary">
+                  attacker-lens terminal
+                </span>
+                <span className="rounded-full border border-tertiary/40 bg-black/35 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-tertiary">
+                  passive input
+                </span>
+              </div>
+              <pre className="min-h-[250px] whitespace-pre-wrap p-5 font-mono text-[12px] leading-7 text-primary">
+                {iasTerminalLines.join("\n")}
+              </pre>
+            </div>
+
+            <div className="mt-5 rounded-2xl border border-tertiary/30 bg-tertiary/10 p-5">
+              <p className="text-sm leading-7 text-white/72">
+                IAS does not teach exploitation. It gives defenders the same
+                outside-in visibility attackers rely on, then converts each
+                finding into concrete cleanup work.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div variants={containerVariants} className="space-y-5">
+            <motion.div
+              variants={itemVariants}
+              className="rounded-2xl border border-white/15 bg-white/[0.055] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.32)] backdrop-blur-xl md:p-7"
+            >
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
+                    Findings dashboard
+                  </p>
+                  <h3 className="mt-2 text-3xl font-semibold text-white">
+                    What attackers can chain together
+                  </h3>
+                </div>
+                <div className="rounded-xl border border-tertiary/35 bg-tertiary/15 px-5 py-4 text-right">
+                  <p className="font-display text-5xl leading-none text-tertiary">
+                    3
+                  </p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-white/55">
+                    priority paths
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 grid gap-3">
+                {iasFindings.map((item) => (
+                  <article
+                    key={item.title}
+                    className="rounded-xl border border-white/12 bg-black/35 p-5 transition-colors hover:border-tertiary/35"
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <h4 className="text-lg font-semibold text-white">
+                        {item.title}
+                      </h4>
+                      <span
+                        className={`rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] ${
+                          item.severity === "High"
+                            ? "border-error/35 text-error"
+                            : "border-tertiary/35 text-tertiary"
+                        }`}
+                      >
+                        {item.severity}
+                      </span>
+                    </div>
+                    <p className="mt-3 text-sm leading-7 text-white/68">
+                      {item.finding}
+                    </p>
+                    <div className="mt-4 rounded-lg border border-primary/25 bg-primary-container/20 p-3">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-primary">
+                        Remediation callout
+                      </p>
+                      <p className="mt-2 text-xs leading-6 text-white/62">
+                        {item.fix}
+                      </p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
@@ -949,9 +605,8 @@ export default function HomePage() {
       <SiteHeader />
 
       <main className="flex-grow overflow-hidden pb-16 pt-20 md:pt-24">
-        <section className="relative px-6 pb-16 pt-14 md:px-8 md:pb-20 md:pt-20">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(2,26,22,0.95),transparent_40%),linear-gradient(180deg,rgba(29,32,31,0.35),rgba(17,20,19,0)_52%)]" />
-
+        <section className="relative overflow-hidden px-6 pb-16 pt-14 md:px-8 md:pb-20 md:pt-20">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(231,193,133,0.2),transparent_32%),radial-gradient(circle_at_12%_20%,rgba(177,204,197,0.18),transparent_28%),linear-gradient(180deg,rgba(8,10,9,0.98),rgba(17,20,19,0.78)_58%,rgba(17,20,19,0))]" />
           <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center">
             <motion.div
               variants={containerVariants}
@@ -959,27 +614,19 @@ export default function HomePage() {
               animate="visible"
               className="flex max-w-5xl flex-col items-center text-center"
             >
-              <motion.p
-                variants={itemVariants}
-                className="rounded-full border border-outline-variant/30 bg-surface-container-low/70 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-tertiary"
-              >
-                Human-centric cybersecurity platform
-              </motion.p>
-
               <motion.h1
                 variants={itemVariants}
-                className="mt-6 max-w-5xl font-display text-5xl leading-[1.05] text-on-surface sm:text-6xl md:text-7xl"
+                className="max-w-5xl font-display text-5xl leading-[1.02] text-white sm:text-6xl md:text-7xl"
               >
-                Reduce the human risk factor before attackers exploit it.
+                See the shape of risk before it becomes real.
               </motion.h1>
 
               <motion.p
                 variants={itemVariants}
-                className="mt-6 max-w-3xl text-base leading-8 text-on-surface-variant md:text-xl"
+                className="mt-6 max-w-3xl text-base leading-8 text-white/68 md:text-xl"
               >
-                HVI turns behavior, exposure, and passive security signals into
-                clear action paths for individuals, families, and enterprise
-                security teams.
+                A quiet layer for exposure, pressure, and digital decisions.
+                Abstract enough to see patterns. Direct enough to act.
               </motion.p>
 
               <motion.div
@@ -987,10 +634,10 @@ export default function HomePage() {
                 className="mt-9 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row"
               >
                 <Link
-                  href="#threat-simulation"
+                  href="/products#assessment"
                   className="btn-gold inline-flex items-center justify-center gap-3 rounded-2xl px-7 py-4 text-center text-[12px] font-bold uppercase tracking-[0.08em] shadow-[0_14px_40px_rgba(0,0,0,0.35)] transition-transform hover:scale-105 active:scale-95"
                 >
-                  Experience the Simulation
+                  Take the HVI Assessment
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
                 </Link>
                 <Link
@@ -1006,14 +653,15 @@ export default function HomePage() {
               variants={itemVariants}
               initial="hidden"
               animate="visible"
-              className="mt-16 w-full scroll-mt-24 md:mt-20"
+              className="mt-10 w-full scroll-mt-24 md:mt-12"
             >
-              <AppSimulation />
+              <HeroOsintPreview />
             </motion.div>
           </div>
         </section>
 
-        <ThreatMicroSimulation />
+        <IasPerspectiveSection />
+        <OsintScansModule />
 
         <section
           id="choose-path"
@@ -1071,75 +719,6 @@ export default function HomePage() {
           </motion.div>
         </section>
 
-        <section className="px-6 py-16 md:px-8 md:py-20">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-            <motion.div
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-                Why it matters
-              </p>
-              <h2 className="mt-4 font-display text-4xl leading-tight text-on-surface md:text-5xl">
-                Visitors should know what HVI does in five seconds.
-              </h2>
-              <p className="mt-5 text-base leading-8 text-on-surface-variant">
-                The homepage now routes people immediately: personal users go
-                toward their own score, while security leaders move toward an
-                enterprise risk assessment.
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.25 }}
-              className="grid gap-4 md:grid-cols-3"
-            >
-              {trustSignals.map(([value, label]) => (
-                <motion.div
-                  key={value}
-                  variants={itemVariants}
-                  className="rounded-lg border border-outline-variant/25 bg-surface-container-low p-5"
-                >
-                  <div className="font-display text-3xl text-tertiary">{value}</div>
-                  <p className="mt-3 text-sm leading-6 text-on-surface-variant">
-                    {label}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        <section className="px-6 pb-20 md:px-8 md:pb-24">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.25 }}
-            className="mx-auto grid max-w-7xl gap-4 md:grid-cols-3"
-          >
-            {journeySteps.map((step) => (
-              <motion.div
-                key={step.step}
-                variants={itemVariants}
-                className="rounded-lg border border-outline-variant/25 bg-surface-container-low p-6"
-              >
-                <p className="font-display text-3xl text-primary">{step.step}</p>
-                <h3 className="mt-4 text-xl font-semibold text-on-surface">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-on-surface-variant">
-                  {step.copy}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </section>
       </main>
 
       <SiteFooter />
