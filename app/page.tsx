@@ -1024,7 +1024,7 @@ export default function HomePage() {
                     href="/products#simulation"
                     className="btn-gold inline-flex items-center justify-center gap-3 rounded-2xl px-8 py-4 text-[12px] font-bold uppercase tracking-[0.08em]"
                   >
-                    Experience the Simulation
+                    Assess
                     <span className="material-symbols-outlined text-lg">
                       arrow_forward
                     </span>
