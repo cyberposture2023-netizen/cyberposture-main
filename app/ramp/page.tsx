@@ -62,14 +62,10 @@ export default function RampPage() {
         {/* Hero */}
         <section className="px-6 py-24 md:px-8 md:py-32">
           <div className="mx-auto max-w-5xl text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-              R.A.M.P.
-            </p>
+            
 
             <h1 className="mt-6 font-display text-5xl leading-[0.95] md:text-7xl">
-              Readiness Assessment &
-              <br />
-              Mapping Protocol
+              R A M P
             </h1>
 
             <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-on-surface-variant">

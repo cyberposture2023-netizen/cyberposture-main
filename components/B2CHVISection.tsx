@@ -72,7 +72,7 @@ export default function B2CHVISection() {
           </p>
         </motion.div>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2">
+        {/* <div className="mt-14 grid gap-5 md:grid-cols-2">
           {riskAreas.map((area) => (
             <div
               key={area.title}
@@ -87,43 +87,9 @@ export default function B2CHVISection() {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
 
-        <div className="mt-14 rounded-3xl border border-tertiary/25 bg-white/[0.04] p-8 backdrop-blur-xl">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-                Assessment Preview
-              </p>
-
-              <h3 className="mt-3 text-3xl font-semibold text-white">
-                Sample Assessment Questions
-              </h3>
-            </div>
-
-            <div className="rounded-xl border border-tertiary/25 bg-tertiary/10 px-4 py-3">
-              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-tertiary">
-                ~4 Minutes
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8 grid gap-4">
-            {[
-              "How often do you reuse passwords across multiple accounts?",
-              "Are your social media profiles publicly visible?",
-              "Would you click a delivery link from an unknown sender?",
-              "Your bank account will be suspended in 30 minutes. What do you do first?",
-            ].map((question) => (
-              <div
-                key={question}
-                className="rounded-xl border border-white/10 bg-black/30 p-5"
-              >
-                <p className="text-white/85">{question}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        
 
         <div className="mt-14 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-3xl border border-tertiary/30 bg-tertiary/10 p-8">

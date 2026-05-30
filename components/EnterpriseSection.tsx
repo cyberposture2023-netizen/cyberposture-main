@@ -87,76 +87,9 @@ export default function EnterpriseSection() {
           </p>
         </motion.div>
 
-        {/* Telemetry Engine */}
-        <div className="mt-16">
-          <div className="mb-8 flex items-center justify-between">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-                Passive Telemetry Engine
-              </p>
+       
 
-              <h3 className="mt-2 text-4xl font-semibold text-white">
-                Four Dimensions of Human Risk
-              </h3>
-            </div>
-
-            <div className="hidden rounded-xl border border-tertiary/30 bg-tertiary/10 px-5 py-4 md:block">
-              <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-tertiary">
-                Real-Time HVI
-              </p>
-            </div>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2">
-            {telemetryPillars.map((pillar) => (
-              <div
-                key={pillar.title}
-                className="rounded-2xl border border-white/12 bg-white/[0.05] p-6 backdrop-blur-xl"
-              >
-                <h4 className="text-2xl font-semibold text-white">
-                  {pillar.title}
-                </h4>
-
-                <p className="mt-4 text-sm leading-7 text-white/65">
-                  {pillar.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Privacy Section */}
-        <div className="mt-20 rounded-3xl border border-tertiary/30 bg-tertiary/10 p-8 md:p-10">
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-            Privacy Architecture
-          </p>
-
-          <h3 className="mt-4 text-4xl font-semibold text-white">
-            Zero HR Data Boundary
-          </h3>
-
-          <p className="mt-5 max-w-3xl text-white/70">
-            Human Vulnerability Index operates behind a strict
-            privacy firewall. The platform focuses on technical and
-            behavioral indicators, not employee evaluation.
-          </p>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {[
-              "No HRIS integrations",
-              "No salary information",
-              "No performance reviews",
-              "No personal employee records",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-xl border border-white/10 bg-black/20 p-5"
-              >
-                <p className="font-medium text-white">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        
 
         {/* Dashboard Preview */}
         <div className="mt-20">
@@ -248,23 +181,7 @@ export default function EnterpriseSection() {
           </div>
         </div>
 
-        {/* Integrations */}
-        <div className="mt-20 rounded-3xl border border-white/12 bg-white/[0.05] p-8">
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-            Security Stack Integrations
-          </p>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {integrations.map((integration) => (
-              <div
-                key={integration}
-                className="rounded-xl border border-white/10 bg-black/20 p-4 text-center"
-              >
-                <span className="text-white/80">{integration}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        
 
         {/* CTA */}
         <div className="mt-20 text-center">

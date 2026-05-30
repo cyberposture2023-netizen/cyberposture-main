@@ -3,11 +3,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
 const dashboardModules = [
-  "TPRM & Supply Chain",
+  "NIST AI RMF",
   "ISO 42001",
-  "Policy Hub",
-  "Exceptions",
-  "Remediation",
+  "EU AI Act Alignment",
 ];
 
 const tprmFeatures = [
@@ -86,7 +84,7 @@ export default function AIGovernancePage() {
         <section id="dashboard" className="px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
             <h2 className="font-display text-4xl md:text-5xl">
-              AI Governance Dashboard
+              AI Governance 
             </h2>
 
             <div className="mt-12 grid gap-5 md:grid-cols-3 lg:grid-cols-5">
@@ -103,7 +101,7 @@ export default function AIGovernancePage() {
         </section>
 
         {/* TPRM */}
-        <section className="px-6 py-20 md:px-8">
+        {/* <section className="px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
             <h2 className="font-display text-4xl">
               Third-Party Risk Management & Supply Chain Security
@@ -130,10 +128,10 @@ export default function AIGovernancePage() {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* ISO */}
-        <section className="px-6 py-20 md:px-8">
+        {/* <section className="px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
             <h2 className="font-display text-4xl">
               ISO/IEC 42001 Compliance Automator
@@ -150,10 +148,10 @@ export default function AIGovernancePage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Policy */}
-        <section className="px-6 py-20 md:px-8">
+        {/* <section className="px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
             <h2 className="font-display text-4xl">
               Policy & Procedure Hub
@@ -170,7 +168,7 @@ export default function AIGovernancePage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Exception + Remediation */}
         <section className="px-6 py-20 md:px-8">
