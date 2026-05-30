@@ -171,7 +171,7 @@ export default function AIGovernancePage() {
         </section> */}
 
         {/* Exception + Remediation */}
-        <section className="px-6 py-20 md:px-8">
+        {/* <section className="px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl grid gap-10 lg:grid-cols-2">
             <div>
               <h2 className="font-display text-4xl">
@@ -207,7 +207,7 @@ export default function AIGovernancePage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA */}
         <section className="px-6 py-24 md:px-8">

@@ -669,66 +669,6 @@ export default function HomePage() {
                 </Link>
               </motion.div> */}
 
-              <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.25 }}
-            className="mx-auto max-w-7xl"
-          >
-
-
-            <motion.div variants={itemVariants} className="mx-auto max-w-3xl text-center">
-              {/* <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-                Choose Your Path
-              </p> */}
-
-              <h2 className="mt-4 font-display text-4xl leading-tight text-on-surface md:text-5xl">
-                Protect Yourself Or Secure Your Organization
-              </h2>
-
-              <p className="mt-5 text-base leading-8 text-on-surface-variant">
-                Human Vulnerability Index serves both individuals and enterprises.
-                Select the path that best matches your security needs.
-              </p>
-            </motion.div>
-
-
-
-            <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              {portalCards.map((card) => (
-                <motion.article
-                  key={card.audience}
-                  variants={itemVariants}
-                  whileHover={{ y: -6 }}
-                  className="rounded-xl border border-outline-variant/25 bg-background/45 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.22)] md:p-8"
-                >
-                  <div className="flex items-start justify-between gap-5">
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">
-                        {card.audience}
-                      </p>
-                      <h3 className="mt-4 font-display text-3xl leading-tight text-on-surface md:text-4xl">
-                        {card.title}
-                      </h3>
-                    </div>
-                    <span className="material-symbols-outlined rounded-lg border border-outline-variant/30 bg-surface-container-low p-3 text-3xl text-tertiary">
-                      {card.icon}
-                    </span>
-                  </div>
-                  <p className="mt-5 max-w-xl text-sm leading-7 text-on-surface-variant md:text-base">
-                    {card.copy}
-                  </p>
-                  <Link
-                    href={card.href}
-                    className="mt-7 inline-flex rounded-lg border border-tertiary/35 px-5 py-3 text-sm font-bold text-tertiary transition-colors hover:bg-tertiary/10"
-                  >
-                    {card.cta}
-                  </Link>
-                </motion.article>
-              ))}
-            </div>
-          </motion.div>
 
             </motion.div>
 
@@ -744,71 +684,7 @@ export default function HomePage() {
         </section>
 
 
-        {/* <section
-          id="choose-path"
-          className="border-y border-outline-variant/20 bg-surface-container-low/55 px-6 py-14 md:px-8 md:py-16"
-        >
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.25 }}
-            className="mx-auto max-w-7xl"
-          >
-
-
-            <motion.div variants={itemVariants} className="mx-auto max-w-3xl text-center">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-                Choose Your Path
-              </p>
-
-              <h2 className="mt-4 font-display text-4xl leading-tight text-on-surface md:text-5xl">
-                Protect Yourself Or Secure Your Organization
-              </h2>
-
-              <p className="mt-5 text-base leading-8 text-on-surface-variant">
-                Human Vulnerability Index serves both individuals and enterprises.
-                Select the path that best matches your security needs.
-              </p>
-            </motion.div>
-
-
-
-            <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              {portalCards.map((card) => (
-                <motion.article
-                  key={card.audience}
-                  variants={itemVariants}
-                  whileHover={{ y: -6 }}
-                  className="rounded-xl border border-outline-variant/25 bg-background/45 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.22)] md:p-8"
-                >
-                  <div className="flex items-start justify-between gap-5">
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">
-                        {card.audience}
-                      </p>
-                      <h3 className="mt-4 font-display text-3xl leading-tight text-on-surface md:text-4xl">
-                        {card.title}
-                      </h3>
-                    </div>
-                    <span className="material-symbols-outlined rounded-lg border border-outline-variant/30 bg-surface-container-low p-3 text-3xl text-tertiary">
-                      {card.icon}
-                    </span>
-                  </div>
-                  <p className="mt-5 max-w-xl text-sm leading-7 text-on-surface-variant md:text-base">
-                    {card.copy}
-                  </p>
-                  <Link
-                    href={card.href}
-                    className="mt-7 inline-flex rounded-lg border border-tertiary/35 px-5 py-3 text-sm font-bold text-tertiary transition-colors hover:bg-tertiary/10"
-                  >
-                    {card.cta}
-                  </Link>
-                </motion.article>
-              ))}
-            </div>
-          </motion.div>
-        </section> */}
+        
 
         {/* WhyHumanRiskSection */}
         <section className="border-y border-outline-variant/20 bg-background/60 px-6 py-16 md:px-8 md:py-20">
@@ -1037,6 +913,72 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section
+          id="choose-path"
+          className="border-y border-outline-variant/20 bg-surface-container-low/55 px-6 py-14 md:px-8 md:py-16"
+        >
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            className="mx-auto max-w-7xl"
+          >
+
+
+            <motion.div variants={itemVariants} className="mx-auto max-w-3xl text-center">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
+                Choose Your Path
+              </p>
+
+              <h2 className="mt-4 font-display text-4xl leading-tight text-on-surface md:text-5xl">
+                Protect Yourself Or Secure Your Organization
+              </h2>
+
+              <p className="mt-5 text-base leading-8 text-on-surface-variant">
+                Human Vulnerability Index serves both individuals and enterprises.
+                Select the path that best matches your security needs.
+              </p>
+            </motion.div>
+
+
+
+            <div className="mt-10 grid gap-5 lg:grid-cols-2">
+              {portalCards.map((card) => (
+                <motion.article
+                  key={card.audience}
+                  variants={itemVariants}
+                  whileHover={{ y: -6 }}
+                  className="rounded-xl border border-outline-variant/25 bg-background/45 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.22)] md:p-8"
+                >
+                  <div className="flex items-start justify-between gap-5">
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">
+                        {card.audience}
+                      </p>
+                      <h3 className="mt-4 font-display text-3xl leading-tight text-on-surface md:text-4xl">
+                        {card.title}
+                      </h3>
+                    </div>
+                    <span className="material-symbols-outlined rounded-lg border border-outline-variant/30 bg-surface-container-low p-3 text-3xl text-tertiary">
+                      {card.icon}
+                    </span>
+                  </div>
+                  <p className="mt-5 max-w-xl text-sm leading-7 text-on-surface-variant md:text-base">
+                    {card.copy}
+                  </p>
+                  <Link
+                    href={card.href}
+                    className="mt-7 inline-flex rounded-lg border border-tertiary/35 px-5 py-3 text-sm font-bold text-tertiary transition-colors hover:bg-tertiary/10"
+                  >
+                    {card.cta}
+                  </Link>
+                </motion.article>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+
         {/* HomeCTASection */}
         <section className="relative overflow-hidden px-6 py-20 md:px-8 md:py-24">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(231,193,133,0.18),transparent_30%)]" />
@@ -1096,35 +1038,7 @@ export default function HomePage() {
                   </Link>
                 </div>
 
-                <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm">
-                  <Link
-                    href="/products#b2c"
-                    className="text-tertiary transition-opacity hover:opacity-80"
-                  >
-                    Human Vulnerability Index →
-                  </Link>
-
-                  <Link
-                    href="/products#enterprise"
-                    className="text-tertiary transition-opacity hover:opacity-80"
-                  >
-                    Enterprise Human Risk OS →
-                  </Link>
-
-                  <Link
-                    href="/ai-governance"
-                    className="text-tertiary transition-opacity hover:opacity-80"
-                  >
-                    AI Governance Suite →
-                  </Link>
-
-                  <Link
-                    href="/ramp"
-                    className="text-tertiary transition-opacity hover:opacity-80"
-                  >
-                    R.A.M.P. →
-                  </Link>
-                </div>
+                
               </motion.div>
             </motion.div>
           </div>
