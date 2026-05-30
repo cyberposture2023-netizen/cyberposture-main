@@ -1,16 +1,19 @@
 
 ```
 cyberposture-main
+├─ .next-dev.err.log
+├─ .next-dev.log
 ├─ AGENTS.md
 ├─ app
 │  ├─ about
 │  │  └─ page.tsx
-│  ├─ components
-│  │  ├─ AttackSimulationSection.tsx
-│  │  ├─ HVIAssessmentSection.tsx
-│  │  ├─ SiteFooter.tsx
-│  │  └─ SiteHeader.tsx
+│  ├─ careers
+│  │  └─ page.tsx
 │  ├─ contact
+│  │  ├─ b2b
+│  │  │  └─ page.tsx
+│  │  ├─ b2c
+│  │  │  └─ page.tsx
 │  │  └─ page.tsx
 │  ├─ favicon.ico
 │  ├─ globals.css
@@ -19,6 +22,18 @@ cyberposture-main
 │  └─ products
 │     └─ page.tsx
 ├─ CLAUDE.md
+├─ components
+│  ├─ AttackSimulationSection.tsx
+│  ├─ AudienceContactPage.tsx
+│  ├─ B2CHVISection.tsx
+│  ├─ ChoosePathSection.tsx
+│  ├─ EnterpriseSection.tsx
+│  ├─ EvidenceSection.tsx
+│  ├─ HVIAssessmentSection.tsx
+│  ├─ SiteFooter.tsx
+│  ├─ SiteHeader.tsx
+│  ├─ ThreatSimulationSection.tsx
+│  └─ TimelineSection.tsx
 ├─ eslint.config.mjs
 ├─ next.config.ts
 ├─ package.json
@@ -28,6 +43,7 @@ cyberposture-main
 ├─ public
 │  ├─ file.svg
 │  ├─ globe.svg
+│  ├─ gmail-logo.png
 │  ├─ next.svg
 │  ├─ vercel.svg
 │  └─ window.svg

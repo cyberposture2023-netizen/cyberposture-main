@@ -18,7 +18,7 @@ const libreCaslon = Libre_Caslon_Text({
 
 export const metadata = {
   title: "CyberPosture | Human-Centric Cyber Risk Intelligence",
-  description: "Behavioral analytics and adaptive vulnerability intelligence for modern enterprise defense.",
+  description: "Passive OSINT, Internet Attack Surface visibility, and adaptive vulnerability intelligence for modern enterprise defense.",
 };
 
 export default function RootLayout({
