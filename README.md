@@ -7,6 +7,8 @@ cyberposture-main
 ├─ app
 │  ├─ about
 │  │  └─ page.tsx
+│  ├─ ai-governance
+│  │  └─ page.tsx
 │  ├─ careers
 │  │  └─ page.tsx
 │  ├─ contact
@@ -19,7 +21,9 @@ cyberposture-main
 │  ├─ globals.css
 │  ├─ layout.tsx
 │  ├─ page.tsx
-│  └─ products
+│  ├─ products
+│  │  └─ page.tsx
+│  └─ ramp
 │     └─ page.tsx
 ├─ CLAUDE.md
 ├─ components
