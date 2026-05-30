@@ -180,14 +180,14 @@ export default function B2CHVISection() {
             Takes less than 4 minutes. No sign-up required.
           </p>
 
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <Link
               href="/contact/b2c"
               className="btn-ghost-gold inline-flex rounded-xl px-8 py-4 text-sm font-bold uppercase tracking-[0.08em]"
             >
               Explore Personal Protection
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
