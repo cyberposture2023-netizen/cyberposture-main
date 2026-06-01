@@ -19,7 +19,7 @@ const NAV = [
         to: "/products#b2c",
         label: "Human Vulnerability Index",
       },
-     
+
     ],
   },
   {
@@ -79,7 +79,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
 
         {/* Brand Group */}
-        <div className="flex items-baseline gap-3">
+        <div className="flex items-baseline gap-1">
           <Link
             href="/"
             onClick={() => setIsOpen(false)}
@@ -87,7 +87,8 @@ export function SiteHeader() {
           >
             CyberPosture
           </Link>
-          <span className="hidden text-[15px] font-bold  tracking-widest text-on-surface-variant/50 md:inline-block">
+
+          <span className="text-sm font-medium text-on-surface-variant/60">
             .ai
           </span>
         </div>
@@ -132,7 +133,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        
+
 
         {/* Mobile Menu Toggle */}
         <button

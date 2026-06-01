@@ -5,14 +5,43 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import {
   ShieldCheck,
-  Radar,
+
   BrainCircuit,
   Lock,
   ChevronRight,
   ShieldAlert,
 } from "lucide-react";
 
+import {
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  ResponsiveContainer,
+} from "recharts";
+
 type Stage = "intro" | "questions" | "processing" | "results";
+
+const terminalLines = [
+  "[INIT] Loading behavioral telemetry...",
+  "[OK] Credential hygiene profile loaded",
+  "[OK] MFA validation patterns analyzed",
+  "[SCAN] Correlating phishing susceptibility indicators...",
+  "[SCAN] Evaluating trust exploitation vectors...",
+  "[SCAN] Building Human Vulnerability Index...",
+  "[OK] Threat model generated",
+  "[OK] Behavioral risk surface calculated",
+];
+
+const radarData = [
+  { subject: "Phishing", value: 78 },
+  { subject: "Password", value: 72 },
+  { subject: "MFA", value: 84 },
+  { subject: "Social Eng.", value: 63 },
+  { subject: "Endpoint", value: 81 },
+  { subject: "Access", value: 69 },
+];
 
 const questions = [
   {
@@ -90,6 +119,49 @@ const insights = [
   },
 ];
 
+
+
+
+
+export function HVIRadarChart() {
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+      <RadarChart
+        cx="50%"
+        cy="50%"
+        outerRadius="72%"
+        data={radarData}
+      >
+        <PolarGrid stroke="rgba(255,255,255,0.08)" />
+
+        <PolarAngleAxis
+          dataKey="subject"
+          tick={{
+            fill: "rgba(255,255,255,0.75)",
+            fontSize: 11,
+          }}
+        />
+
+        <PolarRadiusAxis
+          domain={[0, 100]}
+          tick={false}
+          axisLine={false}
+        />
+
+        <Radar
+          dataKey="value"
+          stroke="#E7C185"
+          strokeWidth={2}
+          fill="#E7C185"
+          fillOpacity={0.22}
+          isAnimationActive
+          animationDuration={1500}
+        />
+      </RadarChart>
+    </ResponsiveContainer>
+  );
+}
+
 export default function HVIAssessmentSection() {
   const [stage, setStage] = useState<Stage>("intro");
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -159,7 +231,7 @@ export default function HVIAssessmentSection() {
   return (
     <section id="hvi-assessment" className="relative overflow-hidden py-16 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        
+
         {/* HEADER */}
         <div className="mb-10 md:mb-16 text-center">
           <p className="mb-2 md:mb-3 text-[10px] md:text-sm font-semibold uppercase tracking-[0.25em] text-tertiary">
@@ -180,7 +252,7 @@ export default function HVIAssessmentSection() {
 
           <div className="relative z-10 flex min-h-[100svh] md:min-h-[700px] flex-col p-6 sm:p-8 md:p-14">
             <AnimatePresence mode="wait">
-              
+
               {/* INTRO */}
               {stage === "intro" && (
                 <motion.div
@@ -199,7 +271,7 @@ export default function HVIAssessmentSection() {
                   </h3>
 
                   <p className="mt-4 md:mt-6 max-w-2xl text-center text-sm md:text-base leading-relaxed text-on-surface-variant">
-                    Simulate a behavioral cybersecurity evaluation 
+                    Simulate a behavioral cybersecurity evaluation
                   </p>
 
                   <div className="mt-10 md:mt-12 grid w-full max-w-4xl gap-4 md:gap-5 md:grid-cols-3">
@@ -311,47 +383,71 @@ export default function HVIAssessmentSection() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="flex flex-1 flex-col items-center justify-center py-10"
+                  className="flex flex-1 flex-col items-center justify-center"
                 >
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                    className="relative mb-8 md:mb-10 flex h-32 w-32 md:h-40 md:w-40 items-center justify-center rounded-full border border-tertiary/20"
-                  >
-                    <div className="absolute inset-3 md:inset-4 rounded-full border border-dashed border-tertiary/30" />
-                    <div className="absolute inset-8 md:inset-10 rounded-full border border-tertiary/10" />
-                    <Radar className="h-10 w-10 md:h-14 md:w-14 text-tertiary" />
-                  </motion.div>
+                  <div className="w-full max-w-4xl overflow-hidden rounded-3xl border border-primary/20 bg-black/40 backdrop-blur-xl">
 
-                  <h3 className="mb-4 md:mb-5 text-2xl md:text-3xl font-semibold text-on-surface text-center">
-                    AI Behavioral Processing
-                  </h3>
+                    {/* Terminal Header */}
+                    <div className="flex items-center gap-2 border-b border-primary/10 px-5 py-3">
+                      <div className="h-3 w-3 rounded-full bg-red-500/80" />
+                      <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
+                      <div className="h-3 w-3 rounded-full bg-green-500/80" />
+                      <span className="ml-3 text-xs uppercase tracking-[0.2em] text-on-surface-variant">
+                        hvi-engine.secure
+                      </span>
+                    </div>
 
-                  <div className="h-6 mb-6 md:mb-8 text-center">
-                    <AnimatePresence mode="wait">
-                      <motion.p
-                        key={processingIndex}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        className="text-sm md:text-base text-on-surface-variant px-4"
-                      >
-                        {processingTexts[processingIndex]}
-                      </motion.p>
-                    </AnimatePresence>
-                  </div>
+                    {/* Terminal Body */}
+                    <div className="p-6 font-mono">
+                      <p className="mb-4 text-primary">
+                        root@cyberposture:~$ run hvi-analysis
+                      </p>
 
-                  <div className="h-1.5 w-full max-w-xl overflow-hidden rounded-full bg-surface-container-highest">
-                    <motion.div
-                      animate={{ width: `${progress}%` }}
-                      className="h-full bg-gradient-to-r from-primary to-tertiary"
-                    />
-                  </div>
+                      <div className="space-y-2 text-sm">
+                        {terminalLines
+                          .slice(
+                            0,
+                            Math.min(
+                              terminalLines.length,
+                              Math.floor(progress / 15)
+                            )
+                          )
+                          .map((line) => (
+                            <motion.div
+                              key={line}
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              className="text-on-surface-variant"
+                            >
+                              {line}
+                            </motion.div>
+                          ))}
+                      </div>
 
-                  <div className="mt-10 md:mt-12 grid w-full max-w-4xl gap-3 md:gap-4 md:grid-cols-3">
-                    <ProcessingCard title="Telemetry Analysis" value="ACTIVE" />
-                    <ProcessingCard title="Behavioral Correlation" value="SCANNING" />
-                    <ProcessingCard title="Threat Modeling" value="PROCESSING" />
+                      <motion.div
+                        animate={{ opacity: [1, 0] }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 0.8,
+                        }}
+                        className="mt-2 inline-block h-4 w-2 bg-primary"
+                      />
+                    </div>
+
+                    {/* Progress */}
+                    <div className="border-t border-primary/10 p-5">
+                      <div className="mb-2 flex justify-between text-xs uppercase tracking-wider">
+                        <span>Behavioral Processing</span>
+                        <span>{progress}%</span>
+                      </div>
+
+                      <div className="h-2 overflow-hidden rounded-full bg-surface-container-highest">
+                        <motion.div
+                          animate={{ width: `${progress}%` }}
+                          className="h-full bg-gradient-to-r from-primary to-tertiary"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               )}
@@ -377,7 +473,7 @@ export default function HVIAssessmentSection() {
                   </div>
 
                   <div className="grid gap-6 md:gap-8 lg:grid-cols-[1fr_1fr_1fr] xl:grid-cols-[320px_1fr_360px]">
-                    
+
                     {/* SCORE WIDGET */}
                     <div className="glass-panel rounded-3xl p-6 md:p-8">
                       <div className="mb-8 flex justify-center">
@@ -406,16 +502,8 @@ export default function HVIAssessmentSection() {
                       <p className="mb-6 md:mb-8 text-[10px] md:text-xs font-semibold uppercase tracking-[0.25em] text-primary">
                         Behavioral Risk Surface
                       </p>
-                      <div className="flex flex-1 min-h-[250px] md:min-h-[300px] items-center justify-center rounded-2xl border border-dashed border-outline-variant/30 bg-surface-container-lowest/50">
-                        <div className="text-center px-4">
-                          <ShieldAlert className="mx-auto mb-4 md:mb-5 h-10 w-10 md:h-14 md:w-14 text-primary opacity-50" />
-                          <p className="text-base md:text-lg text-on-surface">
-                            Radar Visualization
-                          </p>
-                          <p className="mt-2 text-xs md:text-sm text-on-surface-variant">
-                            Behavioral risk distribution map
-                          </p>
-                        </div>
+                      <div className="flex flex-1 min-h-[320px] md:min-h-[360px] items-center justify-center rounded-2xl border border-outline-variant/20 bg-surface-container-lowest/30 p-2">
+                        <HVIRadarChart />
                       </div>
                     </div>
 

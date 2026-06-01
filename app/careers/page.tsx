@@ -111,8 +111,7 @@ export default function CareersPage() {
               Build the human-centric security layer.
             </h1>
             <p className="mt-6 text-base leading-8 text-on-surface-variant md:text-lg">
-              HVI is hiring builders, analysts, and operators who can
-              turn human risk signals into privacy-safe, enterprise-ready
+              Turn human risk signals into privacy-safe, enterprise-ready
               security products.
             </p>
           </motion.div>
