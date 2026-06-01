@@ -132,13 +132,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        {/* Desktop CTA */}
-        <Link
-          href="/products#simulation"
-          className="btn-gold hidden rounded-lg px-5 py-2 text-[12px] font-bold uppercase tracking-[0.08em] md:inline-flex"
-        >
-          Experience Simulation
-        </Link>
+        
 
         {/* Mobile Menu Toggle */}
         <button
