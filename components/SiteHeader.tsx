@@ -19,18 +19,7 @@ const NAV = [
         to: "/products#b2c",
         label: "Human Vulnerability Index",
       },
-      {
-        to: "/products#enterprise",
-        label: "Enterprise Human Risk OS",
-      },
-      {
-        to: "/ai-governance",
-        label: "AI Governance Suite",
-      },
-      {
-        to: "/ramp",
-        label: "R.A.M.P.",
-      },
+     
     ],
   },
   {
@@ -98,7 +87,7 @@ export function SiteHeader() {
           >
             CyberPosture
           </Link>
-          <span className="hidden text-[10px] font-bold  tracking-widest text-on-surface-variant/50 md:inline-block">
+          <span className="hidden text-[15px] font-bold  tracking-widest text-on-surface-variant/50 md:inline-block">
             .ai
           </span>
         </div>

@@ -199,9 +199,7 @@ export default function HVIAssessmentSection() {
                   </h3>
 
                   <p className="mt-4 md:mt-6 max-w-2xl text-center text-sm md:text-base leading-relaxed text-on-surface-variant">
-                    Simulate a behavioral cybersecurity evaluation covering
-                    phishing awareness, password hygiene, social engineering
-                    resistance, MFA discipline, and remote access behavior.
+                    Simulate a behavioral cybersecurity evaluation 
                   </p>
 
                   <div className="mt-10 md:mt-12 grid w-full max-w-4xl gap-4 md:gap-5 md:grid-cols-3">
