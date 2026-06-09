@@ -29,28 +29,24 @@ const itemVariants: Variants = {
   },
 };
 
-
 const portalCards = [
   {
-    audience: "Individual",
+    audience: "Personal",
     title: "Protect Yourself & Your Family",
     icon: "shield_person",
-    copy:
-      "Measure susceptibility to phishing, identity theft, social engineering, and manipulation. Discover your Human Vulnerability Index and receive personalized recommendations to strengthen your digital resilience.",
-    cta: "Explore Personal HVI",
+    copy: "Measure susceptibility to phishing, identity theft, social engineering, and manipulation. Discover your Human Vulnerability Index and receive personalized recommendations to strengthen your digital resilience.",
+    cta: "More",
     href: "/products#b2c",
   },
   {
     audience: "Enterprise",
     title: "Secure Your Organization",
     icon: "business_center",
-    copy:
-      "Continuously measure human risk, behavioral exposure, and organizational attack surface. Gain visibility into the human factors that influence security outcomes across your workforce.",
-    cta: "Explore Enterprise HVI",
+    copy: "Continuously measure human risk, behavioral exposure, and organizational attack surface. Gain visibility into the human factors that influence security outcomes across your workforce.",
+    cta: "More",
     href: "/products#enterprise",
   },
 ];
-
 
 const threatInboxItems = [
   {
@@ -116,19 +112,22 @@ const iasFindings = [
   {
     severity: "High",
     title: "Leaked credential trail",
-    finding: "Redacted password reuse evidence tied to two public breach references.",
+    finding:
+      "Redacted password reuse evidence tied to two public breach references.",
     fix: "Force credential rotation, block reused passwords, and add MFA recovery review.",
   },
   {
     severity: "Medium",
     title: "Cloud sharing exposure",
-    finding: "Public document naming reveals project, vendor, and internal workflow context.",
+    finding:
+      "Public document naming reveals project, vendor, and internal workflow context.",
     fix: "Tighten link-sharing defaults and archive stale externally visible documents.",
   },
   {
     severity: "Medium",
     title: "Misconfigured mail posture",
-    finding: "DMARC enforcement appears weak enough for believable spoofing attempts.",
+    finding:
+      "DMARC enforcement appears weak enough for believable spoofing attempts.",
     fix: "Move DMARC toward reject, align SPF/DKIM, and monitor spoof attempts.",
   },
 ] as const;
@@ -230,7 +229,8 @@ function HeroOsintPreview() {
                       {selectedThreat.preview}
                     </p>
                     <p className="mt-4 font-mono text-[11px] text-white/45">
-                      secure-action.example/{selectedThreat.channel.toLowerCase()}
+                      secure-action.example/
+                      {selectedThreat.channel.toLowerCase()}
                     </p>
                   </div>
                 </div>
@@ -281,10 +281,11 @@ function HeroOsintPreview() {
                       key={item.title}
                       type="button"
                       onClick={() => setActiveThreat(index)}
-                      className={`absolute inset-x-0 rounded-2xl border text-left shadow-[0_18px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl transition-all duration-500 ${isActive
-                        ? "border-white/25 bg-white/[0.16] p-4"
-                        : "border-white/10 bg-white/[0.075] p-3 hover:bg-white/[0.11]"
-                        }`}
+                      className={`absolute inset-x-0 rounded-2xl border text-left shadow-[0_18px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl transition-all duration-500 ${
+                        isActive
+                          ? "border-white/25 bg-white/[0.16] p-4"
+                          : "border-white/10 bg-white/[0.075] p-3 hover:bg-white/[0.11]"
+                      }`}
                       style={{
                         top: `${offset * 18}px`,
                         zIndex: threatInboxItems.length - offset,
@@ -303,7 +304,9 @@ function HeroOsintPreview() {
                             <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-white/55">
                               {item.channel}
                             </p>
-                            <span className="text-[10px] text-white/40">now</span>
+                            <span className="text-[10px] text-white/40">
+                              now
+                            </span>
                           </div>
                           <h3 className="mt-1 truncate text-sm font-semibold text-white">
                             {item.title}
@@ -322,8 +325,6 @@ function HeroOsintPreview() {
                     </button>
                   );
                 })}
-
-
               </div>
 
               <div className="mt-4 flex justify-center gap-1.5">
@@ -332,8 +333,11 @@ function HeroOsintPreview() {
                     key={`${item.title}-dot`}
                     type="button"
                     onClick={() => setActiveThreat(index)}
-                    className={`h-1.5 rounded-full transition-all ${activeThreat === index ? "w-6 bg-white/70" : "w-1.5 bg-white/25"
-                      }`}
+                    className={`h-1.5 rounded-full transition-all ${
+                      activeThreat === index
+                        ? "w-6 bg-white/70"
+                        : "w-1.5 bg-white/25"
+                    }`}
                     aria-label={`Show ${item.channel} notification`}
                   />
                 ))}
@@ -345,7 +349,6 @@ function HeroOsintPreview() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-28 bg-gradient-to-b from-transparent via-background/70 to-background sm:h-36" />
     </motion.div>
   );
-
 }
 function OsintScansModule() {
   const [visibleLines, setVisibleLines] = useState(5);
@@ -353,7 +356,7 @@ function OsintScansModule() {
   useEffect(() => {
     const interval = window.setInterval(() => {
       setVisibleLines((current) =>
-        current >= osintScanLines.length ? 5 : current + 1
+        current >= osintScanLines.length ? 5 : current + 1,
       );
     }, 950);
 
@@ -476,7 +479,6 @@ function OsintScansModule() {
                 ))}
               </div>
             </div>
-
           </div>
         </motion.div>
       </div>
@@ -486,7 +488,10 @@ function OsintScansModule() {
 
 function IasPerspectiveSection() {
   return (
-    <section id="ias" className="relative overflow-hidden border-y border-tertiary/30 bg-[#050706] px-6 py-20 md:px-8 md:py-28">
+    <section
+      id="ias"
+      className="relative overflow-hidden border-y border-tertiary/30 bg-[#050706] px-6 py-20 md:px-8 md:py-28"
+    >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_20%,rgba(231,193,133,0.22),transparent_28%),radial-gradient(circle_at_82%_16%,rgba(177,204,197,0.16),transparent_24%)]" />
       <div className="pointer-events-none absolute left-[-4vw] top-[-60px] font-display text-[10rem] leading-none text-white/[0.035] md:text-[16rem]">
         IAS
@@ -571,10 +576,11 @@ function IasPerspectiveSection() {
                         {item.title}
                       </h4>
                       <span
-                        className={`rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] ${item.severity === "High"
-                          ? "border-error/35 text-error"
-                          : "border-tertiary/35 text-tertiary"
-                          }`}
+                        className={`rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] ${
+                          item.severity === "High"
+                            ? "border-error/35 text-error"
+                            : "border-tertiary/35 text-tertiary"
+                        }`}
                       >
                         {item.severity}
                       </span>
@@ -616,13 +622,23 @@ export default function HomePage() {
               animate="visible"
               className="flex max-w-5xl flex-col items-center text-center"
             >
-
               <motion.h1
                 variants={itemVariants}
                 className="max-w-5xl font-display text-5xl leading-[1.02] text-white sm:text-6xl md:text-7xl"
               >
                 Human Vulnerability Index
               </motion.h1>
+
+              <motion.div
+                variants={itemVariants}
+                className="mt-6 max-w-4xl text-center"
+              >
+                <p className="text-2xl font-medium text-tertiary md:text-3xl">
+                  Cybersecurity Has Focused On Systems.
+                  <br />
+                  We Focus On People.
+                </p>
+              </motion.div>
 
               {/* <motion.div
                 variants={itemVariants}
@@ -668,8 +684,6 @@ export default function HomePage() {
                   Choose Your Path
                 </Link>
               </motion.div> */}
-
-
             </motion.div>
 
             <motion.div
@@ -677,14 +691,9 @@ export default function HomePage() {
               initial="hidden"
               animate="visible"
               className="mt-10 w-full scroll-mt-24 md:mt-12"
-            >
-
-            </motion.div>
+            ></motion.div>
           </div>
         </section>
-
-
-        
 
         {/* WhyHumanRiskSection */}
         <section className="border-y border-outline-variant/20 bg-background/60 px-6 py-16 md:px-8 md:py-20">
@@ -708,8 +717,9 @@ export default function HomePage() {
                 </h2>
 
                 <p className="mt-5 text-base leading-8 text-on-surface-variant">
-                  Organizations invest heavily in technical controls, yet attackers
-                  continue to exploit human behavior, decision-making, and trust.
+                  Organizations invest heavily in technical controls, yet
+                  attackers continue to exploit human behavior, decision-making,
+                  and trust.
                 </p>
               </motion.div>
 
@@ -764,7 +774,8 @@ export default function HomePage() {
 
                   <p className="mt-4 text-sm leading-7 text-on-surface-variant">
                     Despite being central to modern attacks, human risk remains
-                    one of the least measured components of cybersecurity programs.
+                    one of the least measured components of cybersecurity
+                    programs.
                   </p>
                 </motion.article>
               </div>
@@ -795,9 +806,10 @@ export default function HomePage() {
                 </h2>
 
                 <p className="mt-5 text-base leading-8 text-on-surface-variant">
-                  Whether you're protecting your personal digital life or managing
-                  risk across an enterprise, Human Vulnerability Index provides
-                  visibility into the human factors attackers exploit.
+                  Whether you're protecting your personal digital life or
+                  managing risk across an enterprise, Human Vulnerability Index
+                  (HVI) provides visibility into the human factors attackers
+                  exploit.
                 </p>
               </motion.div>
 
@@ -819,15 +831,15 @@ export default function HomePage() {
                       </p>
 
                       <h3 className="mt-1 text-3xl font-semibold text-on-surface">
-                        Human Vulnerability Index
+                        Human Vulnerability Index (HVI)
                       </h3>
                     </div>
                   </div>
 
                   <p className="mt-6 text-on-surface-variant">
                     Measure susceptibility to phishing, identity theft,
-                    manipulation, and social engineering through a
-                    personalized assessment.
+                    manipulation, and social engineering through a personalized
+                    assessment.
                   </p>
 
                   <div className="mt-8 grid gap-3">
@@ -841,9 +853,7 @@ export default function HomePage() {
                         key={item}
                         className="rounded-lg border border-white/10 bg-background/30 px-4 py-3"
                       >
-                        <span className="text-sm text-on-surface">
-                          {item}
-                        </span>
+                        <span className="text-sm text-on-surface">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -852,7 +862,7 @@ export default function HomePage() {
                     href="/products#b2c"
                     className="mt-8 inline-flex rounded-lg border border-tertiary/35 px-5 py-3 text-sm font-bold text-tertiary transition-colors hover:bg-tertiary/10"
                   >
-                    View Personal Assessment
+                    More
                   </Link>
                 </motion.article>
 
@@ -873,7 +883,7 @@ export default function HomePage() {
                       </p>
 
                       <h3 className="mt-1 text-3xl font-semibold text-on-surface">
-                        Human Risk Operating System
+                        Human Risk Operating System (HROS)
                       </h3>
                     </div>
                   </div>
@@ -894,9 +904,7 @@ export default function HomePage() {
                         key={item}
                         className="rounded-lg border border-white/10 bg-background/30 px-4 py-3"
                       >
-                        <span className="text-sm text-on-surface">
-                          {item}
-                        </span>
+                        <span className="text-sm text-on-surface">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -905,7 +913,7 @@ export default function HomePage() {
                     href="/products#enterprise"
                     className="mt-8 inline-flex rounded-lg border border-primary/35 px-5 py-3 text-sm font-bold text-primary transition-colors hover:bg-primary/10"
                   >
-                    View Enterprise Platform
+                    More
                   </Link>
                 </motion.article>
               </div>
@@ -924,9 +932,10 @@ export default function HomePage() {
             viewport={{ once: true, amount: 0.25 }}
             className="mx-auto max-w-7xl"
           >
-
-
-            <motion.div variants={itemVariants} className="mx-auto max-w-3xl text-center">
+            <motion.div
+              variants={itemVariants}
+              className="mx-auto max-w-3xl text-center"
+            >
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
                 Choose Your Path
               </p>
@@ -936,12 +945,11 @@ export default function HomePage() {
               </h2>
 
               <p className="mt-5 text-base leading-8 text-on-surface-variant">
-                Human Vulnerability Index serves both individuals and enterprises.
-                Select the path that best matches your security needs.
+                Human Vulnerability Index serves both individuals and
+                enterprises. Select the path that best matches your security
+                needs.
               </p>
             </motion.div>
-
-
 
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
               {portalCards.map((card) => (
@@ -1010,8 +1018,8 @@ export default function HomePage() {
                 className="mx-auto mt-6 max-w-3xl text-base leading-8 text-on-surface-variant md:text-lg"
               >
                 Explore how attackers exploit human behavior, measure personal
-                vulnerability, and discover how Human Vulnerability Index
-                helps individuals and organizations reduce exposure before risk
+                vulnerability, and discover how Human Vulnerability Index helps
+                individuals and organizations reduce exposure before risk
                 becomes reality.
               </motion.p>
 
@@ -1037,18 +1045,10 @@ export default function HomePage() {
                     Contact Us
                   </Link>
                 </div>
-
-                
               </motion.div>
             </motion.div>
           </div>
         </section>
-
-
-
-
-
-
       </main>
 
       <SiteFooter />

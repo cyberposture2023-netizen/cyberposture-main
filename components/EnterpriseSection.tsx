@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -27,23 +26,7 @@ const telemetryPillars = [
   },
 ];
 
-const useCases = [
-  {
-    title: "Targeted Intervention",
-    description:
-      "Identify high-risk departments and deliver contextual security nudges instead of forcing repetitive training across the entire workforce.",
-  },
-  {
-    title: "Shadow IT Discovery",
-    description:
-      "Reveal where employees bypass controls because security tooling creates operational friction and workflow bottlenecks.",
-  },
-  {
-    title: "Automated Escalation",
-    description:
-      "Combine security alerts with human risk context to prioritize incidents and automate containment actions.",
-  },
-];
+// Enterprise use cases removed per change request
 
 const integrations = [
   "Microsoft Entra",
@@ -71,25 +54,17 @@ export default function EnterpriseSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-            Phase 3 · Enterprise Human Risk Operating System
-          </p>
-
           <h2 className="mt-5 max-w-5xl font-display text-5xl leading-[0.95] text-white md:text-7xl">
-            Move Beyond Awareness Training
+            Move Beyond Awareness Training & phishing campaigns
           </h2>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-white/70">
-            Traditional security awareness programs rely on surveys,
-            compliance checklists, and simulated phishing campaigns.
-            Human Vulnerability Index continuously maps human risk
-            across the organization without disrupting employee workflows.
+            Traditional security awareness programs rely on surveys, compliance
+            checklists, and simulated phishing campaigns. Human Vulnerability
+            Index continuously maps human risk across the organization without
+            disrupting employee workflows.
           </p>
         </motion.div>
-
-       
-
-        
 
         {/* Dashboard Preview */}
         <div className="mt-20">
@@ -153,35 +128,7 @@ export default function EnterpriseSection() {
           </div>
         </div>
 
-        {/* Use Cases */}
-        <div className="mt-20">
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-            Enterprise Use Cases
-          </p>
-
-          <h3 className="mt-3 text-4xl font-semibold text-white">
-            Operational Security Outcomes
-          </h3>
-
-          <div className="mt-8 grid gap-5 lg:grid-cols-3">
-            {useCases.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-white/12 bg-white/[0.05] p-6"
-              >
-                <h4 className="text-2xl font-semibold text-white">
-                  {item.title}
-                </h4>
-
-                <p className="mt-4 text-sm leading-7 text-white/65">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        
+        {/* Enterprise use cases removed as requested */}
 
         {/* CTA */}
         <div className="mt-20 text-center">
@@ -190,7 +137,7 @@ export default function EnterpriseSection() {
           </h3>
 
           <p className="mx-auto mt-5 max-w-2xl text-white/70">
-            Explore how Human Vulnerability Index can reveal
+            Explore how Human Vulnerability Index (HVI) can reveal
             organizational blind spots and reduce enterprise risk through
             continuous assessment and contextual intervention.
           </p>

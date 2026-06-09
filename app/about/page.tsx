@@ -15,15 +15,13 @@ export default function AboutPage() {
             </p>
 
             <h1 className="mt-6 font-display text-5xl leading-[0.95] text-on-surface md:text-7xl">
-              Cybersecurity Has Focused On Systems.
-              <br />
-              We Focus On People.
+              About Human Vulnerability Index
             </h1>
 
             <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-on-surface-variant">
-              For decades, security investments have centered around
-              firewalls, endpoints, and infrastructure. Yet attackers
-              continue to succeed through a simpler path: human behavior.
+              For decades, security investments have centered around firewalls,
+              endpoints, and infrastructure. Yet attackers continue to succeed
+              through a simpler path: human behavior.
             </p>
           </div>
         </section>
@@ -31,8 +29,10 @@ export default function AboutPage() {
         {/* Mission */}
         <section className="px-6 py-20 md:px-8">
           <div className="mx-auto max-w-4xl">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-              Our Mission
+            <p className="mx-auto mt-0 max-w-3xl text-lg leading-8 text-on-surface-variant">
+              Modern attackers target people before they target systems. Our
+              philosophy is simple: security improves when human vulnerability
+              becomes measurable.
             </p>
 
             <h2 className="mt-4 font-display text-4xl text-on-surface md:text-5xl">
@@ -40,15 +40,15 @@ export default function AboutPage() {
             </h2>
 
             <p className="mt-8 text-lg leading-9 text-on-surface-variant">
-              Human Vulnerability Index exists to help individuals
-              and organizations understand, measure, and reduce the human
-              risk factor in cybersecurity.
+              Human Vulnerability Index exists to help individuals and
+              organizations understand, measure, and reduce the human risk
+              factor in cybersecurity.
             </p>
 
             <p className="mt-6 text-lg leading-9 text-on-surface-variant">
               We believe security improves when vulnerability is visible,
-              contextual, and actionable rather than hidden behind
-              assumptions, annual training, and compliance checklists.
+              contextual, and actionable rather than hidden behind assumptions,
+              annual training, and compliance checklists.
             </p>
           </div>
         </section>
@@ -95,12 +95,6 @@ export default function AboutPage() {
                 </ul>
               </div>
             </div>
-
-            <p className="mx-auto mt-10 max-w-3xl text-center text-lg leading-8 text-on-surface-variant">
-              Modern attackers target people before they target systems.
-              Our philosophy is simple: security improves when human
-              vulnerability becomes measurable.
-            </p>
           </div>
         </section>
 
@@ -129,8 +123,8 @@ export default function AboutPage() {
                 </h3>
 
                 <p className="mt-4 leading-8 text-on-surface-variant">
-                  Security outcomes are shaped by decisions, context,
-                  stress, incentives, and trust.
+                  Security outcomes are shaped by decisions, context, stress,
+                  incentives, and trust.
                 </p>
               </div>
 
@@ -140,8 +134,8 @@ export default function AboutPage() {
                 </h3>
 
                 <p className="mt-4 leading-8 text-on-surface-variant">
-                  Human risk visibility should never require intrusive
-                  employee surveillance or HR profiling.
+                  Human risk visibility should never require intrusive employee
+                  surveillance or HR profiling.
                 </p>
               </div>
             </div>
@@ -161,8 +155,8 @@ export default function AboutPage() {
 
             <p className="mt-8 text-lg leading-8 text-on-surface-variant">
               Our work combines cybersecurity, behavioral science,
-              human-centered design, and risk analysis to create a new
-              approach to measuring vulnerability.
+              human-centered design, and risk analysis to create a new approach
+              to measuring vulnerability.
             </p>
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -175,9 +169,7 @@ export default function AboutPage() {
                   key={item}
                   className="rounded-2xl border border-outline-variant/20 p-6"
                 >
-                  <h3 className="font-semibold text-on-surface">
-                    {item}
-                  </h3>
+                  <h3 className="font-semibold text-on-surface">{item}</h3>
                 </div>
               ))}
             </div>
@@ -194,17 +186,22 @@ export default function AboutPage() {
             <h2 className="mt-4 font-display text-4xl text-on-surface md:text-6xl">
               Help Build A More Human-Centric Security Future
             </h2>
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-on-surface-variant">
+              Technology can detect threats, but people remain the final
+              decision point in most cyber incidents. The Human Firewall is
+              built through understanding behavior, measuring vulnerability, and
+              enabling informed decisions—not through surveillance, invasive
+              monitoring, or HR-driven assessments. Security becomes stronger
+              when human risk is visible, contextual, and actionable.
+            </p>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-on-surface-variant">
-              Explore Human Vulnerability Index and discover
-              how measuring human risk can improve security outcomes.
+              Explore Human Vulnerability Index and discover how measuring human
+              risk can improve security outcomes.
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-              <a
-                href="/products"
-                className="btn-gold rounded-xl px-8 py-4"
-              >
+              <a href="/products" className="btn-gold rounded-xl px-8 py-4">
                 Explore The Product
               </a>
 

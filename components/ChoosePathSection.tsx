@@ -6,7 +6,6 @@ export default function ChoosePathSection() {
   return (
     <section className="px-6 py-20 md:px-8">
       <div className="mx-auto max-w-6xl">
-
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
             Choose Your Path
@@ -17,27 +16,25 @@ export default function ChoosePathSection() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-on-surface-variant">
-            Whether you're protecting yourself or securing an
-            organization, Human Vulnerability Index
-            provides visibility into the risks attackers exploit.
+            Whether you're protecting yourself or securing an organization,
+            Human Vulnerability Index provides visibility into the risks
+            attackers exploit.
           </p>
         </div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
-
           <div className="rounded-3xl border border-tertiary/25 bg-tertiary/10 p-8">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-              Individual
+              Personal
             </p>
 
             <h3 className="mt-4 text-4xl font-semibold text-on-surface">
-              Personal HVI
+              Human Vulnerability Index (HVI)
             </h3>
 
             <p className="mt-5 text-on-surface-variant">
-              Measure your vulnerability to phishing,
-              identity theft, social engineering,
-              and manipulation.
+              Measure your vulnerability to phishing, identity theft, social
+              engineering, and manipulation.
             </p>
 
             <ul className="mt-8 space-y-3">
@@ -51,7 +48,7 @@ export default function ChoosePathSection() {
               href="#b2c"
               className="btn-gold mt-8 inline-flex rounded-xl px-8 py-4"
             >
-              Explore Personal HVI
+              More
             </a>
           </div>
 
@@ -61,12 +58,12 @@ export default function ChoosePathSection() {
             </p>
 
             <h3 className="mt-4 text-4xl font-semibold text-on-surface">
-              Human Risk OS
+              Human Risk Operating System (HROS)
             </h3>
 
             <p className="mt-5 text-on-surface-variant">
-              Continuously map organizational human risk
-              using passive telemetry and behavioral signals.
+              Continuously map organizational human risk using passive telemetry
+              and behavioral signals.
             </p>
 
             <ul className="mt-8 space-y-3">
@@ -80,10 +77,9 @@ export default function ChoosePathSection() {
               href="#enterprise"
               className="btn-gold mt-8 inline-flex rounded-xl px-8 py-4"
             >
-              Explore Enterprise HVI
+              More
             </a>
           </div>
-
         </div>
       </div>
     </section>

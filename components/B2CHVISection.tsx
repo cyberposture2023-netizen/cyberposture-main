@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -57,10 +56,6 @@ export default function B2CHVISection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-            Phase 2 · Human Vulnerability Index
-          </p>
-
           <h2 className="mt-5 max-w-4xl font-display text-5xl leading-[0.95] text-white md:text-7xl">
             Measure Your Human Attack Surface
           </h2>
@@ -89,8 +84,6 @@ export default function B2CHVISection() {
           ))}
         </div> */}
 
-        
-
         <div className="mt-14 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-3xl border border-tertiary/30 bg-tertiary/10 p-8">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
@@ -114,9 +107,7 @@ export default function B2CHVISection() {
               {scoreBreakdown.map((item) => (
                 <div key={item.label}>
                   <div className="mb-2 flex items-center justify-between">
-                    <span className="text-sm text-white/70">
-                      {item.label}
-                    </span>
+                    <span className="text-sm text-white/70">{item.label}</span>
 
                     <span className="text-sm font-semibold text-white">
                       {item.value}%
@@ -151,9 +142,7 @@ export default function B2CHVISection() {
                 >
                   <span className="text-tertiary">✓</span>
 
-                  <p className="text-sm leading-7 text-white/70">
-                    {item}
-                  </p>
+                  <p className="text-sm leading-7 text-white/70">{item}</p>
                 </div>
               ))}
             </div>

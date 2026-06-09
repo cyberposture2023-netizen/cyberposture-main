@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -63,9 +62,9 @@ export default function TimelineSection() {
           </h2>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-white/70">
-            Human risk is not solved through a single assessment.
-            It is continuously measured, refined, and reduced through
-            contextual intervention and operational visibility.
+            Human risk is not solved through a single assessment. It is
+            continuously measured, refined, and reduced through contextual
+            intervention and operational visibility.
           </p>
         </motion.div>
 
@@ -140,9 +139,7 @@ export default function TimelineSection() {
                   >
                     <span className="text-tertiary">✓</span>
 
-                    <span className="text-sm text-white/70">
-                      {outcome}
-                    </span>
+                    <span className="text-sm text-white/70">{outcome}</span>
                   </div>
                 ))}
               </div>
@@ -162,8 +159,8 @@ export default function TimelineSection() {
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/70">
             Move from reactive awareness programs to continuous visibility,
-            contextual intervention, and measurable risk reduction across
-            your organization.
+            contextual intervention, and measurable risk reduction across your
+            organization.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
@@ -178,7 +175,7 @@ export default function TimelineSection() {
               href="#enterprise"
               className="btn-ghost-gold inline-flex rounded-xl px-8 py-4 text-sm font-bold uppercase tracking-[0.08em]"
             >
-              Explore Enterprise HVI
+              More
             </a>
           </div>
         </div>

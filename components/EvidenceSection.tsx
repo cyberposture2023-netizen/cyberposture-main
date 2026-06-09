@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -45,16 +44,7 @@ const evidencePoints = [
   },
 ];
 
-const telemetrySignals = [
-  "Directory privilege mapping",
-  "Behavioral activity shifts",
-  "Off-hours activity indicators",
-  "Shadow tool adoption",
-  "Email security events",
-  "DLP security triggers",
-  "EDR detections",
-  "Policy bypass indicators",
-];
+// Technical Proxies / Signals list removed per CHANGE_REQUEST.md
 
 export default function EvidenceSection() {
   return (
@@ -80,9 +70,9 @@ export default function EvidenceSection() {
           </h2>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-white/70">
-            Human Vulnerability Index is designed around observed
-            industry-wide attack patterns, behavioral security research,
-            and real-world breach trends.
+            Human Vulnerability Index is designed around observed industry-wide
+            attack patterns, behavioral security research, and real-world breach
+            trends.
           </p>
         </motion.div>
 
@@ -138,39 +128,7 @@ export default function EvidenceSection() {
           </div>
         </div>
 
-        {/* Telemetry Signals */}
-        <div className="mt-20 rounded-3xl border border-white/12 bg-white/[0.05] p-8 backdrop-blur-xl">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-                Technical Proxies
-              </p>
-
-              <h3 className="mt-3 text-4xl font-semibold text-white">
-                Signals Behind Human Risk
-              </h3>
-            </div>
-
-            <div className="rounded-xl border border-tertiary/30 bg-tertiary/10 px-4 py-3">
-              <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-tertiary">
-                Passive Observation
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {telemetrySignals.map((signal) => (
-              <div
-                key={signal}
-                className="rounded-xl border border-white/10 bg-black/20 p-4"
-              >
-                <p className="text-sm text-white/80">
-                  {signal}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Technical Proxies section removed per CHANGE_REQUEST.md */}
 
         {/* Research Positioning */}
         <div className="mt-20 rounded-3xl border border-primary/20 bg-primary-container/10 p-8">
@@ -183,12 +141,12 @@ export default function EvidenceSection() {
           </h3>
 
           <p className="mt-6 max-w-4xl text-base leading-8 text-white/70">
-            Traditional security programs focus on awareness. Human
-            Vulnerability Intelligence focuses on measurement. By combining
-            behavioral indicators, technical telemetry, privilege context,
-            and risk signals, organizations gain continuous visibility into
-            their human attack surface instead of relying solely on periodic
-            training exercises.
+            Traditional security programs focus on awareness and phishing
+            campaigns. Human Vulnerability Intelligence focuses on measurement.
+            By combining behavioral indicators, technical telemetry, privilege
+            context, and risk signals, organizations gain continuous visibility
+            into their human attack surface instead of relying solely on
+            periodic training exercises.
           </p>
         </div>
       </div>
