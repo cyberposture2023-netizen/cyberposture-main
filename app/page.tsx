@@ -638,52 +638,13 @@ export default function HomePage() {
                   <br />
                   We Focus On People.
                 </p>
+
+                <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-secondary">
+                  For decades, security investments have centered around
+                  firewalls, endpoints, and infrastructure. Yet attackers
+                  continue to succeed through a simpler path: human behavior.
+                </p>
               </motion.div>
-
-              {/* <motion.div
-                variants={itemVariants}
-                className="mt-8 max-w-4xl text-center"
-              >
-                <p className="text-2xl font-medium text-tertiary md:text-3xl">
-                  Reduce the Human Risk Factor in Cybersecurity
-                </p>
-
-                <p className="mt-8 text-lg leading-8 text-white/80 md:text-xl">
-                  Cyberattacks don't begin with malware.
-                  <br />
-                  They begin with people.
-                </p>
-
-                <p className="mt-6 text-base leading-8 text-white/65 md:text-lg">
-                  Measure personal vulnerability.
-                  <br />
-                  Map organizational risk.
-                  <br />
-                  Reduce exposure before attackers exploit it.
-                </p>
-              </motion.div> */}
-
-              {/* <motion.div
-                variants={itemVariants}
-                className="mt-10 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row"
-              >
-                <Link
-                  href="/products#simulation"
-                  className="btn-gold inline-flex items-center justify-center gap-3 rounded-2xl px-7 py-4 text-center text-[12px] font-bold uppercase tracking-[0.08em] shadow-[0_14px_40px_rgba(0,0,0,0.35)] transition-transform hover:scale-105 active:scale-95"
-                >
-                  Experience the Simulation
-                  <span className="material-symbols-outlined text-lg">
-                    arrow_forward
-                  </span>
-                </Link>
-
-                <Link
-                  href="#choose-path"
-                  className="rounded-lg border border-white/20 px-7 py-4 text-center text-[12px] font-bold uppercase tracking-[0.08em] text-on-surface transition-colors hover:bg-white/5"
-                >
-                  Choose Your Path
-                </Link>
-              </motion.div> */}
             </motion.div>
 
             <motion.div

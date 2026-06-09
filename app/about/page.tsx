@@ -64,6 +64,20 @@ export default function AboutPage() {
               <h2 className="mt-4 font-display text-4xl text-on-surface md:text-5xl">
                 The Human Firewall
               </h2>
+
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-on-surface-variant">
+                Technology can detect threats, but people remain the final
+                decision point in most cyber incidents. Building a stronger
+                Human Firewall should not require employee surveillance,
+                invasive monitoring, or HR-driven assessments.
+              </p>
+
+              <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-on-surface-variant">
+                Human Vulnerability Index is designed to measure and improve
+                human resilience while preserving privacy, trust, and individual
+                dignity. Security becomes stronger when human risk is visible,
+                contextual, and actionable.
+              </p>
             </div>
 
             <div className="mt-16 grid gap-6 lg:grid-cols-2">
@@ -130,12 +144,13 @@ export default function AboutPage() {
 
               <div className="rounded-2xl border border-outline-variant/20 p-8">
                 <h3 className="text-2xl font-semibold text-on-surface">
-                  Privacy First
+                  Human-Centered Security
                 </h3>
 
                 <p className="mt-4 leading-8 text-on-surface-variant">
-                  Human risk visibility should never require intrusive employee
-                  surveillance or HR profiling.
+                  Effective security programs strengthen people, improve
+                  decision making, and build resilience rather than relying
+                  solely on technical controls.
                 </p>
               </div>
             </div>
