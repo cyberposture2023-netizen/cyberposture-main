@@ -64,27 +64,27 @@ export default function AIGovernancePage() {
 
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
               <Link
-                href="/contact/b2b"
+                href="/contact"
                 className="btn-gold rounded-xl px-8 py-4"
               >
-                Request Enterprise Demo
+                Contact US
               </Link>
 
-              <a
+              {/* <a
                 href="#dashboard"
                 className="rounded-xl border border-outline-variant/30 px-8 py-4"
               >
                 Explore Controls
-              </a>
+              </a> */}
             </div>
           </div>
         </section>
 
         {/* Dashboard */}
-        <section id="dashboard" className="px-6 py-20 md:px-8">
+        {/* <section id="dashboard" className="px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
             <h2 className="font-display text-4xl md:text-5xl">
-              AI Governance 
+              AI Governance
             </h2>
 
             <div className="mt-12 grid gap-5 md:grid-cols-3 lg:grid-cols-5">
@@ -98,7 +98,7 @@ export default function AIGovernancePage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* TPRM */}
         {/* <section className="px-6 py-20 md:px-8">
@@ -210,7 +210,7 @@ export default function AIGovernancePage() {
         </section> */}
 
         {/* CTA */}
-        <section className="px-6 py-24 md:px-8">
+        {/* <section className="px-6 py-24 md:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-display text-5xl">
               Secure AI Adoption At Scale
@@ -227,7 +227,7 @@ export default function AIGovernancePage() {
               Request Enterprise Demo
             </Link>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <SiteFooter />
