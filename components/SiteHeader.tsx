@@ -34,16 +34,6 @@ const NAV = [
     to: "/contact",
     label: "Contact",
     menuTitle: "Contact",
-    children: [
-      {
-        to: "/contact/b2c",
-        label: "Personal Support",
-      },
-      {
-        to: "/contact/b2b",
-        label: "Enterprise Inquiry",
-      },
-    ],
   },
 ] as const;
 

@@ -1,8 +1,6 @@
-
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -26,8 +24,8 @@ export default function ContactPage() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-on-surface-variant">
-              Choose the option that best matches your needs and we'll
-              route your request to the right team.
+              Choose the option that best matches your needs and we'll route
+              your request to the right team.
             </p>
           </div>
 
@@ -35,26 +33,29 @@ export default function ContactPage() {
             <button
               onClick={() => setAudience("b2c")}
               className="rounded-3xl border border-tertiary/25 bg-tertiary/10 p-8 text-left transition-all hover:-translate-y-1"
+              type="button"
             >
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
-                Individual Customer
+                Contact
               </p>
 
               <h2 className="mt-4 text-3xl font-semibold text-on-surface">
-                Personal Support
+                Individual Customer
               </h2>
 
               <ul className="mt-6 space-y-3 text-on-surface-variant">
-                <li>• Personal HVI Questions</li>
+                <li>• HVI Assessment Questions</li>
                 <li>• Account Assistance</li>
-                <li>• Billing Support</li>
                 <li>• General Inquiries</li>
+                <li>• General Inquiries</li>
+                <li>• Support Requests</li>
               </ul>
             </button>
 
             <button
               onClick={() => setAudience("b2b")}
               className="rounded-3xl border border-primary/25 bg-primary-container/10 p-8 text-left transition-all hover:-translate-y-1"
+              type="button"
             >
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">
                 Business / Organization
@@ -80,16 +81,26 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="mt-12 rounded-3xl border border-outline-variant/20 p-8"
+                exit={{ opacity: 0, y: 20 }}
               >
-                <h3 className="text-3xl font-semibold">
-                  Individual Customer Support
-                </h3>
+                <h3 className="text-3xl font-semibold">Contact</h3>
+                <p className="mt-4 text-lg leading-8 text-on-surface-variant">
+                  Questions about your Human Vulnerability Index (HVI)
+                  assessment?
+                </p>
 
                 <form className="mt-8 grid gap-5">
                   <input className="ghost-input p-4" placeholder="Full Name" />
-                  <input className="ghost-input p-4" placeholder="Email Address" />
-                  <input className="ghost-input p-4" placeholder="Account ID (Optional)" />
-
+                  <input
+                    className="ghost-input p-4"
+                    placeholder="Email Address"
+                  />
+                  <input
+                    className="ghost-input p-4"
+                    placeholder="Phone Number"
+                  />
+                  <input className="ghost-input p-4" placeholder="Country" />
+                  <input className="ghost-input p-4" placeholder="City" />
                   <textarea
                     rows={6}
                     className="ghost-input resize-none p-4"
@@ -109,6 +120,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="mt-12 rounded-3xl border border-outline-variant/20 p-8"
+                exit={{ opacity: 0, y: 20 }}
               >
                 <h3 className="text-3xl font-semibold">
                   Enterprise Consultation
@@ -116,9 +128,18 @@ export default function ContactPage() {
 
                 <form className="mt-8 grid gap-5">
                   <input className="ghost-input p-4" placeholder="Full Name" />
-                  <input className="ghost-input p-4" placeholder="Corporate Email" />
-                  <input className="ghost-input p-4" placeholder="Company Name" />
-
+                  <input
+                    className="ghost-input p-4"
+                    placeholder="Corporate Email"
+                  />
+                  <input
+                    className="ghost-input p-4"
+                    placeholder="Company Name"
+                  />
+                  <input
+                    className="ghost-input p-4"
+                    placeholder="Contact Number"
+                  />
                   <select className="ghost-input p-4">
                     <option>Employee Count</option>
                     <option>1–50</option>
@@ -128,15 +149,6 @@ export default function ContactPage() {
                     <option>1000+</option>
                   </select>
 
-                  <select className="ghost-input p-4">
-                    <option>Security Concern</option>
-                    <option>Human Risk Visibility</option>
-                    <option>Phishing</option>
-                    <option>Insider Risk</option>
-                    <option>Compliance</option>
-                    <option>Other</option>
-                  </select>
-
                   <textarea
                     rows={6}
                     className="ghost-input resize-none p-4"
@@ -144,22 +156,12 @@ export default function ContactPage() {
                   />
 
                   <button className="btn-gold rounded-xl px-8 py-4">
-                    Request Consultation
+                    Submit
                   </button>
                 </form>
               </motion.div>
             )}
           </AnimatePresence>
-
-          <div className="mt-12 flex justify-center gap-4">
-            <Link href="/contact/b2c" className="text-tertiary">
-              Dedicated B2C Page
-            </Link>
-
-            <Link href="/contact/b2b" className="text-tertiary">
-              Dedicated B2B Page
-            </Link>
-          </div>
         </div>
       </main>
 

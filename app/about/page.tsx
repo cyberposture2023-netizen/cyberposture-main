@@ -92,6 +92,59 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+        <section className="px-6 py-20 md:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="text-center">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-tertiary">
+                Adaptive Intelligence
+              </p>
+
+              <h2 className="mt-4 font-display text-4xl text-on-surface md:text-5xl">
+                Smarter Risk. Real-Time Adaptability.
+              </h2>
+              <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-on-surface-variant">
+                Cyber threats do not stand still, and neither should risk
+                assessment. Human Vulnerability Index continuously evolves
+                alongside the changing threat landscape, using machine learning
+                and behavioral intelligence to improve accuracy over time.
+              </p>
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-on-surface-variant">
+                Every interaction, assessment, and behavioral signal contributes
+                to a deeper understanding of human risk, helping organizations
+                move beyond static evaluations and toward continuous visibility.
+              </p>
+            </div>
+            <div className="mt-16 grid gap-6 lg:grid-cols-2">
+              <div className="rounded-2xl border border-outline-variant/20 p-8">
+                <h3 className="text-2xl font-semibold text-on-surface">
+                  Traditional Awareness Programs
+                </h3>
+
+                <p className="mt-6 leading-8 text-on-surface-variant">
+                  Phishing simulations and annual awareness training were
+                  designed for a different era. They primarily measure
+                  participation and compliance, offering limited insight into
+                  real-world human risk.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-tertiary/20 bg-tertiary/5 p-8">
+                <h3 className="text-2xl font-semibold text-on-surface">
+                  Human Vulnerability Index
+                </h3>
+
+                <p className="mt-6 leading-8 text-on-surface-variant">
+                  We focus on what actually matters: human risk behavior. By
+                  measuring how people make decisions, respond to manipulation,
+                  and interact with risk, organizations can identify
+                  vulnerabilities before incidents occur—not after they have
+                  already happened.
+                </p>
+              </div>
+            </div>
+            
+          </div>
+        </section>
 
         {/* Beliefs */}
         <section className="px-6 py-20 md:px-8">
