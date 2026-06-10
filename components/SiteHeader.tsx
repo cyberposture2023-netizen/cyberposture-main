@@ -19,6 +19,10 @@ const NAV = [
         to: "/products#b2c",
         label: "Human Vulnerability Index",
       },
+      {
+        to: "/ai-governance",
+        label: "AI Governance Suite",
+      },
 
     ],
   },

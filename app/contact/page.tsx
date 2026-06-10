@@ -108,7 +108,7 @@ export default function ContactPage() {
                   />
 
                   <button className="btn-gold rounded-xl px-8 py-4">
-                    Send Message
+                    Submit
                   </button>
                 </form>
               </motion.div>
