@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono, Geist } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -10,11 +11,7 @@ const display = Space_Grotesk({
   variable: "--font-display-var",
 });
 
-const sans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-sans-var",
-});
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const mono = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -75,7 +72,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${display.variable} ${sans.variable} ${mono.variable} h-full antialiased`}
+      className={cn("h-full", "antialiased", display.variable, mono.variable, "font-sans", geist.variable)}
     >
       <body className="min-h-full flex flex-col bg-surface-page text-navy-800">
         <script
