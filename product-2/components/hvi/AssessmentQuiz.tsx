@@ -108,7 +108,10 @@ export default function AssessmentQuiz({ autoStart = false }: { autoStart?: bool
                 What's your Human Vulnerability Index?
               </h2>
               <p className="text-[16px] leading-[1.6] text-slate-400 mx-auto mb-2.5 max-w-[520px]">
-                Take the assessment to see your sample HVI score, identify key risk areas, and understand your current cybersecurity posture.
+               The Human Vulnerability Index (HVI) translates human cybersecurity
+              behaviors into a clear, measurable score. Instead of focusing only
+              on systems and technology, HVI helps identify the human factors
+              that contribute to cyber risk.
               </p>
               <div className="font-mono text-xs text-slate-200 mb-6">
                 10 questions · about 2 minutes · no sign-up

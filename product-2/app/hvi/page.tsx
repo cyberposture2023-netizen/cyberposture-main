@@ -76,8 +76,9 @@ export default function HviPage() {
               What HVI Does
             </h2>
             <p className="text-[18px] leading-[1.7] text-navy-600 mb-6">
-              CyberPosture HVI is a privacy-first human-risk intelligence platform that measures the human side of cyber risk and expresses it as a single, intuitive  score.  HVI gives individuals, security teams, and organizations a clear, measurable read on cyber vulnerability — where exposure exists, how it's trending, and what to do about it. The result is a shared language for human risk that turns awareness into measurable, continuous improvement, without compromising individual privacy.
+                CyberPosture HVI is a privacy-first human-risk intelligence platform that measures the human side of cyber risk and expresses it as a single, intuitive  score.  HVI gives individuals, security teams, and organizations a clear, measurable read on cyber vulnerability — where exposure exists, how it's trending, and what to do about it. The result is a shared language for human risk that turns awareness into measurable, continuous improvement, without compromising individual privacy.
             </p>
+
           </div>
         </div>
       </section>
