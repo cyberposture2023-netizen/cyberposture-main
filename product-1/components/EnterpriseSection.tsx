@@ -144,14 +144,14 @@ export default function EnterpriseSection() {
 
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="/contact/b2b"
+              href="/contact"
               className="btn-gold inline-flex rounded-xl px-8 py-4 text-sm font-bold uppercase tracking-[0.08em]"
             >
               Book Enterprise Discovery
             </Link>
 
             <Link
-              href="/contact/b2b"
+              href="/contact"
               className="btn-ghost-gold inline-flex rounded-xl px-8 py-4 text-sm font-bold uppercase tracking-[0.08em]"
             >
               Request Pilot Program
