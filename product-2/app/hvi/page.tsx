@@ -76,17 +76,7 @@ export default function HviPage() {
               What HVI Does
             </h2>
             <p className="text-[18px] leading-[1.7] text-navy-600 mb-6">
-              The Human Vulnerability Index (HVI) translates human cybersecurity
-              behaviors into a clear, measurable score. Instead of focusing only
-              on systems and technology, HVI helps identify the human factors
-              that contribute to cyber risk.
-            </p>
-            <p className="text-[16px] leading-[1.8] text-slate-600">
-              Through assessments, behavioral insights, and risk analysis, HVI
-              helps individuals and organizations understand their current
-              exposure, prioritize improvement efforts, and track progress over
-              time. The result is a consistent framework for measuring,
-              communicating, and improving human cyber resilience.
+              CyberPosture HVI is a privacy-first human-risk intelligence platform that measures the human side of cyber risk and expresses it as a single, intuitive  score.  HVI gives individuals, security teams, and organizations a clear, measurable read on cyber vulnerability — where exposure exists, how it's trending, and what to do about it. The result is a shared language for human risk that turns awareness into measurable, continuous improvement, without compromising individual privacy.
             </p>
           </div>
         </div>

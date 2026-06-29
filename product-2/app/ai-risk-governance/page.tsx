@@ -96,19 +96,7 @@ export default function AiPage() {
             </h2>
 
             <p className="text-[18px] leading-[1.7] text-navy-600 mb-6">
-              CyberPosture helps organizations understand, manage, and reduce
-              the risks introduced by AI adoption. From employee use of AI tools
-              to embedded AI features and autonomous agents, the platform
-              provides visibility into how AI is being used and where risk
-              emerges.
-            </p>
-
-            <p className="text-[16px] leading-[1.8] text-slate-600">
-              Through continuous assessment, risk intelligence, and governance
-              workflows, organizations can identify potential exposures, apply
-              appropriate controls, and adopt AI with greater confidence. The
-              result is a practical framework for balancing innovation,
-              security, compliance, and operational resilience.
+              The Cyber Posture AI Risk & Governance Platform helps organizations adopt and deploy AI with confidence by understanding and mitigating AI risk continuously — when, where, and as it occurs. As teams design and deploy a growing range of AI capabilities, the platform assesses risk at every stage . It tracks where AI is running across your organization, including the unsanctioned tools most teams never see.
             </p>
           </div>
         </div>
