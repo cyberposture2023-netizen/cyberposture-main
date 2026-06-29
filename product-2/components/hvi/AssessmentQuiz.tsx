@@ -91,7 +91,7 @@ export default function AssessmentQuiz({ autoStart = false }: { autoStart?: bool
   return (
     <div
       id="assessment"
-      className="bg-surface-subtle border-b border-surface-border"
+      className="bg-navy-800 border-b border-surface-border"
     >
       <div className="container-content py-14">
         <div
