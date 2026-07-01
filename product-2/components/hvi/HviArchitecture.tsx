@@ -42,8 +42,7 @@ export default function HviArchitecture() {
           How the HVI platform works.
         </h2>
         <p className="text-[16px] leading-[1.55] text-slate-400 mb-8 max-w-[720px]">
-          A continuous loop — from assessment to score to action — running on a
-          shared, security-first platform foundation.
+         A continuous loop—from assessment to score to action—running on a shared, privacy-first and security-first platform foundation.
         </p>
 
         <div className="border border-surface-border rounded-[20px] p-7 bg-card">

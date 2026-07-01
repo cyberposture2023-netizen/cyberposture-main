@@ -77,6 +77,65 @@ export default function AiPage() {
           </div>
         </div>
       </section>
+      <section
+  className="text-white"
+  style={{ background: "linear-gradient(165deg,#080f1e,#1a65b8)" }}
+>
+  <div className="container-content py-16">
+    <div className="font-mono text-[11.5px] tracking-label uppercase text-teal-bright mb-3.5">
+      AI Risk & Governance
+    </div>
+
+    <h2 className="font-display font-semibold text-[38px] leading-[1.1] tracking-tighter mb-5 max-w-[760px]">
+      What AI Governance Does
+    </h2>
+
+    <p
+      className="text-[17px] leading-[1.7] max-w-[760px] mb-10"
+      style={{ color: "#c8d4e5" }}
+    >
+      The CyberPosture AI Risk & Governance Platform helps organizations
+      understand, manage, and reduce AI risk continuously. As teams design,
+      deploy, and use AI across the enterprise, the platform assesses risk at
+      every stage, provides visibility into where AI is operating, and helps
+      identify unsanctioned AI tools that often go unnoticed.
+    </p>
+
+    <div className="grid gap-6 md:grid-cols-3">
+      {[
+        {
+          title: "Assess AI Risk",
+          description:
+            "Evaluate AI systems continuously throughout development, deployment, and operation.",
+        },
+        {
+          title: "Discover AI Usage",
+          description:
+            "Gain visibility into approved and unsanctioned AI tools running across the organization.",
+        },
+        {
+          title: "Strengthen Governance",
+          description:
+            "Support responsible AI adoption through oversight, risk management, and compliance controls.",
+        },
+      ].map((item) => (
+        <div
+          key={item.title}
+          className="rounded-2xl p-6"
+          style={{
+            background: "rgba(255,255,255,.06)",
+            border: "1px solid rgba(255,255,255,.12)",
+          }}
+        >
+          <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+          <p className="text-sm leading-6 text-slate-300">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       <UsageInventory />
       <AiHelpsAnswer />

@@ -108,9 +108,7 @@ export default function AssessmentQuiz({ autoStart = false }: { autoStart?: bool
                 What's your Human Vulnerability Index?
               </h2>
               <p className="text-[16px] leading-[1.6] text-slate-400 mx-auto mb-2.5 max-w-[520px]">
-                Answer ten quick questions — one for each HVI risk dimension —
-                to see a sample 300–850 score, your top risk areas, and where
-                you're strongest.
+                Take the assessment to see your sample HVI score, identify key risk areas, and understand your current cybersecurity posture
               </p>
               <div className="font-mono text-xs text-slate-200 mb-6">
                 10 questions · about 2 minutes · no sign-up

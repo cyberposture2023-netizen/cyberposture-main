@@ -50,19 +50,22 @@ export default function Hero() {
             </h1>
 
             {/* Subhead */}
-            <p className="text-lg leading-[1.55] mb-10 max-w-[640px]" style={{ color: "#8fa2bd" }}>
+            <p
+              className="text-lg leading-[1.55] mb-10 max-w-[640px]"
+              style={{ color: "#8fa2bd" }}
+            >
               Two focused platforms for two under-measured domains — human
               behavior and enterprise AI adoption.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-3.5 mb-12">
-              <Link
-                href="/hvi"
+              <a
+                href="#platforms"
                 className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold bg-primary text-primary-foreground hover:bg-teal-50 transition-colors"
               >
                 Explore Platforms
-              </Link>
+              </a>
               <Link
                 href="/hvi#assessment"
                 className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold text-white transition-colors"
@@ -89,8 +92,16 @@ export default function Hero() {
             {/* Stat chips */}
             <div className="flex flex-wrap gap-3.5">
               {[
-                { value: "300–850", label: "HVI score range", color: "#5fe9ff" },
-                { value: "10",      label: "Human risk dimensions", color: "#e8edf5" },
+                {
+                  value: "300–850",
+                  label: "HVI score range",
+                  color: "#5fe9ff",
+                },
+                {
+                  value: "10",
+                  label: "Human risk dimensions",
+                  color: "#e8edf5",
+                },
                 {
                   value: "Discover · Assess · Govern · Evidence",
                   label: "AI governance pillars",

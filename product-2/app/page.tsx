@@ -18,7 +18,9 @@ export default function HomePage() {
     <>
       <Hero />
       <StatStrip />
-      <PlatformCards />
+      <section id="platforms">
+        <PlatformCards />
+      </section>
       <WhyCards />
       <ArchitectureDiagram />
       <ChooseYourPath />
