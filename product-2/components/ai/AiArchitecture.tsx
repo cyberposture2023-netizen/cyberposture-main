@@ -37,7 +37,7 @@ export default function AiArchitecture() {
       <div className="container-content py-20">
         <div
           className="font-mono text-xs tracking-label uppercase mb-3"
-          style={{ color: "#5646C9" }}
+          style={{ color: "#00b8d9" }}
         >
           Platform architecture
         </div>
@@ -49,19 +49,19 @@ export default function AiArchitecture() {
           security-first platform foundation.
         </p>
 
-        <div className="border border-surface-border rounded-[20px] p-7 bg-white">
+        <div className="border border-surface-border rounded-[20px] p-7 bg-card">
           {/* Step flow */}
           <div className="flex flex-col md:flex-row items-stretch w-fit max-w-full mx-auto gap-2 md:gap-0">
       {steps.map((step, i) => (
         <Fragment key={step.num}>
           {/* Step Card */}
           <div
-            className="flex-1 bg-white border border-surface-border rounded-[13px] p-5 min-w-[200px]"
-            style={{ borderTop: "3px solid #6A5AE0" }}
+            className="flex-1 bg-card border border-surface-border rounded-[13px] p-5 min-w-[200px]"
+            style={{ borderTop: "3px solid #1a65b8" }}
           >
             <div
               className="font-mono text-xs mb-2"
-              style={{ color: "#5646C9" }}
+              style={{ color: "#00b8d9" }}
             >
               {step.num}
             </div>
@@ -79,7 +79,7 @@ export default function AiArchitecture() {
           {i < steps.length - 1 && (
             <div
               className="flex items-center justify-center text-[18px] py-2 md:py-0 md:px-2"
-              style={{ color: "#B6AEEA" }}
+              style={{ color: "#8bdfff" }}
               aria-hidden="true"
             >
               {/* Desktop gets a right arrow, Mobile gets a down arrow */}
@@ -102,11 +102,11 @@ export default function AiArchitecture() {
           {/* Foundation */}
           <div
             className="rounded-[14px] p-[22px]"
-            style={{ background: "#1A1340" }}
+            style={{ background: "#080f1e" }}
           >
             <div
               className="font-mono text-[11px] tracking-[.1em] uppercase text-center mb-4"
-              style={{ color: "#B6AEEA" }}
+              style={{ color: "#8bdfff" }}
             >
               Shared CyberPosture platform foundation
             </div>
@@ -117,7 +117,7 @@ export default function AiArchitecture() {
                   className="rounded-[9px] px-2 py-3 text-center text-xs font-medium"
                   style={{
                     background: "rgba(255,255,255,.06)",
-                    color: "#E6E2F8",
+                    color: "#c8d4e5",
                   }}
                 >
                   {cell}
@@ -129,12 +129,12 @@ export default function AiArchitecture() {
           {/* Security base */}
           <div
             className="mt-2.5 rounded-[12px] px-[18px] py-3.5 text-center"
-            style={{ background: "#3A2E8C" }}
+            style={{ background: "#102040" }}
           >
             <div className="font-mono text-[11px] tracking-[.08em] uppercase text-white">
               Security, Privacy &amp; Governance — built into every layer
             </div>
-            <div className="text-xs mt-1.5" style={{ color: "#D6D0F2" }}>
+            <div className="text-xs mt-1.5" style={{ color: "#a7b8d0" }}>
               Role-based access · Encryption · Data minimization · Consent ·
               Retention · Audit logs · Privacy by design
             </div>

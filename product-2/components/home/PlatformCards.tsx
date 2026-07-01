@@ -33,7 +33,7 @@ function PlatformCard({
 }: PlatformCardProps) {
   return (
     <div
-      className="group bg-white border border-surface-border rounded-[18px] p-9 transition-all duration-[250ms] hover:-translate-y-1.5"
+      className="group bg-card border border-surface-border rounded-[18px] p-9 transition-all duration-[250ms] hover:-translate-y-1.5"
       style={{
         borderTop: `4px solid ${accent}`,
         ["--hover-shadow" as string]: hoverShadow,
@@ -99,44 +99,44 @@ export default function PlatformCards() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <PlatformCard
-            accent="#12A89B"
-            accentSoft="#E6F6F4"
-            accentBorder="#CDEDE8"
+            accent="#00b8d9"
+            accentSoft="rgba(0, 184, 217, 0.14)"
+            accentBorder="rgba(0, 184, 217, 0.22)"
             eyebrow="CyberPosture HVI"
-            eyebrowColor="#0E7C72"
+            eyebrowColor="#00b8d9"
             title="Human Vulnerability Index"
             tagline="Measure the human side of cyber risk."
-            taglineColor="#0E7C72"
+            taglineColor="#00b8d9"
             description="A simple, measurable 300–850 score for behavior-driven cyber risk — helping individuals understand personal vulnerability and organizations measure workforce human-risk patterns over time."
             primaryHref="/hvi"
             primaryLabel="Explore HVI"
-            primaryBg="#12A89B"
+            primaryBg="#00b8d9"
             secondaryHref="/hvi#assessment"
             secondaryLabel="Take HVI Assessment"
-            secondaryColor="#0E7C72"
-            secondaryBg="#E6F6F4"
-            secondaryBorder="#CDEDE8"
-            hoverShadow="0 30px 60px -34px rgba(18,168,155,.5)"
+            secondaryColor="#00b8d9"
+            secondaryBg="rgba(0, 184, 217, 0.14)"
+            secondaryBorder="rgba(0, 184, 217, 0.22)"
+            hoverShadow="0 30px 60px -34px rgba(0,184,217,.5)"
           />
           <PlatformCard
-            accent="#6A5AE0"
-            accentSoft="#ECEAFB"
-            accentBorder="#DAD5F6"
+            accent="#1a65b8"
+            accentSoft="rgba(0, 184, 217, 0.12)"
+            accentBorder="rgba(0, 184, 217, 0.22)"
             eyebrow="AI Risk & Governance · Early Access"
-            eyebrowColor="#5646C9"
+            eyebrowColor="#00b8d9"
             title="AI Risk & Governance Platform"
             tagline="Adopt AI with confidence."
-            taglineColor="#5646C9"
+            taglineColor="#00b8d9"
             description="AI is moving fast across approved tools, unsanctioned apps, connected workflows, and autonomous agents. CyberPosture helps you assess, understand, and mitigate that exposure — so teams can keep innovating with AI, backed by evidence for reviews, audits, and compliance readiness."
             primaryHref="/ai-risk-governance"
             primaryLabel="Explore AI Risk & Governance"
-            primaryBg="#6A5AE0"
+            primaryBg="#1a65b8"
             secondaryHref="/contact?i=Join+AI+Risk+%26+Governance+Early+Access"
             secondaryLabel="Join Early Access"
-            secondaryColor="#5646C9"
-            secondaryBg="#ECEAFB"
-            secondaryBorder="#DAD5F6"
-            hoverShadow="0 30px 60px -34px rgba(106,90,224,.5)"
+            secondaryColor="#00b8d9"
+            secondaryBg="rgba(0, 184, 217, 0.12)"
+            secondaryBorder="rgba(0, 184, 217, 0.22)"
+            hoverShadow="0 30px 60px -34px rgba(26,101,184,.5)"
           />
         </div>
       </div>

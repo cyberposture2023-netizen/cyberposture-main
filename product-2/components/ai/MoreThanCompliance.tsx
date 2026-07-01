@@ -26,12 +26,12 @@ const points = [
 
 export default function MoreThanCompliance() {
   return (
-    <section className="bg-white">
+    <section className="bg-card">
       <div className="container-content py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[.95fr_1.05fr] gap-14 items-center">
           {/* Copy */}
           <div>
-            <div className="font-mono text-xs tracking-label uppercase mb-3.5" style={{ color: "#5646C9" }}>
+            <div className="font-mono text-xs tracking-label uppercase mb-3.5" style={{ color: "#00b8d9" }}>
               More than compliance
             </div>
             <h2 className="font-display font-semibold text-[32px] tracking-tighter text-navy-700 mb-4">
@@ -53,7 +53,7 @@ export default function MoreThanCompliance() {
                 <div key={pt.bold} className="flex gap-3 items-start">
                   <span
                     className="w-[26px] h-[26px] rounded-[7px] font-bold text-[13px] flex items-center justify-center flex-none"
-                    style={{ background: "#ECEAFB", color: "#5646C9" }}
+                    style={{ background: "rgba(0, 184, 217, 0.12)", color: "#00b8d9" }}
                     aria-hidden="true"
                   >
                     ›
@@ -79,7 +79,7 @@ export default function MoreThanCompliance() {
                   className="bg-surface-subtle border border-surface-border rounded-xl px-[18px] py-4"
                 >
                   <div className="font-semibold text-[14.5px] text-slate-700 mb-0.5">{item.t}</div>
-                  <div className="text-[12.5px] leading-[1.45]" style={{ color: "#7E8DA3" }}>{item.d}</div>
+                  <div className="text-[12.5px] leading-[1.45]" style={{ color: "#7a90b0" }}>{item.d}</div>
                 </div>
               ))}
             </div>

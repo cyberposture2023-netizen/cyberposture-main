@@ -1,22 +1,22 @@
 const cards = [
   {
     icon: "◑",
-    iconBg: "#E6F6F4",
-    iconColor: "#0E8C81",
+    iconBg: "rgba(0, 184, 217, 0.14)",
+    iconColor: "#039fc0",
     title: "Human risk is measurable",
     body: "HVI turns behavior-driven cyber exposure into a score people can understand and organizations can act on.",
   },
   {
     icon: "◆",
-    iconBg: "#ECEAFB",
-    iconColor: "#5646C9",
+    iconBg: "rgba(0, 184, 217, 0.12)",
+    iconColor: "#00b8d9",
     title: "AI usage needs governance",
     body: "See where AI is being used, where exposure exists, and what evidence supports responsible oversight.",
   },
   {
     icon: "▦",
-    iconBg: "#EAF1FB",
-    iconColor: "#2D6FB8",
+    iconBg: "rgba(26, 101, 184, 0.18)",
+    iconColor: "#1a65b8",
     title: "Evidence matters",
     body: "Security, risk, and compliance teams need clear records of what was assessed, approved, remediated, or left open.",
   },
@@ -24,7 +24,7 @@ const cards = [
 
 export default function WhyCards() {
   return (
-    <section className="bg-white">
+    <section className="bg-card">
       <div className="container-content py-[84px]">
         <h2 className="font-display font-semibold text-[34px] tracking-tighter text-navy-700 mb-3.5 max-w-[680px]">
           Not every cyber risk starts with a system vulnerability.

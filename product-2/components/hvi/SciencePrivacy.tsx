@@ -23,7 +23,7 @@ const privacyPoints = [
 
 export default function SciencePrivacy() {
   return (
-    <section className="bg-white">
+    <section className="bg-card">
       <div className="container-content py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Science card */}
@@ -43,9 +43,9 @@ export default function SciencePrivacy() {
                   key={p}
                   className="text-xs rounded-full px-[11px] py-[5px]"
                   style={{
-                    color: "#0E7C72",
-                    background: "#E6F6F4",
-                    border: "1px solid #CDEDE8",
+                    color: "#00b8d9",
+                    background: "rgba(0, 184, 217, 0.14)",
+                    border: "1px solid rgba(0, 184, 217, 0.22)",
                   }}
                 >
                   {p}
@@ -71,9 +71,9 @@ export default function SciencePrivacy() {
                   key={p}
                   className="text-xs rounded-full px-[11px] py-[5px]"
                   style={{
-                    color: "#23405E",
-                    background: "#fff",
-                    border: "1px solid #E4EAF3",
+                    color: "#c8d4e5",
+                    background: "#e8edf5",
+                    border: "1px solid rgba(0, 184, 217, 0.18)",
                   }}
                 >
                   {p}
@@ -86,13 +86,13 @@ export default function SciencePrivacy() {
         {/* Methodology CTA banner */}
         <div
           className="rounded-[18px] p-[34px] flex items-center justify-between flex-wrap gap-5"
-          style={{ background: "linear-gradient(120deg,#0E2A4A,#123A6B)" }}
+          style={{ background: "linear-gradient(120deg,#0d1a30,#102040)" }}
         >
           <div>
             <h3 className="font-display font-semibold text-[22px] text-white mb-1.5">
               Want to understand how HVI works?
             </h3>
-            <p className="text-[14.5px] max-w-[560px]" style={{ color: "#B7CCE6" }}>
+            <p className="text-[14.5px] max-w-[560px]" style={{ color: "#a7b8d0" }}>
               A structured methodology explains the risk dimensions, scoring
               model, privacy principles, and responsible-use guidelines behind
               the Human Vulnerability Index.
@@ -100,7 +100,7 @@ export default function SciencePrivacy() {
           </div>
           <Link
             href="/contact?i=General+Inquiry"
-            className="inline-flex items-center flex-none px-[22px] py-[13px] rounded-[10px] text-sm font-semibold text-navy-900 bg-white hover:bg-teal-50 transition-colors"
+            className="inline-flex items-center flex-none px-[22px] py-[13px] rounded-[10px] text-sm font-semibold text-primary-foreground bg-primary hover:bg-teal-50 transition-colors"
           >
             Read the HVI Methodology
           </Link>

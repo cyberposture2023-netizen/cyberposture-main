@@ -12,21 +12,21 @@ export default function ShadowAIPage() {
   return (
     <>
       {/* Hero */}
-      <section style={{ background: "linear-gradient(160deg,#0A2342,#2A2270)" }}>
+      <section style={{ background: "linear-gradient(160deg,#080f1e,#0d1a30)" }}>
         <div className="container-content py-[72px] pb-[60px]">
-          <div className="font-mono text-[11.5px] tracking-[.12em] uppercase mb-[14px]" style={{ color: "#C4B8FF" }}>
+          <div className="font-mono text-[11.5px] tracking-[.12em] uppercase mb-[14px]" style={{ color: "#8bdfff" }}>
             Shadow AI Discovery
           </div>
           <h1 className="font-display font-semibold text-[44px] leading-[1.08] tracking-tighter text-white mb-[18px] max-w-[760px]">
             Find the AI usage you cannot govern today.
           </h1>
-          <p className="text-[17px] leading-[1.6] mb-7 max-w-[700px]" style={{ color: "#C7CCF0" }}>
+          <p className="text-[17px] leading-[1.6] mb-7 max-w-[700px]" style={{ color: "#a7b8d0" }}>
             CyberPosture helps organizations identify unapproved AI tools, unmanaged AI usage,
             risky permissions, and AI workflows operating outside approved governance.
           </p>
           <Link
             href="/contact?i=Shadow+AI+Assessment+Interest"
-            className="inline-flex items-center px-6 py-[14px] rounded-[10px] text-[15px] font-semibold text-[#1A1340] bg-white hover:bg-surface-subtle transition-colors"
+            className="inline-flex items-center px-6 py-[14px] rounded-[10px] text-[15px] font-semibold text-primary-foreground bg-primary hover:bg-surface-subtle transition-colors"
           >
             Join Early Access
           </Link>
@@ -34,7 +34,7 @@ export default function ShadowAIPage() {
       </section>
 
       {/* Body */}
-      <section className="bg-white">
+      <section className="bg-card">
         <div className="container-content py-[72px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Copy */}
@@ -42,13 +42,13 @@ export default function ShadowAIPage() {
               <h2 className="font-display font-semibold text-[28px] tracking-tighter text-navy-700 mb-4">
                 The first visible symptom of a larger problem.
               </h2>
-              <p className="text-[15.5px] leading-[1.65] mb-[14px]" style={{ color: "#4F6680" }}>
+              <p className="text-[15.5px] leading-[1.65] mb-[14px]" style={{ color: "#8fa2bd" }}>
                 Employees and teams often use AI tools before security, risk, legal, or compliance
                 teams have reviewed them. These tools may process sensitive data, create
                 customer-facing outputs, or become part of business workflows without appropriate
                 oversight.
               </p>
-              <p className="text-[15.5px] leading-[1.65] font-semibold" style={{ color: "#15324F" }}>
+              <p className="text-[15.5px] leading-[1.65] font-semibold" style={{ color: "#e8edf5" }}>
                 CyberPosture helps organizations move from unknown AI usage to governed AI usage.
               </p>
 
@@ -78,10 +78,10 @@ export default function ShadowAIPage() {
                   <div key={f} className="flex items-center gap-[11px]">
                     <span
                       className="w-2 h-2 rounded-[2px] flex-none"
-                      style={{ background: "#6A5AE0" }}
+                      style={{ background: "#1a65b8" }}
                       aria-hidden="true"
                     />
-                    <span className="text-[14.5px]" style={{ color: "#33485F" }}>{f}</span>
+                    <span className="text-[14.5px]" style={{ color: "#c8d4e5" }}>{f}</span>
                   </div>
                 ))}
               </div>
@@ -97,14 +97,14 @@ export default function ShadowAIPage() {
             <div className="font-display font-semibold text-[20px] text-navy-700 mb-1">
               Ready to see what's in your environment?
             </div>
-            <div className="text-[14.5px]" style={{ color: "#4F6680" }}>
+            <div className="text-[14.5px]" style={{ color: "#8fa2bd" }}>
               Shadow AI Discovery is part of the AI Risk &amp; Governance platform — currently in early access.
             </div>
           </div>
           <Link
             href="/contact?i=Shadow+AI+Assessment+Interest"
             className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold text-white whitespace-nowrap flex-none"
-            style={{ background: "#5646C9" }}
+            style={{ background: "#00b8d9" }}
           >
             Join Early Access
           </Link>

@@ -21,13 +21,13 @@ export default function FrameworkReadiness() {
             <h2 className="font-display font-semibold text-[30px] tracking-tighter text-white mb-3.5">
               Compliance, as an outcome of good practice.
             </h2>
-            <p className="text-[15.5px] leading-[1.6] mb-3.5" style={{ color: "#B7CCE6" }}>
+            <p className="text-[15.5px] leading-[1.6] mb-3.5" style={{ color: "#a7b8d0" }}>
               When you understand and mitigate AI risk continuously, the evidence
               for reviews, audits, and customer requests builds itself.
               CyberPosture is designed to organize that evidence and align it with
               emerging AI governance and compliance expectations.
             </p>
-            <p className="text-[13.5px] leading-[1.6]" style={{ color: "#7E96B6" }}>
+            <p className="text-[13.5px] leading-[1.6]" style={{ color: "#7a90b0" }}>
               CyberPosture does not replace legal, audit, or compliance judgment. It
               helps teams maintain the structure, evidence, and review history needed
               to support governance and compliance-readiness processes.
@@ -43,7 +43,7 @@ export default function FrameworkReadiness() {
                 style={{
                   background: "rgba(255,255,255,.05)",
                   border: "1px solid rgba(255,255,255,.1)",
-                  color: "#D6E2F2",
+                  color: "#c8d4e5",
                 }}
               >
                 {f}

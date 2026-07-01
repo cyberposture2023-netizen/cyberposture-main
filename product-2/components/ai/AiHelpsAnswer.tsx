@@ -2,7 +2,7 @@ import { aiHelpsAnswer } from "@/lib/content/pages";
 
 export default function AiHelpsAnswer() {
   return (
-    <section className="bg-white">
+    <section className="bg-card">
       <div className="container-content py-[74px]">
         <h2 className="font-display font-semibold text-[30px] tracking-tighter text-navy-700 mb-7">
           What CyberPosture helps answer.

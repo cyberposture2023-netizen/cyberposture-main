@@ -21,9 +21,9 @@ export default function MobileNav() {
         onClick={() => setOpen((v) => !v)}
         className="lg:hidden flex flex-col gap-[5px] p-2 rounded focus-visible:outline-2 focus-visible:outline-teal-500"
       >
-        <span className={`block w-5 h-0.5 bg-navy-800 transition-all duration-200 ${open ? "translate-y-[7px] rotate-45" : ""}`} />
-        <span className={`block w-5 h-0.5 bg-navy-800 transition-all duration-200 ${open ? "opacity-0" : ""}`} />
-        <span className={`block w-5 h-0.5 bg-navy-800 transition-all duration-200 ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
+        <span className={`block w-5 h-0.5 bg-teal-bright transition-all duration-200 ${open ? "translate-y-[7px] rotate-45" : ""}`} />
+        <span className={`block w-5 h-0.5 bg-teal-bright transition-all duration-200 ${open ? "opacity-0" : ""}`} />
+        <span className={`block w-5 h-0.5 bg-teal-bright transition-all duration-200 ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
       </button>
 
       {/* Backdrop */}
@@ -37,17 +37,17 @@ export default function MobileNav() {
 
       {/* Slide-in drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-[300px] bg-white z-50 shadow-panel-dark flex flex-col transition-transform duration-300 lg:hidden ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 h-full w-[300px] bg-card z-50 shadow-panel-dark flex flex-col transition-transform duration-300 lg:hidden ${open ? "translate-x-0" : "translate-x-full"}`}
         aria-label="Mobile navigation"
       >
         {/* Drawer header */}
         <div className="flex items-center justify-between px-6 h-[72px] border-b border-surface-border2">
-          <span className="text-sm font-semibold text-navy-800">Menu</span>
+          <span className="text-sm font-semibold text-foreground">Menu</span>
           <button
             type="button"
             aria-label="Close menu"
             onClick={close}
-            className="p-2 rounded text-slate-400 hover:text-navy-800 focus-visible:outline-2 focus-visible:outline-teal-500"
+            className="p-2 rounded text-slate-400 hover:text-teal-bright focus-visible:outline-2 focus-visible:outline-teal-500"
           >
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
               <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -62,7 +62,7 @@ export default function MobileNav() {
             type="button"
             aria-expanded={platformsOpen}
             onClick={() => setPlatformsOpen((v) => !v)}
-            className="flex items-center justify-between w-full py-2.5 text-sm font-semibold text-navy-800 hover:text-teal-500 transition-colors"
+            className="flex items-center justify-between w-full py-2.5 text-sm font-semibold text-foreground hover:text-teal-bright transition-colors"
           >
             Platforms
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"
@@ -74,7 +74,7 @@ export default function MobileNav() {
             <div className="pl-3 flex flex-col gap-0.5 mb-1">
               {platformsMenu.map((item) => (
                 <Link key={item.href} href={item.href} onClick={close}
-                  className="block py-2 text-sm text-slate-500 hover:text-teal-500 transition-colors">
+                  className="block py-2 text-sm text-slate-500 hover:text-teal-bright transition-colors">
                   {item.label}
                 </Link>
               ))}
@@ -86,7 +86,7 @@ export default function MobileNav() {
             type="button"
             aria-expanded={solutionsOpen}
             onClick={() => setSolutionsOpen((v) => !v)}
-            className="flex items-center justify-between w-full py-2.5 text-sm font-semibold text-navy-800 hover:text-teal-500 transition-colors"
+            className="flex items-center justify-between w-full py-2.5 text-sm font-semibold text-foreground hover:text-teal-bright transition-colors"
           >
             Solutions
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"
@@ -98,7 +98,7 @@ export default function MobileNav() {
             <div className="pl-3 flex flex-col gap-0.5 mb-1">
               {solutionsMenu.map((item) => (
                 <Link key={item.href} href={item.href} onClick={close}
-                  className="block py-2 text-sm text-slate-500 hover:text-teal-500 transition-colors">
+                  className="block py-2 text-sm text-slate-500 hover:text-teal-bright transition-colors">
                   {item.label}
                 </Link>
               ))}
@@ -108,7 +108,7 @@ export default function MobileNav() {
           {/* Top nav links */}
           {topNavLinks.map((item) => (
             <Link key={item.href} href={item.href} onClick={close}
-              className="block py-2.5 text-sm font-semibold text-navy-800 hover:text-teal-500 transition-colors">
+              className="block py-2.5 text-sm font-semibold text-foreground hover:text-teal-bright transition-colors">
               {item.label}
             </Link>
           ))}

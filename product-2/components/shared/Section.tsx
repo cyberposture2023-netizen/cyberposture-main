@@ -8,7 +8,7 @@ interface SectionProps {
   /** Use a different HTML element as the section wrapper */
   as?: "section" | "div" | "article";
   id?: string;
-  /** Apply the subtle (#F6F8FC) alternating background */
+  /** Apply the subtle (#080f1e) alternating background */
   subtle?: boolean;
 }
 

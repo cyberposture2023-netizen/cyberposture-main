@@ -133,11 +133,11 @@ export interface ScoreTier {
 }
 
 export const scoreTiers: ScoreTier[] = [
-  { min: 800, label: "Excellent", sublabel: "Very Low Vulnerability",  color: "#0E8C81" },
-  { min: 740, label: "Strong",    sublabel: "Low Vulnerability",       color: "#12A89B" },
-  { min: 670, label: "Fair",      sublabel: "Moderate Vulnerability",  color: "#2D6FB8" },
-  { min: 580, label: "Elevated",  sublabel: "High Vulnerability",      color: "#E0992A" },
-  { min: 0,   label: "Critical",  sublabel: "Very High Vulnerability", color: "#D6453F" },
+  { min: 800, label: "Excellent", sublabel: "Very Low Vulnerability",  color: "#039fc0" },
+  { min: 740, label: "Strong",    sublabel: "Low Vulnerability",       color: "#00b8d9" },
+  { min: 670, label: "Fair",      sublabel: "Moderate Vulnerability",  color: "#1a65b8" },
+  { min: 580, label: "Elevated",  sublabel: "High Vulnerability",      color: "#f5a623" },
+  { min: 0,   label: "Critical",  sublabel: "Very High Vulnerability", color: "#e05260" },
 ];
 
 export function computeScore(answers: number[]): number {

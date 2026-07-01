@@ -40,7 +40,7 @@ const variants: Record<Variant, string> = {
   ghost:
     "border border-surface-border2 text-slate-500 hover:border-teal-500 hover:text-teal-600 bg-transparent",
   onDark:
-    "border border-white/30 text-white hover:bg-white/10 bg-transparent focus-visible:outline-white",
+    "border border-white/30 text-white hover:bg-card/10 bg-transparent focus-visible:outline-white",
 };
 
 export default function Button({

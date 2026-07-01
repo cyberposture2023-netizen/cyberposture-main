@@ -19,7 +19,7 @@ export default function HviPage() {
       {/* Hero */}
       <section
         className="text-white"
-        style={{ background: "linear-gradient(165deg,#0A2342,#0E5A6E)" }}
+        style={{ background: "linear-gradient(165deg,#080f1e,#1a65b8)" }}
       >
         <div className="container-content py-[72px] pb-16">
           <div className="font-mono text-[11.5px] tracking-label uppercase text-teal-bright mb-3.5">
@@ -28,23 +28,16 @@ export default function HviPage() {
           <h1 className="font-display font-semibold text-[46px] leading-[1.08] tracking-tighter text-white mb-4 max-w-[760px]">
             Measure the human side of cyber risk.
           </h1>
-          <p
-            className="text-[18px] leading-[1.55] mb-3.5 max-w-[640px]"
-            style={{ color: "#C5D6EC" }}
-          >
+          <p className="text-[18px] leading-[1.55] mb-3.5 max-w-[640px]" style={{ color: "#c8d4e5" }}>
             HVI gives people and organizations a simple, measurable score for
             behavior-driven cyber risk.
           </p>
-          <p
-            className="text-[15px] leading-[1.6] mb-7 max-w-[660px]"
-            style={{ color: "#94AECB" }}
-          >
+          <p className="text-[15px] leading-[1.6] mb-7 max-w-[660px]" style={{ color: "#8fa2bd" }}>
             A privacy-first human-risk intelligence platform using a 300–850
             score to help you understand human cyber vulnerability, identify the
             behaviors and controls that matter most, and track improvement over
             time.
           </p>
-
           <div className="flex flex-wrap gap-3.5">
             <Link
               href="#assessment"
@@ -62,23 +55,6 @@ export default function HviPage() {
             >
               Request HVI Demo
             </Link>
-          </div>
-        </div>
-      </section>
-      <section className="bg-white border-b border-surface-border">
-        <div className="container-content py-20">
-          <div className="max-w-[820px]">
-            <div className="font-mono text-xs tracking-label uppercase text-teal-650 mb-3.5">
-              Human Vulnerability Index
-            </div>
-
-            <h2 className="font-display font-semibold text-[32px] tracking-tighter text-navy-700 mb-3">
-              What HVI Does
-            </h2>
-            <p className="text-[18px] leading-[1.7] text-navy-600 mb-6">
-                CyberPosture HVI is a privacy-first human-risk intelligence platform that measures the human side of cyber risk and expresses it as a single, intuitive  score.  HVI gives individuals, security teams, and organizations a clear, measurable read on cyber vulnerability — where exposure exists, how it's trending, and what to do about it. The result is a shared language for human risk that turns awareness into measurable, continuous improvement, without compromising individual privacy.
-            </p>
-
           </div>
         </div>
       </section>

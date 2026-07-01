@@ -6,9 +6,9 @@ export default function Hero() {
       className="relative overflow-hidden"
       style={{
         background:
-          "radial-gradient(1100px 460px at 82% -8%, rgba(18,168,155,.20), transparent 60%), " +
-          "radial-gradient(880px 480px at 6% 120%, rgba(106,90,224,.22), transparent 60%), " +
-          "#061427",
+          "radial-gradient(1100px 460px at 82% -8%, rgba(0,184,217,.20), transparent 60%), " +
+          "radial-gradient(880px 480px at 6% 120%, rgba(26,101,184,.22), transparent 60%), " +
+          "#03080f",
       }}
     >
       {/* Scan line sweep */}
@@ -16,7 +16,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-x-0 top-0 h-full animate-cp-scan"
         style={{
           background:
-            "linear-gradient(to bottom, transparent 0%, rgba(18,168,155,.045) 40%, rgba(18,168,155,.08) 50%, rgba(18,168,155,.045) 60%, transparent 100%)",
+            "linear-gradient(to bottom, transparent 0%, rgba(0,184,217,.045) 40%, rgba(0,184,217,.08) 50%, rgba(0,184,217,.045) 60%, transparent 100%)",
         }}
         aria-hidden="true"
       />
@@ -25,16 +25,16 @@ export default function Hero() {
           {/* Left accent bar */}
           <div
             className="w-1 rounded flex-none"
-            style={{ background: "linear-gradient(180deg,#12A89B,#6A5AE0)" }}
+            style={{ background: "linear-gradient(180deg,#00b8d9,#1a65b8)" }}
             aria-hidden="true"
           />
 
           <div className="flex-1 min-w-0">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2.5 font-mono text-[11.5px] tracking-[.14em] uppercase text-[#6FB7C9] mb-6">
+            <div className="inline-flex items-center gap-2.5 font-mono text-[11.5px] tracking-[.14em] uppercase text-[#5fe9ff] mb-6">
               <span
                 className="w-[7px] h-[7px] rounded-full bg-teal-500 animate-cp-pulse"
-                style={{ boxShadow: "0 0 0 4px rgba(18,168,155,.18)" }}
+                style={{ boxShadow: "0 0 0 4px rgba(0,184,217,.18)" }}
                 aria-hidden="true"
               />
               Risk intelligence for people &amp; AI
@@ -44,13 +44,13 @@ export default function Hero() {
             <h1 className="font-display font-bold text-4xl md:text-[60px] leading-[1.05] tracking-tightest text-white mb-6 max-w-[920px]">
               Measure the human side of cyber risk.
               <br />
-              <span style={{ color: "#7FE3D7" }}>
+              <span style={{ color: "#5fe9ff" }}>
                 Adopt and deploy AI with confidence.
               </span>
             </h1>
 
             {/* Subhead */}
-            <p className="text-lg leading-[1.55] mb-10 max-w-[640px]" style={{ color: "#A9C0DD" }}>
+            <p className="text-lg leading-[1.55] mb-10 max-w-[640px]" style={{ color: "#8fa2bd" }}>
               Two focused platforms for two under-measured domains — human
               behavior and enterprise AI adoption.
             </p>
@@ -59,7 +59,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-3.5 mb-12">
               <Link
                 href="/hvi"
-                className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold bg-white text-[#061427] hover:bg-teal-50 transition-colors"
+                className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold bg-primary text-primary-foreground hover:bg-teal-50 transition-colors"
               >
                 Explore Platforms
               </Link>
@@ -67,8 +67,8 @@ export default function Hero() {
                 href="/hvi#assessment"
                 className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold text-white transition-colors"
                 style={{
-                  background: "linear-gradient(90deg,#12A89B,#0E8C81)",
-                  boxShadow: "0 12px 30px -10px rgba(18,168,155,.7)",
+                  background: "linear-gradient(90deg,#00b8d9,#039fc0)",
+                  boxShadow: "0 12px 30px -10px rgba(0,184,217,.7)",
                 }}
               >
                 Take HVI Assessment
@@ -77,9 +77,9 @@ export default function Hero() {
                 href="/contact?i=Join+AI+Risk+%26+Governance+Early+Access"
                 className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold transition-colors"
                 style={{
-                  color: "#D9CEFF",
-                  background: "rgba(106,90,224,.2)",
-                  border: "1px solid rgba(141,124,255,.45)",
+                  color: "#8bdfff",
+                  background: "rgba(26,101,184,.2)",
+                  border: "1px solid rgba(0,184,217,.45)",
                 }}
               >
                 Join AI Early Access
@@ -89,12 +89,12 @@ export default function Hero() {
             {/* Stat chips */}
             <div className="flex flex-wrap gap-3.5">
               {[
-                { value: "300–850", label: "HVI score range", color: "#7FE3D7" },
-                { value: "10",      label: "Human risk dimensions", color: "#fff" },
+                { value: "300–850", label: "HVI score range", color: "#5fe9ff" },
+                { value: "10",      label: "Human risk dimensions", color: "#e8edf5" },
                 {
                   value: "Discover · Assess · Govern · Evidence",
                   label: "AI governance pillars",
-                  color: "#C4B8FF",
+                  color: "#8bdfff",
                 },
               ].map((chip) => (
                 <div
@@ -111,7 +111,7 @@ export default function Hero() {
                   >
                     {chip.value}
                   </div>
-                  <div className="text-xs mt-0.5" style={{ color: "#8AA1BF" }}>
+                  <div className="text-xs mt-0.5" style={{ color: "#7a90b0" }}>
                     {chip.label}
                   </div>
                 </div>

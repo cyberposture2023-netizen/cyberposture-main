@@ -9,16 +9,16 @@ export const metadata: Metadata = {
 };
 
 const roleAccent: Record<string, { accent: string; bg: string }> = {
-  "security-architect":       { accent: "#12A89B", bg: "#E6F6F4" },
-  "security-analyst-intern":  { accent: "#2D6FB8", bg: "#EAF1FB" },
-  "security-program-manager": { accent: "#5646C9", bg: "#ECEAFB" },
+  "security-architect":       { accent: "#00b8d9", bg: "rgba(0, 184, 217, 0.14)" },
+  "security-analyst-intern":  { accent: "#1a65b8", bg: "rgba(26, 101, 184, 0.18)" },
+  "security-program-manager": { accent: "#00b8d9", bg: "rgba(0, 184, 217, 0.12)" },
 };
 
 export default function CareersPage() {
   return (
     <>
       {/* Hero */}
-      <section style={{ background: "linear-gradient(165deg,#0A2342,#0E5A6E)" }}>
+      <section style={{ background: "linear-gradient(165deg,#080f1e,#1a65b8)" }}>
         <div className="container-content py-[74px] pb-[62px]">
           <div className="font-mono text-[11.5px] tracking-[.12em] uppercase text-teal-bright mb-[14px]">
             Careers
@@ -26,7 +26,7 @@ export default function CareersPage() {
           <h1 className="font-display font-semibold text-[42px] leading-[1.1] tracking-tighter text-white mb-[18px] max-w-[780px]">
             Build the future of human and AI risk intelligence.
           </h1>
-          <p className="text-[17px] leading-[1.6] mb-7 max-w-[640px]" style={{ color: "#C5D6EC" }}>
+          <p className="text-[17px] leading-[1.6] mb-7 max-w-[640px]" style={{ color: "#c8d4e5" }}>
             CyberPosture is building focused platforms for two of cybersecurity's most important risk domains: people and AI.
           </p>
           <Link
@@ -39,9 +39,9 @@ export default function CareersPage() {
       </section>
 
       {/* Roles */}
-      <section className="bg-white">
+      <section className="bg-card">
         <div className="container-content py-16">
-          <p className="text-[16px] leading-[1.7] mb-11 max-w-[780px]" style={{ color: "#3D5470" }}>
+          <p className="text-[16px] leading-[1.7] mb-11 max-w-[780px]" style={{ color: "#a7b8d0" }}>
             We build products that help people and organizations measure human cyber vulnerability,
             understand enterprise AI exposure, and manage risk with evidence. CyberPosture is a good
             fit for people interested in cybersecurity, AI, data systems, product engineering, risk
@@ -51,18 +51,18 @@ export default function CareersPage() {
             <h2 className="font-display font-semibold text-[26px] tracking-tighter text-navy-700">
               Open roles
             </h2>
-            <span className="font-mono text-[12px]" style={{ color: "#8295AC" }}>
+            <span className="font-mono text-[12px]" style={{ color: "#7a90b0" }}>
               {careerRoles.length} positions
             </span>
           </div>
 
           <div className="flex flex-col gap-[18px]">
             {careerRoles.map((r) => {
-              const { accent, bg } = roleAccent[r.id] ?? { accent: "#12A89B", bg: "#E6F6F4" };
+              const { accent, bg } = roleAccent[r.id] ?? { accent: "#00b8d9", bg: "rgba(0, 184, 217, 0.14)" };
               return (
                 <div
                   key={r.id}
-                  className="bg-white border border-surface-border rounded-[16px] p-[30px]"
+                  className="bg-card border border-surface-border rounded-[16px] p-[30px]"
                   style={{ borderLeft: `4px solid ${accent}` }}
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-7">
@@ -77,7 +77,7 @@ export default function CareersPage() {
                       <h3 className="font-display font-semibold text-[24px] text-navy-700 mb-3">
                         {r.title}
                       </h3>
-                      <p className="text-[14.5px] leading-[1.65] mb-[18px]" style={{ color: "#4F6680" }}>
+                      <p className="text-[14.5px] leading-[1.65] mb-[18px]" style={{ color: "#8fa2bd" }}>
                         {r.description}
                       </p>
                       <div className="flex flex-wrap gap-2 mb-5">
@@ -85,7 +85,7 @@ export default function CareersPage() {
                           <span
                             key={s}
                             className="text-[11.5px] font-medium rounded-full px-3 py-1 border border-surface-border bg-surface-subtle"
-                            style={{ color: "#5C7088" }}
+                            style={{ color: "#7a90b0" }}
                           >
                             {s}
                           </span>
@@ -118,7 +118,7 @@ export default function CareersPage() {
                             >
                               ›
                             </span>
-                            <span className="text-[13.5px] leading-[1.45]" style={{ color: "#33485F" }}>
+                            <span className="text-[13.5px] leading-[1.45]" style={{ color: "#c8d4e5" }}>
                               {f}
                             </span>
                           </div>
@@ -133,7 +133,7 @@ export default function CareersPage() {
 
           {/* General inquiry */}
           <div className="mt-[34px] bg-surface-subtle border border-surface-border rounded-[14px] px-6 py-6 flex items-center justify-between flex-wrap gap-[14px]">
-            <span className="text-[15px]" style={{ color: "#3D5470" }}>
+            <span className="text-[15px]" style={{ color: "#a7b8d0" }}>
               Don't see your role? We're always interested in talented people.
             </span>
             <Link

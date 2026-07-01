@@ -12,21 +12,21 @@ export default function AiGovernancePage() {
   return (
     <>
       {/* Hero */}
-      <section style={{ background: "linear-gradient(160deg,#0A2342,#2A2270)" }}>
+      <section style={{ background: "linear-gradient(160deg,#080f1e,#0d1a30)" }}>
         <div className="container-content py-[72px] pb-[60px]">
-          <div className="font-mono text-[11.5px] tracking-[.12em] uppercase mb-[14px]" style={{ color: "#C4B8FF" }}>
+          <div className="font-mono text-[11.5px] tracking-[.12em] uppercase mb-[14px]" style={{ color: "#8bdfff" }}>
             AI Governance &amp; Compliance
           </div>
           <h1 className="font-display font-semibold text-[44px] leading-[1.08] tracking-tighter text-white mb-[18px] max-w-[760px]">
             AI governance requires evidence, not just policy.
           </h1>
-          <p className="text-[17px] leading-[1.6] mb-7 max-w-[700px]" style={{ color: "#C7CCF0" }}>
+          <p className="text-[17px] leading-[1.6] mb-7 max-w-[700px]" style={{ color: "#a7b8d0" }}>
             CyberPosture helps organizations manage AI governance workflows and maintain evidence
             for reviews, audits, customer requests, and compliance readiness.
           </p>
           <Link
             href="/contact?i=AI+Governance+%26+Compliance+Interest"
-            className="inline-flex items-center px-6 py-[14px] rounded-[10px] text-[15px] font-semibold text-[#1A1340] bg-white hover:bg-surface-subtle transition-colors"
+            className="inline-flex items-center px-6 py-[14px] rounded-[10px] text-[15px] font-semibold text-primary-foreground bg-primary hover:bg-surface-subtle transition-colors"
           >
             Join Early Access
           </Link>
@@ -34,9 +34,9 @@ export default function AiGovernancePage() {
       </section>
 
       {/* Body */}
-      <section className="bg-white">
+      <section className="bg-card">
         <div className="container-content py-[72px]">
-          <p className="text-[16px] leading-[1.65] mb-10 max-w-[780px]" style={{ color: "#4F6680" }}>
+          <p className="text-[16px] leading-[1.65] mb-10 max-w-[780px]" style={{ color: "#8fa2bd" }}>
             Policies are only the beginning. Organizations also need to know which AI use cases
             exist, who owns them, what data is involved, what controls apply, whether human review
             is required, and what evidence supports oversight. CyberPosture connects AI usage,
@@ -52,10 +52,10 @@ export default function AiGovernancePage() {
               <div className="flex flex-col gap-3">
                 {governanceCapabilities.map((c) => (
                   <div key={c} className="flex items-center gap-[11px]">
-                    <span className="font-bold flex-none" style={{ color: "#12A89B" }} aria-hidden="true">
+                    <span className="font-bold flex-none" style={{ color: "#00b8d9" }} aria-hidden="true">
                       ✓
                     </span>
-                    <span className="text-[14.5px]" style={{ color: "#33485F" }}>{c}</span>
+                    <span className="text-[14.5px]" style={{ color: "#c8d4e5" }}>{c}</span>
                   </div>
                 ))}
               </div>
@@ -71,10 +71,10 @@ export default function AiGovernancePage() {
                   <div key={c} className="flex items-center gap-[11px]">
                     <span
                       className="w-2 h-2 rounded-[2px] flex-none"
-                      style={{ background: "#6A5AE0" }}
+                      style={{ background: "#1a65b8" }}
                       aria-hidden="true"
                     />
-                    <span className="text-[14.5px]" style={{ color: "#33485F" }}>{c}</span>
+                    <span className="text-[14.5px]" style={{ color: "#c8d4e5" }}>{c}</span>
                   </div>
                 ))}
               </div>

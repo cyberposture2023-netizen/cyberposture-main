@@ -25,8 +25,8 @@ function StatCard({ target, color, citationNum, headline, body, dark, triggered 
       className="rounded-[18px] p-[30px]"
       style={
         dark
-          ? { background: "linear-gradient(165deg,#0E2A4A,#123A6B)" }
-          : { background: "#F6F8FC", border: "1px solid #E7EDF5" }
+          ? { background: "linear-gradient(165deg,#0d1a30,#102040)" }
+          : { background: "#080f1e", border: "1px solid rgba(0, 184, 217, 0.12)" }
       }
     >
       <div
@@ -36,14 +36,14 @@ function StatCard({ target, color, citationNum, headline, body, dark, triggered 
         {target !== null ? (
           <>
             {triggered ? value : 0}%
-            <sup className="text-lg font-medium" style={{ color: dark ? "#7E96B6" : "#9AAAC0", top: "-1.4em", fontSize: "18px" }}>
+            <sup className="text-lg font-medium" style={{ color: dark ? "#7a90b0" : "#7a90b0", top: "-1.4em", fontSize: "18px" }}>
               {citationNum}
             </sup>
           </>
         ) : (
           <>
             $M
-            <sup className="text-lg font-medium" style={{ color: dark ? "#7E96B6" : "#9AAAC0", top: "-1.4em", fontSize: "18px" }}>
+            <sup className="text-lg font-medium" style={{ color: dark ? "#7a90b0" : "#7a90b0", top: "-1.4em", fontSize: "18px" }}>
               {citationNum}
             </sup>
           </>
@@ -51,13 +51,13 @@ function StatCard({ target, color, citationNum, headline, body, dark, triggered 
       </div>
       <div
         className="font-semibold text-[17px] mt-4 mb-2"
-        style={{ color: dark ? "#fff" : "#15324F" }}
+        style={{ color: dark ? "#e8edf5" : "#e8edf5" }}
       >
         {headline}
       </div>
       <div
         className="text-sm leading-[1.55]"
-        style={{ color: dark ? "#B7CCE6" : "#5C7088" }}
+        style={{ color: dark ? "#a7b8d0" : "#7a90b0" }}
       >
         {body}
       </div>
@@ -91,7 +91,7 @@ export default function StatStrip() {
   const cards = [
     {
       target: 74,
-      color: "#12A89B",
+      color: "#00b8d9",
       citationNum: 1,
       headline: "Involve the human element",
       body: "Of breaches involve human actions such as phishing, credential compromise, social engineering, or error.",
@@ -99,7 +99,7 @@ export default function StatStrip() {
     },
     {
       target: 95,
-      color: "#5646C9",
+      color: "#00b8d9",
       citationNum: 2,
       headline: "Trace back to human decisions",
       body: "Of cybersecurity issues can be traced to human error, fatigue, or process breakdowns.",
@@ -107,7 +107,7 @@ export default function StatStrip() {
     },
     {
       target: null,
-      color: "#7FE3D7",
+      color: "#5fe9ff",
       citationNum: 3,
       headline: "Among the costliest incidents",
       body: "Credential compromise, insider mistakes, and social-engineering events are routinely among the most expensive incident categories — making human risk a financial issue, not just a security one.",
@@ -116,7 +116,7 @@ export default function StatStrip() {
   ] as const;
 
   return (
-    <section ref={sectionRef} className="bg-white">
+    <section ref={sectionRef} className="bg-card">
       <div className="container-content py-[88px]">
         {/* Section header */}
         <div className="font-mono text-xs tracking-label uppercase text-teal-650 mb-3.5">
@@ -149,13 +149,13 @@ export default function StatStrip() {
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
-              style={{ color: "#0E7C72" }}
+              style={{ color: "#00b8d9" }}
             >
               verizon.com/dbir
             </a>
           </p>
           <p className="text-[12.5px] leading-[1.5] text-slate-300">
-            <sup className="font-semibold" style={{ color: "#5646C9" }}>2</sup>
+            <sup className="font-semibold" style={{ color: "#00b8d9" }}>2</sup>
             &nbsp; 95% of cybersecurity issues can be traced to human error —
             World Economic Forum, <em>Global Risks Report 2022</em>, Chapter 3:
             Digital Dependencies and Cyber Vulnerabilities.{" "}
@@ -164,13 +164,13 @@ export default function StatStrip() {
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
-              style={{ color: "#5646C9" }}
+              style={{ color: "#00b8d9" }}
             >
               weforum.org
             </a>
           </p>
           <p className="text-[12.5px] leading-[1.5] text-slate-300">
-            <sup className="font-semibold" style={{ color: "#7FA0C0" }}>3</sup>
+            <sup className="font-semibold" style={{ color: "#7a90b0" }}>3</sup>
             &nbsp; Human-driven incidents are among the costliest categories —
             Mimecast, <em>State of Human Risk</em> research.{" "}
             <a
@@ -178,7 +178,7 @@ export default function StatStrip() {
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
-              style={{ color: "#2D6FB8" }}
+              style={{ color: "#1a65b8" }}
             >
               mimecast.com
             </a>

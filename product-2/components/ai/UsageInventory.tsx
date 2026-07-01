@@ -1,22 +1,22 @@
 import { inventoryRows, type InventoryRow } from "@/lib/content/pages";
 
 function exposureColor(e: number) {
-  if (e >= 70) return "#D6453F";
-  if (e >= 45) return "#E0992A";
-  return "#12A89B";
+  if (e >= 70) return "#e05260";
+  if (e >= 45) return "#f5a623";
+  return "#00b8d9";
 }
 
 const statusStyle: Record<InventoryRow["status"], { color: string; bg: string }> = {
-  Approved:     { color: "#0E8C81", bg: "#E6F6F4" },
-  Shadow:       { color: "#C0392B", bg: "#FCEBEA" },
-  "Under review": { color: "#B07A1E", bg: "#FBF3E2" },
+  Approved:     { color: "#039fc0", bg: "rgba(0, 184, 217, 0.14)" },
+  Shadow:       { color: "#e05260", bg: "rgba(224, 82, 96, 0.14)" },
+  "Under review": { color: "#ffd182", bg: "rgba(245, 166, 35, 0.14)" },
 };
 
 export default function UsageInventory() {
   return (
     <section className="bg-surface-subtle border-b border-surface-border">
       <div className="container-content py-16">
-        <div className="font-mono text-xs tracking-label uppercase mb-3" style={{ color: "#5646C9" }}>
+        <div className="font-mono text-xs tracking-label uppercase mb-3" style={{ color: "#00b8d9" }}>
           Conceptual UI
         </div>
         <h2 className="font-display font-semibold text-[30px] tracking-tighter text-navy-700 mb-7">
@@ -24,7 +24,7 @@ export default function UsageInventory() {
         </h2>
 
         <div
-          className="bg-white border border-surface-border rounded-[18px] overflow-hidden"
+          className="bg-card border border-surface-border rounded-[18px] overflow-hidden"
           style={{ boxShadow: "0 24px 60px -38px rgba(13,38,76,.4)" }}
           aria-label="AI Usage Inventory mockup"
         >
@@ -33,13 +33,13 @@ export default function UsageInventory() {
             <span className="font-semibold text-[15px] text-white">AI Usage Inventory</span>
             <div className="flex gap-[18px]">
               {[
-                { val: "23", label: "Tools",  color: "#fff" },
-                { val: "9",  label: "Shadow", color: "#FF8A80" },
-                { val: "4",  label: "Review", color: "#FFC46B" },
+                { val: "23", label: "Tools",  color: "#e8edf5" },
+                { val: "9",  label: "Shadow", color: "#ff8a96" },
+                { val: "4",  label: "Review", color: "#ffd182" },
               ].map(({ val, label, color }) => (
                 <div key={label} className="text-right">
                   <div className="font-display font-bold text-xl" style={{ color }}>{val}</div>
-                  <div className="text-[10.5px]" style={{ color: "#92AAC6" }}>{label}</div>
+                  <div className="text-[10.5px]" style={{ color: "#7a90b0" }}>{label}</div>
                 </div>
               ))}
             </div>
@@ -47,7 +47,7 @@ export default function UsageInventory() {
 
           {/* Table header */}
           <div
-            className="grid gap-3 px-6 py-3 border-b border-[#EEF2F8] font-mono text-[10.5px] tracking-[.06em] uppercase text-slate-200"
+            className="grid gap-3 px-6 py-3 border-b border-surface-border font-mono text-[10.5px] tracking-[.06em] uppercase text-slate-200"
             style={{ gridTemplateColumns: "1.6fr 1fr .7fr .7fr 1.1fr" }}
           >
             <div>Tool</div><div>Status</div><div>Users</div><div>Data</div><div>Exposure</div>
@@ -60,7 +60,7 @@ export default function UsageInventory() {
             return (
               <div
                 key={row.tool}
-                className="grid gap-3 px-6 py-[15px] border-b border-[#F2F5FA] items-center last:border-b-0"
+                className="grid gap-3 px-6 py-[15px] border-b border-surface-border items-center last:border-b-0"
                 style={{ gridTemplateColumns: "1.6fr 1fr .7fr .7fr 1.1fr" }}
               >
                 {/* Tool */}
@@ -83,7 +83,7 @@ export default function UsageInventory() {
                 <div className="text-[12.5px] text-slate-450">{row.dataSensitivity}</div>
                 {/* Exposure bar */}
                 <div className="flex items-center gap-2">
-                  <div className="flex-1 h-[7px] bg-[#EEF2F8] rounded-full overflow-hidden">
+                  <div className="flex-1 h-[7px] bg-muted rounded-full overflow-hidden">
                     <div
                       className="h-full rounded-full"
                       style={{ width: `${row.exposure}%`, background: ec }}

@@ -4,7 +4,7 @@ export const metadata: Metadata = { title: "Responsible Use" };
 
 export default function ResponsibleUsePage() {
   return (
-    <section className="bg-white">
+    <section className="bg-card">
       <div className="mx-auto max-w-[760px] px-7 py-16">
         <h1 className="font-display font-semibold text-[36px] tracking-tighter text-navy-700 mb-4">
           Responsible Use

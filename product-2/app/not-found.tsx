@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="bg-white min-h-[60vh] flex items-center">
+    <section className="bg-card min-h-[60vh] flex items-center">
       <div className="container-content py-20 text-center">
         <div className="font-mono text-[11px] tracking-[.12em] uppercase text-teal-600 mb-5">
           404

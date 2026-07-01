@@ -21,7 +21,7 @@ export default function WorkforceDashboard() {
             <h2 className="font-display font-semibold text-[30px] tracking-tighter text-white mb-3.5">
               More than training completion.
             </h2>
-            <p className="text-[15.5px] leading-[1.6] mb-5" style={{ color: "#B7CCE6" }}>
+            <p className="text-[15.5px] leading-[1.6] mb-5" style={{ color: "#a7b8d0" }}>
               Measure workforce human-risk patterns, understand where exposure
               is concentrated, prioritize interventions, and track improvement
               over time — with reporting for security, risk, HR, and leadership.
@@ -38,7 +38,7 @@ export default function WorkforceDashboard() {
           <div
             className="rounded-[18px] p-[26px]"
             style={{
-              background: "#0E2C4F",
+              background: "#102040",
               border: "1px solid rgba(255,255,255,.1)",
             }}
             aria-label="Workforce HVI Dashboard mockup"
@@ -47,7 +47,7 @@ export default function WorkforceDashboard() {
               <span className="font-semibold text-[15px] text-white">
                 Workforce HVI Dashboard
               </span>
-              <span className="font-mono text-[11px]" style={{ color: "#7FB0E0" }}>
+              <span className="font-mono text-[11px]" style={{ color: "#5fe9ff" }}>
                 Q2 · 1,240 people
               </span>
             </div>
@@ -55,9 +55,9 @@ export default function WorkforceDashboard() {
             {/* Summary stats */}
             <div className="grid grid-cols-3 gap-3 mb-5">
               {[
-                { value: avgHVI.toString(), label: "Avg HVI", color: "#7FE3D7" },
-                { value: `+${qoqChange}`, label: "QoQ change", color: "#fff" },
-                { value: `${highRiskPct}%`, label: "High risk", color: "#E0992A" },
+                { value: avgHVI.toString(), label: "Avg HVI", color: "#5fe9ff" },
+                { value: `+${qoqChange}`, label: "QoQ change", color: "#e8edf5" },
+                { value: `${highRiskPct}%`, label: "High risk", color: "#f5a623" },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -70,7 +70,7 @@ export default function WorkforceDashboard() {
                   >
                     {stat.value}
                   </div>
-                  <div className="text-[11.5px] mt-0.5" style={{ color: "#92AAC6" }}>
+                  <div className="text-[11.5px] mt-0.5" style={{ color: "#7a90b0" }}>
                     {stat.label}
                   </div>
                 </div>
@@ -82,13 +82,13 @@ export default function WorkforceDashboard() {
               {departments.map((dept) => {
                 const barW = Math.round(((dept.score - 300) / 550) * 100);
                 const barColor = deptColor(dept.score);
-                const trendColor = dept.qoq >= 0 ? "#0E8C81" : "#D6453F";
+                const trendColor = dept.qoq >= 0 ? "#039fc0" : "#e05260";
                 const trendStr = (dept.qoq >= 0 ? "+" : "") + dept.qoq;
                 return (
                   <div key={dept.dept} className="flex items-center gap-3">
                     <div
                       className="w-[88px] text-[12.5px] flex-none"
-                      style={{ color: "#C5D6EC" }}
+                      style={{ color: "#c8d4e5" }}
                     >
                       {dept.dept}
                     </div>

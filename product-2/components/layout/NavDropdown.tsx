@@ -26,7 +26,7 @@ export default function NavDropdown({ label, items }: NavDropdownProps) {
         aria-expanded={open}
         aria-haspopup="true"
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-navy-800 transition-colors py-2 focus-visible:outline-2 focus-visible:outline-teal-500 focus-visible:outline-offset-2 rounded"
+        className="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-teal-bright transition-colors py-2 focus-visible:outline-2 focus-visible:outline-teal-500 focus-visible:outline-offset-2 rounded"
       >
         {label}
         <svg
@@ -50,7 +50,7 @@ export default function NavDropdown({ label, items }: NavDropdownProps) {
       {open && (
         <div
           role="menu"
-          className="absolute top-[calc(100%+10px)] left-0 min-w-[260px] bg-white rounded-[14px] border border-surface-border2 shadow-dropdown py-2 animate-cp-up z-50"
+          className="absolute top-[calc(100%+10px)] left-0 min-w-[260px] bg-card rounded-[14px] border border-surface-border2 shadow-dropdown py-2 animate-cp-up z-50"
           onKeyDown={(e) => e.key === "Escape" && setOpen(false)}
         >
           {items.map((item) => (
@@ -59,7 +59,7 @@ export default function NavDropdown({ label, items }: NavDropdownProps) {
               href={item.href}
               role="menuitem"
               onClick={() => setOpen(false)}
-              className="block px-5 py-2.5 text-sm text-slate-600 hover:text-navy-800 hover:bg-surface-subtle transition-colors"
+              className="block px-5 py-2.5 text-sm text-slate-600 hover:text-teal-bright hover:bg-teal-50 transition-colors"
             >
               {item.label}
             </Link>

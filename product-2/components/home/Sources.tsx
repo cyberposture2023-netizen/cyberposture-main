@@ -15,13 +15,13 @@ export default function Sources() {
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
-              style={{ color: "#0E7C72" }}
+              style={{ color: "#00b8d9" }}
             >
               verizon.com/dbir
             </a>
           </p>
           <p className="text-[12.5px] leading-[1.5] text-slate-300">
-            <sup className="font-semibold" style={{ color: "#5646C9" }}>2</sup>
+            <sup className="font-semibold" style={{ color: "#00b8d9" }}>2</sup>
             &nbsp; 95% of cybersecurity issues can be traced to human error —
             World Economic Forum, <em>Global Risks Report 2022</em>, Chapter 3:
             Digital Dependencies and Cyber Vulnerabilities.{" "}
@@ -30,13 +30,13 @@ export default function Sources() {
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
-              style={{ color: "#5646C9" }}
+              style={{ color: "#00b8d9" }}
             >
               weforum.org
             </a>
           </p>
           <p className="text-[12.5px] leading-[1.5] text-slate-300">
-            <sup className="font-semibold" style={{ color: "#7FA0C0" }}>3</sup>
+            <sup className="font-semibold" style={{ color: "#7a90b0" }}>3</sup>
             &nbsp; Human-driven incidents are among the costliest categories —
             Mimecast, <em>State of Human Risk</em> research.{" "}
             <a
@@ -44,7 +44,7 @@ export default function Sources() {
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
-              style={{ color: "#2D6FB8" }}
+              style={{ color: "#1a65b8" }}
             >
               mimecast.com
             </a>

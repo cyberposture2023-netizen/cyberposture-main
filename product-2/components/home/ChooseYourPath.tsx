@@ -7,31 +7,31 @@ const paths = [
     q: "I want to understand my personal cyber vulnerability.",
     cta: "Take HVI Assessment",
     href: "/hvi#assessment",
-    accent: "#12A89B",
+    accent: "#00b8d9",
   },
   {
     q: "I want to measure workforce human risk.",
     cta: "Request HVI Demo",
     href: "/contact?i=Request+HVI+Demo",
-    accent: "#0E8C81",
+    accent: "#039fc0",
   },
   {
     q: "I want to govern enterprise AI usage.",
     cta: "Join AI Early Access",
     href: "/contact?i=Join+AI+Risk+%26+Governance+Early+Access",
-    accent: "#6A5AE0",
+    accent: "#1a65b8",
   },
   {
     q: "I want to discuss CyberPosture for my organization.",
     cta: "Contact Us",
     href: "/contact?i=General+Inquiry",
-    accent: "#2D6FB8",
+    accent: "#1a65b8",
   },
 ];
 
 export default function ChooseYourPath() {
   return (
-    <section className="bg-white">
+    <section className="bg-card">
       <div className="container-content py-[84px]">
         <h2 className="font-display font-semibold text-[34px] tracking-tighter text-navy-700 mb-2 text-center">
           Start with the risk you need to measure.

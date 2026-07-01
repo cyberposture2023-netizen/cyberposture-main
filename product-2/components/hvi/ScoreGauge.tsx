@@ -11,11 +11,11 @@ interface ScoreGaugeProps {
 // Five equal 110-point arc segments, pre-computed SVG paths
 // Semicircle radius 80, center (100,95), range 300→850 = 180°
 const ARC_SEGMENTS = [
-  { color: "#D6453F", d: "M 20 95 A 80 80 0 0 1 35.28 47.98" },
-  { color: "#E0992A", d: "M 35.28 47.98 A 80 80 0 0 1 75.28 18.92" },
-  { color: "#2D6FB8", d: "M 75.28 18.92 A 80 80 0 0 1 124.72 18.92" },
-  { color: "#4FBFA8", d: "M 124.72 18.92 A 80 80 0 0 1 164.72 47.98" },
-  { color: "#12A89B", d: "M 164.72 47.98 A 80 80 0 0 1 180 95" },
+  { color: "#e05260", d: "M 20 95 A 80 80 0 0 1 35.28 47.98" },
+  { color: "#f5a623", d: "M 35.28 47.98 A 80 80 0 0 1 75.28 18.92" },
+  { color: "#1a65b8", d: "M 75.28 18.92 A 80 80 0 0 1 124.72 18.92" },
+  { color: "#34c77b", d: "M 124.72 18.92 A 80 80 0 0 1 164.72 47.98" },
+  { color: "#00b8d9", d: "M 164.72 47.98 A 80 80 0 0 1 180 95" },
 ];
 
 export default function ScoreGauge({ score, displayScore }: ScoreGaugeProps) {
@@ -41,14 +41,14 @@ export default function ScoreGauge({ score, displayScore }: ScoreGaugeProps) {
           {/* Needle */}
           <line
             x1="100" y1="95" x2="100" y2="26"
-            stroke="#fff" strokeWidth="4.5" strokeLinecap="round"
+            stroke="#e8edf5" strokeWidth="4.5" strokeLinecap="round"
             style={{
               transform: `rotate(${needleDeg}deg)`,
               transformOrigin: "100px 95px",
               transition: "transform .1s linear",
             }}
           />
-          <circle cx="100" cy="95" r="7" fill="#fff" />
+          <circle cx="100" cy="95" r="7" fill="#e8edf5" />
         </svg>
         {/* Score number */}
         <div className="absolute inset-x-0 text-center" style={{ bottom: -4 }}>
@@ -65,7 +65,7 @@ export default function ScoreGauge({ score, displayScore }: ScoreGaugeProps) {
       {/* Min/max labels */}
       <div
         className="flex justify-between font-mono text-[11px] mx-auto mt-1"
-        style={{ maxWidth: 260, color: "#7E96B6" }}
+        style={{ maxWidth: 260, color: "#7a90b0" }}
         aria-hidden="true"
       >
         <span>300</span>
@@ -74,7 +74,7 @@ export default function ScoreGauge({ score, displayScore }: ScoreGaugeProps) {
 
       {/* Tier badge */}
       <div
-        className="inline-block mt-3.5 text-[13.5px] font-semibold text-navy-900 bg-white rounded-full px-5 py-2 whitespace-nowrap"
+        className="inline-block mt-3.5 text-[13.5px] font-semibold text-primary-foreground bg-primary rounded-full px-5 py-2 whitespace-nowrap"
         aria-label={`Risk tier: ${tier.label} — ${tier.sublabel}`}
       >
         {tier.label} · {tier.sublabel}

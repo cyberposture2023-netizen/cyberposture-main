@@ -19,17 +19,15 @@ export default function AiPage() {
       {/* Hero */}
       <section
         className="relative overflow-hidden text-white"
-        style={{
-          background: "linear-gradient(160deg,#1A1340,#2A2270 70%,#0A2342)",
-        }}
+        style={{ background: "linear-gradient(160deg,#080f1e,#0d1a30 70%,#080f1e)" }}
       >
         {/* Grid texture */}
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(141,124,255,.08) 1px, transparent 1px), " +
-              "linear-gradient(90deg, rgba(141,124,255,.08) 1px, transparent 1px)",
+              "linear-gradient(rgba(0,184,217,.08) 1px, transparent 1px), " +
+              "linear-gradient(90deg, rgba(0,184,217,.08) 1px, transparent 1px)",
             backgroundSize: "46px 46px",
           }}
           aria-hidden="true"
@@ -39,9 +37,9 @@ export default function AiPage() {
           <div
             className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[.08em] uppercase mb-5 rounded-full px-3.5 py-1.5"
             style={{
-              background: "rgba(141,124,255,.16)",
-              border: "1px solid rgba(141,124,255,.34)",
-              color: "#C4B8FF",
+              background: "rgba(0,184,217,.16)",
+              border: "1px solid rgba(0,184,217,.34)",
+              color: "#8bdfff",
             }}
           >
             Early Access · Concept, Design &amp; Research
@@ -50,16 +48,11 @@ export default function AiPage() {
           <h1 className="font-display font-semibold text-[46px] leading-[1.08] tracking-tighter text-white mb-4 max-w-[820px]">
             Adopt enterprise AI with confidence.
           </h1>
-          <p
-            className="text-[17px] leading-[1.6] mb-7 max-w-[730px]"
-            style={{ color: "#C7CCF0" }}
-          >
+          <p className="text-[17px] leading-[1.6] mb-7 max-w-[730px]" style={{ color: "#a7b8d0" }}>
             AI now shows up everywhere — copilots, chatbots, embedded product
             features, APIs, and autonomous agents. CyberPosture helps you
             understand and mitigate risk{" "}
-            <strong className="text-white">
-              when, where, and as it happens
-            </strong>{" "}
+            <strong className="text-white">when, where, and as it happens</strong>{" "}
             across all of it, so your teams can keep moving fast with AI. Strong
             governance and compliance follow as a natural outcome — not the
             starting point.
@@ -67,7 +60,7 @@ export default function AiPage() {
           <div className="flex flex-wrap gap-3.5">
             <Link
               href="/contact?i=Join+AI+Risk+%26+Governance+Early+Access"
-              className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold text-[#1A1340] bg-white hover:bg-brand-purple-50 transition-colors"
+              className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold text-primary-foreground bg-primary hover:bg-brand-purple-50 transition-colors"
             >
               Join Early Access
             </Link>
@@ -75,29 +68,12 @@ export default function AiPage() {
               href="/contact?i=Request+Test+Customer+Conversation"
               className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold text-white transition-colors"
               style={{
-                background: "rgba(141,124,255,.2)",
-                border: "1px solid rgba(141,124,255,.4)",
+                background: "rgba(0,184,217,.2)",
+                border: "1px solid rgba(0,184,217,.4)",
               }}
             >
               Request Test Customer Conversation
             </Link>
-          </div>
-        </div>
-      </section>
-      <section className="bg-white border-b border-surface-border">
-        <div className="container-content py-20">
-          <div className="max-w-[820px]">
-            <div className="font-mono text-xs tracking-label uppercase text-brand-purple-600 mb-3.5">
-              AI Risk & Governance
-            </div>
-
-            <h2 className="font-display font-semibold text-[32px] tracking-tighter text-navy-700 mb-3">
-              What It Does
-            </h2>
-
-            <p className="text-[18px] leading-[1.7] text-navy-600 mb-6">
-              The Cyber Posture AI Risk & Governance Platform helps organizations adopt and deploy AI with confidence by understanding and mitigating AI risk continuously — when, where, and as it occurs. As teams design and deploy a growing range of AI capabilities, the platform assesses risk at every stage . It tracks where AI is running across your organization, including the unsanctioned tools most teams never see.
-            </p>
           </div>
         </div>
       </section>
@@ -110,26 +86,23 @@ export default function AiPage() {
       <FrameworkReadiness />
 
       {/* Early access CTA */}
-      <section className="bg-white">
+      <section className="bg-card">
         <div className="container-content py-16">
           <div
             className="rounded-[20px] px-11 py-11 text-center"
-            style={{ background: "linear-gradient(120deg,#2A2270,#5646C9)" }}
+            style={{ background: "linear-gradient(120deg,#0d1a30,#00b8d9)" }}
           >
             <h2 className="font-display font-semibold text-[28px] text-white mb-2.5">
               Join the AI Risk &amp; Governance early-access program.
             </h2>
-            <p
-              className="text-[15px] mx-auto mb-6 max-w-[600px]"
-              style={{ color: "#D9D2FF" }}
-            >
-              For organizations with meaningful AI adoption, governance
-              obligations, security exposure, or compliance requirements.
+            <p className="text-[15px] mx-auto mb-6 max-w-[600px]" style={{ color: "#c8d4e5" }}>
+              For organizations with meaningful AI adoption, governance obligations,
+              security exposure, or compliance requirements.
             </p>
             <Link
               href="/contact?i=Join+AI+Risk+%26+Governance+Early+Access"
               className="inline-flex items-center px-7 py-3.5 rounded-[10px] text-[15px] font-semibold hover:opacity-90 transition-opacity"
-              style={{ color: "#2A2270", background: "#fff" }}
+              style={{ color: "#0d1a30", background: "#e8edf5" }}
             >
               Join Early Access
             </Link>

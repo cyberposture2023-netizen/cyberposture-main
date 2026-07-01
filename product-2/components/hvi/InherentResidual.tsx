@@ -1,6 +1,6 @@
 export default function InherentResidual() {
   return (
-    <section className="bg-white">
+    <section className="bg-card">
       <div className="container-content py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Copy */}
@@ -33,11 +33,11 @@ export default function InherentResidual() {
                 </span>
                 <span className="font-mono text-sm text-risk-critical">High</span>
               </div>
-              <div className="h-3.5 bg-[#EEF2F8] rounded-full overflow-hidden">
+              <div className="h-3.5 bg-muted rounded-full overflow-hidden">
                 <div
                   className="h-full w-[78%] rounded-full"
                   style={{
-                    background: "linear-gradient(90deg,#E0992A,#D6453F)",
+                    background: "linear-gradient(90deg,#f5a623,#e05260)",
                   }}
                   role="meter"
                   aria-valuenow={78}
@@ -64,11 +64,11 @@ export default function InherentResidual() {
                 </span>
                 <span className="font-mono text-sm text-teal-600">Reduced</span>
               </div>
-              <div className="h-3.5 bg-[#EEF2F8] rounded-full overflow-hidden">
+              <div className="h-3.5 bg-muted rounded-full overflow-hidden">
                 <div
                   className="h-full w-[34%] rounded-full"
                   style={{
-                    background: "linear-gradient(90deg,#12A89B,#0E8C81)",
+                    background: "linear-gradient(90deg,#00b8d9,#039fc0)",
                   }}
                   role="meter"
                   aria-valuenow={34}

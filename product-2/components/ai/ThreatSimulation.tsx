@@ -57,9 +57,9 @@ export default function ThreatSimulation() {
   const spotted = choices.filter((c) => c !== "trust").length;
   const actions = scenario?.channel === "SMS" ? smsActions : emailActions;
 
-  const verdictBg  = verdict?.safe ? "#EAF8F5" : "#FCF1EF";
-  const verdictBd  = verdict?.safe ? "#CDEDE8" : "#F5D9D4";
-  const verdictClr = verdict?.safe ? "#0E8C81" : "#C0392B";
+  const verdictBg  = verdict?.safe ? "rgba(0, 184, 217, 0.14)" : "rgba(224, 82, 96, 0.14)";
+  const verdictBd  = verdict?.safe ? "rgba(0, 184, 217, 0.22)" : "rgba(224, 82, 96, 0.24)";
+  const verdictClr = verdict?.safe ? "#039fc0" : "#e05260";
 
   return (
     <section className="bg-navy-800 text-white">
@@ -71,7 +71,7 @@ export default function ThreatSimulation() {
           <h2 className="font-display font-semibold text-[32px] tracking-tighter text-white mx-auto mb-2.5 max-w-[600px]">
             Would you spot the threat?
           </h2>
-          <p className="text-[16px] leading-[1.55] mx-auto max-w-[520px]" style={{ color: "#A9C0DD" }}>
+          <p className="text-[16px] leading-[1.55] mx-auto max-w-[520px]" style={{ color: "#8fa2bd" }}>
             Most attacks don't start with malware. They start with a decision.
             Work through three real-world messages.
           </p>
@@ -79,7 +79,7 @@ export default function ThreatSimulation() {
 
         <div
           className="mx-auto max-w-[920px] rounded-[20px] overflow-hidden"
-          style={{ background: "#0E2C4F", border: "1px solid rgba(255,255,255,.1)" }}
+          style={{ background: "#102040", border: "1px solid rgba(255,255,255,.1)" }}
         >
           {/* ── Intro ── */}
           {phase === "intro" && (
@@ -91,7 +91,7 @@ export default function ThreatSimulation() {
               <h3 className="font-display font-semibold text-[22px] text-white mb-2">
                 Three messages. One question each.
               </h3>
-              <p className="text-[14.5px] leading-[1.6] mx-auto mb-6 max-w-[440px]" style={{ color: "#A9C0DD" }}>
+              <p className="text-[14.5px] leading-[1.6] mx-auto mb-6 max-w-[440px]" style={{ color: "#8fa2bd" }}>
                 For each one, decide how you'd respond. We'll show you the red flags after every choice.
               </p>
               <button
@@ -108,15 +108,15 @@ export default function ThreatSimulation() {
             <div className="px-9 py-7 pb-9">
               {/* Progress + channel */}
               <div className="flex items-center justify-between mb-[18px]">
-                <span className="font-mono text-xs" style={{ color: "#7FB0E0" }}>
+                <span className="font-mono text-xs" style={{ color: "#5fe9ff" }}>
                   SCENARIO {index + 1} / {simScenarios.length}
                 </span>
                 <span
                   className="text-[11.5px] font-semibold rounded-[6px] px-2.5 py-1"
                   style={{
-                    color: "#7FE3D7",
-                    background: "rgba(18,168,155,.14)",
-                    border: "1px solid rgba(18,168,155,.3)",
+                    color: "#5fe9ff",
+                    background: "rgba(0,184,217,.14)",
+                    border: "1px solid rgba(0,184,217,.3)",
                   }}
                 >
                   {scenario.channel}
@@ -124,11 +124,11 @@ export default function ThreatSimulation() {
               </div>
 
               {/* Message card */}
-              <div className="bg-white rounded-[14px] p-[22px] text-slate-700">
-                <div className="flex items-center gap-3 border-b border-[#EEF2F8] pb-3.5 mb-3.5">
+              <div className="bg-card rounded-[14px] p-[22px] text-slate-700">
+                <div className="flex items-center gap-3 border-b border-surface-border pb-3.5 mb-3.5">
                   <div
                     className="w-[42px] h-[42px] rounded-full flex items-center justify-center font-display font-semibold text-[17px] text-white flex-none"
-                    style={{ background: "#0E2A4A" }}
+                    style={{ background: "#0d1a30" }}
                     aria-hidden="true"
                   >
                     {scenario.name[0]}
@@ -189,8 +189,8 @@ export default function ThreatSimulation() {
                         border: "1.5px solid rgba(255,255,255,.18)",
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = "#12A89B";
-                        e.currentTarget.style.background = "rgba(18,168,155,.16)";
+                        e.currentTarget.style.borderColor = "#00b8d9";
+                        e.currentTarget.style.background = "rgba(0,184,217,.16)";
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.borderColor = "rgba(255,255,255,.18)";
@@ -213,9 +213,9 @@ export default function ThreatSimulation() {
               </div>
               <div className="font-display font-bold text-[54px] text-white leading-none">
                 {spotted}
-                <span className="text-[28px]" style={{ color: "#7E96B6" }}> / 3</span>
+                <span className="text-[28px]" style={{ color: "#7a90b0" }}> / 3</span>
               </div>
-              <p className="text-[15px] mx-auto mt-2 mb-6 max-w-[460px]" style={{ color: "#A9C0DD" }}>
+              <p className="text-[15px] mx-auto mt-2 mb-6 max-w-[460px]" style={{ color: "#8fa2bd" }}>
                 {simResultMessage(spotted)}
               </p>
               <div className="flex flex-wrap gap-3 justify-center">

@@ -91,11 +91,11 @@ export default function AssessmentQuiz({ autoStart = false }: { autoStart?: bool
   return (
     <div
       id="assessment"
-      className="bg-navy-800 border-b border-surface-border"
+      className="bg-surface-subtle border-b border-surface-border"
     >
       <div className="container-content py-14">
         <div
-          className="mx-auto max-w-[920px] bg-white border border-surface-border rounded-[20px] overflow-hidden"
+          className="mx-auto max-w-[920px] bg-card border border-surface-border rounded-[20px] overflow-hidden"
           style={{ boxShadow: "0 30px 70px -40px rgba(13,38,76,.4)" }}
         >
           {/* ── Intro ── */}
@@ -108,10 +108,9 @@ export default function AssessmentQuiz({ autoStart = false }: { autoStart?: bool
                 What's your Human Vulnerability Index?
               </h2>
               <p className="text-[16px] leading-[1.6] text-slate-400 mx-auto mb-2.5 max-w-[520px]">
-               The Human Vulnerability Index (HVI) translates human cybersecurity
-              behaviors into a clear, measurable score. Instead of focusing only
-              on systems and technology, HVI helps identify the human factors
-              that contribute to cyber risk.
+                Answer ten quick questions — one for each HVI risk dimension —
+                to see a sample 300–850 score, your top risk areas, and where
+                you're strongest.
               </p>
               <div className="font-mono text-xs text-slate-200 mb-6">
                 10 questions · about 2 minutes · no sign-up
@@ -119,7 +118,7 @@ export default function AssessmentQuiz({ autoStart = false }: { autoStart?: bool
               <button
                 onClick={start}
                 className="inline-flex items-center px-8 py-3.5 rounded-[10px] text-[15px] font-semibold text-white bg-teal-500 hover:bg-teal-600 transition-colors"
-                style={{ boxShadow: "0 12px 28px -10px rgba(18,168,155,.7)" }}
+                style={{ boxShadow: "0 12px 28px -10px rgba(0,184,217,.7)" }}
               >
                 Start assessment
               </button>
@@ -142,12 +141,12 @@ export default function AssessmentQuiz({ autoStart = false }: { autoStart?: bool
                 </span>
               </div>
               {/* Progress bar */}
-              <div className="h-1.5 bg-[#EAF0F7] rounded-full overflow-hidden mb-7">
+              <div className="h-1.5 bg-[#1a2e4a] rounded-full overflow-hidden mb-7">
                 <div
                   className="h-full rounded-full transition-[width] duration-300 ease-out"
                   style={{
                     width: `${pct}%`,
-                    background: "linear-gradient(90deg,#12A89B,#0E8C81)",
+                    background: "linear-gradient(90deg,#00b8d9,#039fc0)",
                   }}
                 />
               </div>
@@ -177,7 +176,7 @@ export default function AssessmentQuiz({ autoStart = false }: { autoStart?: bool
               <div
                 className="px-11 py-10 text-center"
                 style={{
-                  background: "linear-gradient(165deg,#0A2342,#103A66)",
+                  background: "linear-gradient(165deg,#080f1e,#102040)",
                 }}
               >
                 <div className="font-mono text-[11px] tracking-label uppercase text-teal-bright mb-2">
@@ -190,20 +189,20 @@ export default function AssessmentQuiz({ autoStart = false }: { autoStart?: bool
               <div className="px-11 py-9 pb-11">
                 {/* Risk / strength grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-[22px] mb-7">
-                  <div className="rounded-[14px] p-[22px]" style={{ background: "#FCF1EF", border: "1px solid #F5D9D4" }}>
-                    <div className="font-semibold text-sm text-[#C0392B] mb-3.5">
+                  <div className="rounded-[14px] p-[22px]" style={{ background: "rgba(224, 82, 96, 0.14)", border: "1px solid rgba(224, 82, 96, 0.24)" }}>
+                    <div className="font-semibold text-sm text-[#e05260] mb-3.5">
                       Top risk areas to address
                     </div>
                     <div className="flex flex-col gap-2.5">
                       {topRisks.map((r) => (
                         <div key={r.dim} className="flex items-center gap-2.5">
                           <span className="w-[7px] h-[7px] rounded-full bg-risk-critical flex-none" aria-hidden="true" />
-                          <span className="text-sm text-[#3D2C2A]">{r.dim}</span>
+                          <span className="text-sm text-[#c8d4e5]">{r.dim}</span>
                         </div>
                       ))}
                     </div>
                   </div>
-                  <div className="rounded-[14px] p-[22px]" style={{ background: "#EAF8F5", border: "1px solid #CDEDE8" }}>
+                  <div className="rounded-[14px] p-[22px]" style={{ background: "rgba(0, 184, 217, 0.14)", border: "1px solid rgba(0, 184, 217, 0.22)" }}>
                     <div className="font-semibold text-sm text-teal-600 mb-3.5">
                       Your strongest areas
                     </div>
@@ -211,7 +210,7 @@ export default function AssessmentQuiz({ autoStart = false }: { autoStart?: bool
                       {strongest.map((r) => (
                         <div key={r.dim} className="flex items-center gap-2.5">
                           <span className="w-[7px] h-[7px] rounded-full bg-teal-500 flex-none" aria-hidden="true" />
-                          <span className="text-sm text-[#1F3A37]">{r.dim}</span>
+                          <span className="text-sm text-[#c8d4e5]">{r.dim}</span>
                         </div>
                       ))}
                     </div>
@@ -228,12 +227,12 @@ export default function AssessmentQuiz({ autoStart = false }: { autoStart?: bool
                       <div key={rec} className="flex gap-2.5 items-start">
                         <span
                           className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-teal-600 flex-none mt-0.5"
-                          style={{ background: "#E6F6F4" }}
+                          style={{ background: "rgba(0, 184, 217, 0.14)" }}
                           aria-hidden="true"
                         >
                           ✓
                         </span>
-                        <span className="text-sm leading-[1.5] text-[#33485F]">{rec}</span>
+                        <span className="text-sm leading-[1.5] text-[#c8d4e5]">{rec}</span>
                       </div>
                     ))}
                   </div>
@@ -244,7 +243,7 @@ export default function AssessmentQuiz({ autoStart = false }: { autoStart?: bool
                   <button
                     onClick={start}
                     className="inline-flex items-center px-[22px] py-[13px] rounded-[10px] text-sm font-semibold text-teal-650 hover:bg-teal-500 hover:text-white transition-colors"
-                    style={{ background: "#E6F6F4", border: "1px solid #CDEDE8" }}
+                    style={{ background: "rgba(0, 184, 217, 0.14)", border: "1px solid rgba(0, 184, 217, 0.22)" }}
                   >
                     Retake assessment
                   </button>
