@@ -29,7 +29,9 @@ const hviLayers = [
 
 const aiLayers = ["Discover", "Assess", "Govern", "Evidence"];
 
-const glassTile = {
+import type { CSSProperties } from "react";
+
+const glassTile: CSSProperties = {
   background: "rgba(232, 237, 245, 0.04)",
   cursor: "default",
   pointerEvents: "none",
