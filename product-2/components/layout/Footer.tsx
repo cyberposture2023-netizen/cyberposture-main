@@ -16,11 +16,11 @@ export default function Footer() {
           <div className="flex flex-col gap-5">
             <Link href="/" aria-label="CyberPosture home">
               <Image
-                src="/cp-icon-v2.png"
+                src="/cp-logo-hires-png.png"
                 alt="CyberPosture"
                 width={40}
                 height={40}
-                className="h-10 w-auto"
+                className="h-19 w-auto"
               />
             </Link>
             <p className="text-sm text-slate-250 leading-relaxed max-w-[200px]">

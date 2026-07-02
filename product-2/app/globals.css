@@ -348,38 +348,18 @@ main > section:not(:first-child) > .container-content {
   padding-bottom: clamp(46px, 6vw, 64px) !important;
 }
 
+
+
 footer {
   position: relative;
-  overflow: hidden;
   border-color: transparent !important;
-  background:
-    radial-gradient(620px 260px at 18% 0%, rgba(0, 184, 217, 0.08), transparent 70%),
-    linear-gradient(180deg, rgba(3, 8, 15, 0), rgba(3, 8, 15, 0.78) 24%, rgba(3, 8, 15, 0.96)) !important;
-  margin-top: -36px !important;
-  padding-top: 36px;
-}
-footer {
-  border-top: 2px solid transparent;
-  background-image:
-    linear-gradient(to right, #01779a 0%, #0085a3 100%),
-    radial-gradient(620px 260px at 18% 0%, rgba(0, 184, 217, 0.08), transparent 70%),
-    linear-gradient(180deg, rgba(3, 8, 15, 0), rgba(3, 8, 15, 0.78) 24%, rgba(3, 8, 15, 0.96));
-  background-origin: border-box, padding-box, padding-box;
-  background-clip: border-box, padding-box, padding-box;
-}
-footer::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 108px;
-  pointer-events: none;
-  background: linear-gradient(to bottom, rgba(3, 8, 15, 0), rgba(3, 8, 15, 0.88));
+  background: linear-gradient(180deg, rgba(3, 8, 15, 0), rgba(3, 8, 15, 1) 60px);
 }
 
 footer > * {
   position: relative;
   z-index: 1;
-}
+} 
 
 main :is(h1, h2, h3, h4) {
   color: #f4f8ff;
