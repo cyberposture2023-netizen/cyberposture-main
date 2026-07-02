@@ -60,7 +60,7 @@ export default function AboutPage() {
                 >
                   {f.initials}
                 </div>
-                <div className="font-display font-semibold text-[21px] text-navy-700">{f.name}</div>
+                <div className="font-display font-semibold text-[21px] text-white">{f.name}</div>
                 <div className="text-[13.5px] font-semibold mt-[3px] mb-4" style={{ color: "#00b8d9" }}>
                   {f.role}
                 </div>

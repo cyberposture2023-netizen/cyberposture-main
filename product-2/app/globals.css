@@ -10,13 +10,13 @@
   --card-foreground: #e8edf5;
   --popover: #0d1a30;
   --popover-foreground: #e8edf5;
-  --primary: #00b8d9;
+ --primary: #009fab;
   --primary-foreground: #080f1e;
   --secondary: #102040;
   --secondary-foreground: #e8edf5;
   --muted: #1a2e4a;
   --muted-foreground: #7a90b0;
-  --accent: #00b8d9;
+  --accent: #009fab;
   --accent-foreground: #080f1e;
   --destructive: #e05260;
   --destructive-foreground: #ffffff;
@@ -57,13 +57,14 @@
   --card-foreground: #e8edf5;
   --popover: #0d1a30;
   --popover-foreground: #e8edf5;
-  --primary: #00b8d9;
+ --primary: #009fab;
+
   --primary-foreground: #080f1e;
   --secondary: #102040;
   --secondary-foreground: #e8edf5;
   --muted: #1a2e4a;
   --muted-foreground: #7a90b0;
-  --accent: #00b8d9;
+  --accent: #009fab;
   --accent-foreground: #080f1e;
   --destructive: #e05260;
   --destructive-foreground: #ffffff;
@@ -151,8 +152,8 @@
 
   /* Teal */
   --color-teal-50: rgba(0, 184, 217, 0.14);
-  --color-teal-500: #00b8d9;
-  --color-teal-600: #039fc0;
+--color-teal-500: #009fab;
+--color-teal-600: #0085a3;
   --color-teal-650: #00b8d9;
   --color-teal-deep: #1a65b8;
   --color-teal-bright: #5fe9ff;
@@ -357,7 +358,15 @@ footer {
   margin-top: -36px !important;
   padding-top: 36px;
 }
-
+footer {
+  border-top: 2px solid transparent;
+  background-image:
+    linear-gradient(to right, #01779a 0%, #0085a3 100%),
+    radial-gradient(620px 260px at 18% 0%, rgba(0, 184, 217, 0.08), transparent 70%),
+    linear-gradient(180deg, rgba(3, 8, 15, 0), rgba(3, 8, 15, 0.78) 24%, rgba(3, 8, 15, 0.96));
+  background-origin: border-box, padding-box, padding-box;
+  background-clip: border-box, padding-box, padding-box;
+}
 footer::before {
   content: "";
   position: absolute;

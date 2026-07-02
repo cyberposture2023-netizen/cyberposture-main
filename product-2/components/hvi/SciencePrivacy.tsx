@@ -71,9 +71,9 @@ export default function SciencePrivacy() {
                   key={p}
                   className="text-xs rounded-full px-[11px] py-[5px]"
                   style={{
-                    color: "#c8d4e5",
-                    background: "#e8edf5",
-                    border: "1px solid rgba(0, 184, 217, 0.18)",
+                    color: "#00b8d9",
+                    background: "rgba(0, 184, 217, 0.14)",
+                    border: "1px solid rgba(0, 184, 217, 0.22)",
                   }}
                 >
                   {p}

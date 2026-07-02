@@ -30,14 +30,10 @@ const hviLayers = [
 const aiLayers = ["Discover", "Assess", "Govern", "Evidence"];
 
 const glassTile = {
-  background:
-    "linear-gradient(145deg, rgba(13, 26, 48, 0.68), rgba(16, 32, 64, 0.34))",
-  border: "1px solid rgba(0, 184, 217, 0.16)",
-  boxShadow: "inset 0 1px 0 rgba(232, 237, 245, 0.06)",
-  backdropFilter: "blur(14px)",
-  WebkitBackdropFilter: "blur(14px)",
+  background: "rgba(232, 237, 245, 0.04)",
+  cursor: "default",
+  pointerEvents: "none",
 };
-
 export default function ArchitectureDiagram() {
   return (
     <section className="bg-navy-800 text-white">
@@ -79,10 +75,10 @@ export default function ArchitectureDiagram() {
               {hviLayers.map((l) => (
                 <div
                   key={l}
-                  className="cursor-default rounded-[9px] px-2 py-[11px] text-center text-xs"
+                  className="select-none rounded-[6px] px-2 py-[11px] text-center text-xs"
                   style={{
                     ...glassTile,
-                    color: "#c8d4e5",
+                    color: "#9fb0c7",
                   }}
                 >
                   {l}
@@ -113,10 +109,10 @@ export default function ArchitectureDiagram() {
               {aiLayers.map((l) => (
                 <div
                   key={l}
-                  className="cursor-default rounded-[9px] px-2 py-[11px] text-center text-xs"
+                  className="select-none rounded-[6px] px-2 py-[11px] text-center text-xs"
                   style={{
                     ...glassTile,
-                    color: "#c8d4e5",
+                    color: "#9fb0c7",
                   }}
                 >
                   {l}
@@ -158,10 +154,10 @@ export default function ArchitectureDiagram() {
             {foundationLayers.map((l) => (
               <div
                 key={l}
-                className="cursor-default rounded-[9px] px-2.5 py-3 text-center text-[12.5px] font-medium"
+                className="select-none rounded-[6px] px-2.5 py-3 text-center text-[12.5px] font-medium"
                 style={{
                   ...glassTile,
-                  color: "#e8edf5",
+                  color: "#c8d4e5",
                 }}
               >
                 {l}

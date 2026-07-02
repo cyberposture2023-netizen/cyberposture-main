@@ -67,7 +67,7 @@ export interface Founder {
 
 export const founders: Founder[] = [
   {
-    initials: "VS",
+    initials: "SV",
     name: "V. S. Sudhakar",
     role: "Co-Founder & CEO",
     bio: "A cybersecurity, governance, risk, compliance, and audit-readiness leader with more than 20 years of experience across healthcare, medical devices, banking, financial services, audit, and regulated enterprise environments. He has led security programs, risk assessments, SOC 2 readiness, incident response, and enterprise governance — and developed AI-driven GRC and security operations tooling. At CyberPosture he leads overall strategy, security methodology, risk models, scoring algorithms, and governance frameworks.",

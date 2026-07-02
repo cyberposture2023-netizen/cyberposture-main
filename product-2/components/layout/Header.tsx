@@ -15,13 +15,14 @@ export default function Header() {
       <div className="container-content w-full flex items-center justify-between gap-6">
 
         {/* Logo */}
+        
      <Link href="/" aria-label="CyberPosture home" className="shrink-0">
   <Image
     src="/cp-logo-hires.png"
     alt="CyberPosture"
     width={180}
     height={40}
-    className="h-[60px] w-auto drop-shadow-[0_0_1px_rgba(94,169,255,0.75)]"
+    className="h-[70px] w-auto drop-shadow-[0_0_1px_rgba(0,0,0,1.5)]"
     priority
   />
 </Link>
