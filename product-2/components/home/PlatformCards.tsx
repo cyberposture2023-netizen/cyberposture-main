@@ -107,7 +107,7 @@ export default function PlatformCards() {
             title="Human Vulnerability Index"
             tagline="Measure the human side of cyber risk."
             taglineColor="#00b8d9"
-            description="A simple, measurable 300–850 score for behavior-driven cyber risk — helping individuals understand personal vulnerability and organizations measure workforce human-risk patterns over time."
+            description="CyberPosture HVI is a privacy-first human-risk intelligence platform that measures the human side of cyber risk and expresses it as a single, intuitive score."
             primaryHref="/hvi"
             primaryLabel="Explore HVI"
             primaryBg="#00b8d9"
@@ -127,7 +127,8 @@ export default function PlatformCards() {
             title="AI Risk & Governance Platform"
             tagline="Adopt AI with confidence."
             taglineColor="#00b8d9"
-            description="AI is moving fast across approved tools, unsanctioned apps, connected workflows, and autonomous agents. CyberPosture helps you assess, understand, and mitigate that exposure — so teams can keep innovating with AI, backed by evidence for reviews, audits, and compliance readiness."
+            description="The Cyber Posture AI Risk & Governance Platform helps organizations adopt and deploy AI with confidence by understanding and mitigating AI risk continuously — when, where, and as it occurs."
+            
             primaryHref="/ai-risk-governance"
             primaryLabel="Explore AI Risk & Governance"
             primaryBg="#1a65b8"

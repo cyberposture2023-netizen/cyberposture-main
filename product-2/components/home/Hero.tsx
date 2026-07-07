@@ -11,15 +11,7 @@ export default function Hero() {
           "#03080f",
       }}
     >
-      {/* Scan line sweep */}
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-full animate-cp-scan"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent 0%, rgba(0,184,217,.045) 40%, rgba(0,184,217,.08) 50%, rgba(0,184,217,.045) 60%, transparent 100%)",
-        }}
-        aria-hidden="true"
-      />
+      
       <div className="container-content relative py-24 md:py-28 z-10">
         <div className="flex items-stretch gap-7">
           {/* Left accent bar */}

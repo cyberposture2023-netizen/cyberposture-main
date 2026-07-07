@@ -17,14 +17,26 @@ export default function HviPage() {
   return (
     <>
       {/* Hero */}
-      <section
-        className="text-white"
-        style={{ background: "linear-gradient(165deg,#080f1e,#1a65b8)" }}
-      >
-        <div className="container-content py-[72px] pb-16">
-          <div className="font-mono text-[11.5px] tracking-label uppercase text-teal-bright mb-3.5">
-            CyberPosture HVI · Human Vulnerability Index
-          </div>
+      {/* Hero */}
+<section
+  className="relative overflow-hidden text-white"
+  style={{ background: "linear-gradient(165deg,#080f1e,#1a65b8)" }}
+>
+  {/* Grid texture */}
+  <div
+  className="absolute inset-0"
+  style={{
+    backgroundImage:
+      "radial-gradient(rgba(0,184,217,.16) 1px, transparent 1px)",
+    backgroundSize: "24px 24px",
+  }}
+  aria-hidden="true"
+/>
+  <div className="container-content relative py-[72px] pb-16">
+    <div className="font-mono text-[11.5px] tracking-label uppercase text-teal-bright mb-3.5">
+      CyberPosture HVI · Human Vulnerability Index
+    </div>
+    
           <h1 className="font-display font-semibold text-[46px] leading-[1.08] tracking-tighter text-white mb-4 max-w-[760px]">
             Measure the human side of cyber risk.
           </h1>
@@ -70,11 +82,7 @@ export default function HviPage() {
       className="text-[17px] leading-[1.7] max-w-[760px] mb-10"
       style={{ color: "#c8d4e5" }}
     >
-      CyberPosture HVI is a privacy-first human-risk intelligence platform that
-      measures the human side of cyber risk and expresses it as a single,
-      intuitive score. HVI gives individuals, security teams, and organizations
-      a clear, measurable view of cyber vulnerability—showing where exposure
-      exists, how it is changing over time, and what actions can reduce risk.
+      CyberPosture HVI is a privacy-first human-risk intelligence platform that measures the human side of cyber risk and expresses it as a single, intuitive  score.  HVI gives individuals, security teams, and organizations a clear, measurable read on cyber vulnerability — where exposure exists, how it's trending, and what to do about it. The result is a shared language for human risk that turns awareness into measurable, continuous improvement, without compromising individual privacy.
     </p>
 
     <div className="grid gap-6 md:grid-cols-3">
