@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
     // or configure a Cloudflare Images loader when deploying
     unoptimized: process.env.NODE_ENV === "production",
   },
+  turbopack: {
+    root: process.cwd(),
+  },
 };
 
 export default nextConfig;

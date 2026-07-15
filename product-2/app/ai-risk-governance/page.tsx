@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import UsageInventory from "@/components/ai/UsageInventory";
 import AiHelpsAnswer from "@/components/ai/AiHelpsAnswer";
 import AiArchitecture from "@/components/ai/AiArchitecture";
@@ -49,13 +50,7 @@ export default function AiPage() {
             Adopt enterprise AI with confidence.
           </h1>
           <p className="text-[17px] leading-[1.6] mb-7 max-w-[730px]" style={{ color: "#a7b8d0" }}>
-            AI now shows up everywhere — copilots, chatbots, embedded product
-            features, APIs, and autonomous agents. CyberPosture helps you
-            understand and mitigate risk{" "}
-            <strong className="text-white">when, where, and as it happens</strong>{" "}
-            across all of it, so your teams can keep moving fast with AI. Strong
-            governance and compliance follow as a natural outcome — not the
-            starting point.
+            AI now shows up everywhere — copilots, chatbots, embedded product features, APIs, and autonomous agents — often before anyone's watching for it.
           </p>
           <div className="flex flex-wrap gap-3.5">
             <Link
@@ -94,12 +89,26 @@ export default function AiPage() {
       className="text-[17px] leading-[1.7] max-w-[760px] mb-10"
       style={{ color: "#c8d4e5" }}
     >
-      The CyberPosture AI Risk & Governance Platform helps organizations
-      understand, manage, and reduce AI risk continuously. As teams design,
-      deploy, and use AI across the enterprise, the platform assesses risk at
-      every stage, provides visibility into where AI is operating, and helps
-      identify unsanctioned AI tools that often go unnoticed.
+      The Cyber Posture AI Risk & Governance Platform helps organizations adopt and deploy AI with confidence by understanding and mitigating AI risk continuously — when, where, and as it occurs. As teams design and deploy a growing range of AI capabilities, the platform assesses risk at every stage . It tracks where AI is running across your organization, including the unsanctioned tools most teams never see.
+
     </p>
+
+    {/* <div
+      className="rounded-2xl overflow-hidden mb-10"
+      style={{
+        background: "rgba(255,255,255,.04)",
+        border: "1px solid rgba(255,255,255,.12)",
+      }}
+    >
+      <Image
+  src="/ai-risk.png"
+  alt="Diagram of AI risk across discovery, assessment, and governance stages"
+  width={1200}
+  height={640}
+  className="w-full h-auto"
+  priority
+/>
+    </div> */}
 
     <div className="grid gap-6 md:grid-cols-3">
       {[

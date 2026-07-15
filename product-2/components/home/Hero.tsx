@@ -11,15 +11,7 @@ export default function Hero() {
           "#03080f",
       }}
     >
-      {/* Scan line sweep */}
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-full animate-cp-scan"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent 0%, rgba(0,184,217,.045) 40%, rgba(0,184,217,.08) 50%, rgba(0,184,217,.045) 60%, transparent 100%)",
-        }}
-        aria-hidden="true"
-      />
+      
       <div className="container-content relative py-24 md:py-28 z-10">
         <div className="flex items-stretch gap-7">
           {/* Left accent bar */}
@@ -59,35 +51,50 @@ export default function Hero() {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-3.5 mb-12">
-              <a
-                href="#platforms"
-                className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold bg-primary text-primary-foreground hover:bg-teal-50 transition-colors"
-              >
-                Explore Platforms
-              </a>
-              <Link
-                href="/hvi#assessment"
-                className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold text-white transition-colors"
-                style={{
-                  background: "linear-gradient(90deg,#00b8d9,#039fc0)",
-                  boxShadow: "0 12px 30px -10px rgba(0,184,217,.7)",
-                }}
-              >
-                Take HVI Assessment
-              </Link>
-              <Link
-                href="/contact?i=Join+AI+Risk+%26+Governance+Early+Access"
-                className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold transition-colors"
-                style={{
-                  color: "#8bdfff",
-                  background: "rgba(26,101,184,.2)",
-                  border: "1px solid rgba(0,184,217,.45)",
-                }}
-              >
-                Join AI Early Access
-              </Link>
-            </div>
+          <div className="flex flex-wrap gap-3.5 mb-12">
+  
+    <a href="#platforms"
+    className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold text-white transition-colors hover:opacity-90"
+    style={{
+      background: "rgba(0, 184, 217, 0.16)",
+      border: "1px solid rgba(0, 184, 217, 0.35)",
+      backdropFilter: "blur(12px)",
+      WebkitBackdropFilter: "blur(12px)",
+      boxShadow: "inset 0 1px 0 rgba(255,255,255,0.12), 0 8px 24px -12px rgba(0,184,217,0.4)",
+    }}
+  >
+    Explore Platforms
+  </a>
+  <Link
+    href="/hvi#assessment"
+    className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold text-white transition-colors hover:opacity-90"
+    style={{
+      background:
+        "linear-gradient(90deg, rgba(0,184,217,0.55), rgba(3,159,192,0.55))",
+      border: "1px solid rgba(255,255,255,0.25)",
+      backdropFilter: "blur(12px)",
+      WebkitBackdropFilter: "blur(12px)",
+      boxShadow:
+        "inset 0 1px 0 rgba(255,255,255,0.18), 0 12px 30px -10px rgba(0,184,217,.55)",
+    }}
+  >
+    Take HVI Assessment
+  </Link>
+  <Link
+    href="/contact?i=Join+AI+Risk+%26+Governance+Early+Access"
+    className="inline-flex items-center px-6 py-3.5 rounded-[10px] text-[15px] font-semibold transition-colors hover:opacity-90"
+    style={{
+      color: "#8bdfff",
+      background: "rgba(26,101,184,.14)",
+      border: "1px solid rgba(0,184,217,.35)",
+      backdropFilter: "blur(12px)",
+      WebkitBackdropFilter: "blur(12px)",
+      boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08)",
+    }}
+  >
+    Join AI Early Access
+  </Link>
+</div>
 
             {/* Stat chips */}
             <div className="flex flex-wrap gap-3.5">

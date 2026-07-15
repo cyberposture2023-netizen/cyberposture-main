@@ -1,131 +1,168 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { platformsMenu, solutionsMenu, topNavLinks } from "@/lib/content/nav";
+
+function MenuLink({
+  href,
+  label,
+  onClick,
+}: {
+  href: string;
+  label: string;
+  onClick: () => void;
+}) {
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className="group flex min-h-[52px] items-center justify-between rounded-[14px] border border-white/10 bg-white/[0.055] px-4 py-3.5 text-[15px] font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,.06)] transition-colors hover:border-teal-500/40 hover:bg-teal-500/10"
+    >
+      <span>{label}</span>
+      <span className="text-teal-bright opacity-70 transition-transform group-hover:translate-x-0.5">
+        -&gt;
+      </span>
+    </Link>
+  );
+}
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
-  const [platformsOpen, setPlatformsOpen] = useState(false);
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const previousTouchAction = document.body.style.touchAction;
+    document.body.style.overflow = "hidden";
+    document.body.style.touchAction = "none";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.body.style.touchAction = previousTouchAction;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
 
   const close = () => setOpen(false);
+  const portalRoot = open && typeof document !== "undefined" ? document.body : null;
 
-  return (
-    <>
-      {/* Hamburger button */}
-      <button
-        type="button"
-        aria-label={open ? "Close menu" : "Open menu"}
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
-        className="lg:hidden flex flex-col gap-[5px] p-2 rounded focus-visible:outline-2 focus-visible:outline-teal-500"
-      >
-        <span className={`block w-5 h-0.5 bg-teal-bright transition-all duration-200 ${open ? "translate-y-[7px] rotate-45" : ""}`} />
-        <span className={`block w-5 h-0.5 bg-teal-bright transition-all duration-200 ${open ? "opacity-0" : ""}`} />
-        <span className={`block w-5 h-0.5 bg-teal-bright transition-all duration-200 ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
-      </button>
-
-      {/* Backdrop */}
-      {open && (
-        <div
-          className="fixed inset-0 bg-navy-900/40 z-40 lg:hidden"
-          aria-hidden="true"
-          onClick={close}
-        />
-      )}
-
-      {/* Slide-in drawer */}
-      <div
-        className={`fixed top-0 right-0 h-full w-[300px] bg-card z-50 shadow-panel-dark flex flex-col transition-transform duration-300 lg:hidden ${open ? "translate-x-0" : "translate-x-full"}`}
-        aria-label="Mobile navigation"
-      >
-        {/* Drawer header */}
-        <div className="flex items-center justify-between px-6 h-[72px] border-b border-surface-border2">
-          <span className="text-sm font-semibold text-foreground">Menu</span>
-          <button
-            type="button"
-            aria-label="Close menu"
-            onClick={close}
-            className="p-2 rounded text-slate-400 hover:text-teal-bright focus-visible:outline-2 focus-visible:outline-teal-500"
-          >
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-              <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-            </svg>
-          </button>
+  const overlay = (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile navigation"
+      className="fixed inset-0 z-[9999] flex h-dvh min-h-svh w-dvw flex-col overflow-y-auto bg-[#03080f]/95 text-white backdrop-blur-xl lg:hidden"
+      style={{
+        background:
+          "radial-gradient(780px 380px at 18% 0%, rgba(0,184,217,.18), transparent 68%), radial-gradient(740px 380px at 92% 8%, rgba(26,101,184,.22), transparent 64%), linear-gradient(180deg, rgba(3,8,15,.99), rgba(6,16,29,.99))",
+      }}
+    >
+      <div className="flex h-[72px] shrink-0 items-center justify-between border-b border-white/10 px-5">
+        <div>
+          <div className="font-mono text-[11px] uppercase tracking-label text-teal-bright">
+            CyberPosture
+          </div>
+          <div className="text-[18px] font-semibold leading-tight text-white">
+            Menu
+          </div>
         </div>
+        <button
+          type="button"
+          aria-label="Close menu"
+          onClick={close}
+          className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/[0.055] text-slate-500 transition-colors hover:text-white"
+        >
+          <svg width="20" height="20" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </button>
+      </div>
 
-        {/* Nav links */}
-        <nav className="flex-1 overflow-y-auto py-4 px-6 flex flex-col gap-1">
-          {/* Platforms accordion */}
-          <button
-            type="button"
-            aria-expanded={platformsOpen}
-            onClick={() => setPlatformsOpen((v) => !v)}
-            className="flex items-center justify-between w-full py-2.5 text-sm font-semibold text-foreground hover:text-teal-bright transition-colors"
+      <nav className="flex flex-1 flex-col gap-7 px-5 py-6">
+        <div className="grid gap-4">
+          <Link
+            href="/hvi?start=1#assessment"
+            onClick={close}
+            className="rounded-[16px] border border-teal-500/45 bg-teal-500 px-5 py-4 text-center text-[16px] font-bold text-navy-900 shadow-[0_18px_40px_-22px_rgba(0,216,255,.95)]"
           >
-            Platforms
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"
-              className={`transition-transform duration-200 ${platformsOpen ? "rotate-180" : ""}`}>
-              <path d="M2 5l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-          {platformsOpen && (
-            <div className="pl-3 flex flex-col gap-0.5 mb-1">
-              {platformsMenu.map((item) => (
-                <Link key={item.href} href={item.href} onClick={close}
-                  className="block py-2 text-sm text-slate-500 hover:text-teal-bright transition-colors">
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          )}
-
-          {/* Solutions accordion */}
-          <button
-            type="button"
-            aria-expanded={solutionsOpen}
-            onClick={() => setSolutionsOpen((v) => !v)}
-            className="flex items-center justify-between w-full py-2.5 text-sm font-semibold text-foreground hover:text-teal-bright transition-colors"
-          >
-            Solutions
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"
-              className={`transition-transform duration-200 ${solutionsOpen ? "rotate-180" : ""}`}>
-              <path d="M2 5l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-          {solutionsOpen && (
-            <div className="pl-3 flex flex-col gap-0.5 mb-1">
-              {solutionsMenu.map((item) => (
-                <Link key={item.href} href={item.href} onClick={close}
-                  className="block py-2 text-sm text-slate-500 hover:text-teal-bright transition-colors">
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          )}
-
-          {/* Top nav links */}
-          {topNavLinks.map((item) => (
-            <Link key={item.href} href={item.href} onClick={close}
-              className="block py-2.5 text-sm font-semibold text-foreground hover:text-teal-bright transition-colors">
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        {/* CTAs */}
-        <div className="px-6 py-5 border-t border-surface-border2 flex flex-col gap-3">
-          <Link href="/hvi?start=1#assessment" onClick={close}
-            className="block text-center py-2.5 px-4 rounded-[10px] text-sm font-semibold bg-teal-50 text-teal-600 border border-teal-500/30 hover:bg-teal-500 hover:text-white transition-colors">
             Take HVI Assessment
           </Link>
-          <Link href="/contact?i=Request+Demo" onClick={close}
-            className="block text-center py-2.5 px-4 rounded-[10px] text-sm font-semibold bg-navy-800 text-white hover:bg-navy-700 transition-colors">
+          <Link
+            href="/contact?i=Request+Demo"
+            onClick={close}
+            className="rounded-[16px] border border-white/15 bg-white px-5 py-4 text-center text-[16px] font-bold text-navy-900 shadow-[0_18px_40px_-24px_rgba(255,255,255,.8)]"
+          >
             Request Demo
           </Link>
         </div>
-      </div>
+
+        <section>
+          <h2 className="mb-3 font-mono text-[11px] uppercase tracking-label text-slate-400">
+            Platforms
+          </h2>
+          <div className="grid gap-3">
+            {platformsMenu.map((item) => (
+              <MenuLink key={item.href} {...item} onClick={close} />
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="mb-3 font-mono text-[11px] uppercase tracking-label text-slate-400">
+            Solutions
+          </h2>
+          <div className="grid gap-3">
+            {solutionsMenu.map((item) => (
+              <MenuLink key={item.href} {...item} onClick={close} />
+            ))}
+          </div>
+        </section>
+
+        <section className="pb-4">
+          <h2 className="mb-3 font-mono text-[11px] uppercase tracking-label text-slate-400">
+            Company
+          </h2>
+          <div className="grid grid-cols-2 gap-3">
+            {topNavLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={close}
+                className="rounded-[14px] border border-white/10 bg-white/[0.045] px-4 py-3 text-center text-[14px] font-semibold text-white"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </section>
+      </nav>
+    </div>
+  );
+
+  return (
+    <>
+      <button
+        type="button"
+        aria-label="Open menu"
+        aria-expanded={open}
+        onClick={() => setOpen(true)}
+        className="z-50 flex flex-col gap-[5px] rounded p-2 lg:hidden"
+      >
+        <span className="block h-0.5 w-5 bg-teal-bright" />
+        <span className="block h-0.5 w-5 bg-teal-bright" />
+        <span className="block h-0.5 w-5 bg-teal-bright" />
+      </button>
+
+      {portalRoot ? createPortal(overlay, portalRoot) : null}
     </>
   );
 }

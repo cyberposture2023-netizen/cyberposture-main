@@ -15,13 +15,14 @@ export default function Header() {
       <div className="container-content w-full flex items-center justify-between gap-6">
 
         {/* Logo */}
+        
      <Link href="/" aria-label="CyberPosture home" className="shrink-0">
   <Image
     src="/cp-logo-hires.png"
     alt="CyberPosture"
     width={180}
     height={40}
-    className="h-[60px] w-auto drop-shadow-[0_0_1px_rgba(94,169,255,0.75)]"
+    className="h-[70px] w-auto drop-shadow-[0_0_1px_rgba(0,0,0,1.5)]"
     priority
   />
 </Link>
@@ -50,11 +51,14 @@ export default function Header() {
             Take HVI Assessment
           </Link>
           <Link
-            href="/contact?i=Request+Demo"
-            className="inline-flex items-center px-4 py-2 rounded-[10px] text-sm font-semibold bg-navy-800 text-white hover:bg-navy-700 shadow-btn-navy transition-colors"
-          >
-            Request Demo
-          </Link>
+  href="/contact?i=Request+Demo"
+  className="inline-flex items-center px-4 py-2 rounded-[10px] text-sm font-semibold bg-navy-800 text-white hover:bg-navy-700 hover:border-teal-500/50 shadow-btn-navy transition-colors"
+  style={{
+    border: "1px solid rgba(0, 184, 217, 0.35)",
+  }}
+>
+  Request Demo
+</Link>
         </div>
 
         {/* Mobile hamburger */}

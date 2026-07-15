@@ -71,9 +71,9 @@ export default function SciencePrivacy() {
                   key={p}
                   className="text-xs rounded-full px-[11px] py-[5px]"
                   style={{
-                    color: "#c8d4e5",
-                    background: "#e8edf5",
-                    border: "1px solid rgba(0, 184, 217, 0.18)",
+                    color: "#00b8d9",
+                    background: "rgba(0, 184, 217, 0.14)",
+                    border: "1px solid rgba(0, 184, 217, 0.22)",
                   }}
                 >
                   {p}
@@ -84,28 +84,26 @@ export default function SciencePrivacy() {
         </div>
 
         {/* Methodology CTA banner */}
-        <div
-          className="rounded-[18px] p-[34px] flex items-center justify-between flex-wrap gap-5"
-          style={{ background: "linear-gradient(120deg,#0d1a30,#102040)" }}
-        >
-          <div>
-            <h3 className="font-display font-semibold text-[22px] text-white mb-1.5">
-              Want to understand how HVI works?
-            </h3>
-            <p className="text-[14.5px] max-w-[560px]" style={{ color: "#a7b8d0" }}>
-              A structured methodology explains the risk dimensions, scoring
-              model, privacy principles, and responsible-use guidelines behind
-              the Human Vulnerability Index.
-            </p>
-          </div>
-          <Link
-            href="/contact?i=General+Inquiry"
-            className="inline-flex items-center flex-none px-[22px] py-[13px] rounded-[10px] text-sm font-semibold text-primary-foreground bg-primary hover:bg-teal-50 transition-colors"
-          >
-            Read the HVI Methodology
-          </Link>
-        </div>
-      </div>
+       <div
+  className="rounded-[18px] p-[34px] flex items-center justify-between flex-wrap gap-5"
+  style={{ background: "linear-gradient(120deg,#0d1a30,#102040)" }}
+>
+  <div>
+    <h3 className="font-display font-semibold text-[22px] text-white mb-1.5">
+      Learn more about the HVI Index
+    </h3>
+    <p className="text-[14.5px] max-w-[560px]" style={{ color: "#a7b8d0" }}>
+      Walk through it with our team.
+    </p>
+  </div>
+  <Link
+    href="/contact?i=General+Inquiry"
+    className="inline-flex items-center flex-none px-[22px] py-[13px] rounded-[10px] text-sm font-semibold text-primary-foreground bg-primary hover:bg-teal-50 transition-colors"
+  >
+    Schedule a Demo
+  </Link>
+</div>
+</div>
     </section>
   );
 }
